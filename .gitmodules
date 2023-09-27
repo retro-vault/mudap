@@ -1,0 +1,6 @@
+[submodule "lib/z80"]
+	path = lib/z80
+	url = https://github.com/kosarev/z80.git
+[submodule "lib/z80ex"]
+	path = lib/z80ex
+	url = https://github.com/lipro/z80ex.git
