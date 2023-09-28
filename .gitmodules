@@ -4,3 +4,6 @@
 [submodule "lib/z80ex"]
 	path = lib/z80ex
 	url = https://github.com/lipro/z80ex.git
+[submodule "lib/sockpp"]
+	path = lib/sockpp
+	url = https://github.com/fpagliughi/sockpp.git
