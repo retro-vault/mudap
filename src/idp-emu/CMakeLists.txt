@@ -13,6 +13,7 @@ include_directories(
 
 # Add all libs: z80ex-static, z80ex_dasm-static, 
 target_link_libraries (idp-emu 
-    z80ex-static z80ex_dasm-static
+    z80ex-static
     ${SOCKPP_STATIC_LIBRARY}
+    structopt
 )
