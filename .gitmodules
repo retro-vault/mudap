@@ -7,3 +7,12 @@
 [submodule "lib/sockpp"]
 	path = lib/sockpp
 	url = https://github.com/fpagliughi/sockpp.git
+[submodule "lib/argagg"]
+	path = lib/argagg
+	url = https://github.com/vietjtnguyen/argagg.git
+[submodule "lib/cxxopts"]
+	path = lib/cxxopts
+	url = https://github.com/jarro2783/cxxopts.git
+[submodule "lib/structopt"]
+	path = lib/structopt
+	url = https://github.com/p-ranav/structopt.git

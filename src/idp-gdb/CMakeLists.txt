@@ -15,4 +15,5 @@ include_directories(
 target_link_libraries (idp-gdb 
     z80ex_dasm-static
     ${SOCKPP_STATIC_LIBRARY}
+    structopt 
 )
