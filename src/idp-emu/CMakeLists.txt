@@ -9,11 +9,12 @@ add_executable(idp-emu main.cpp)
 # Add include dirs: z80ex, 
 include_directories(
     ${Z80EX_PATH}/include
-    ${SOCKPP_INCLUDE_DIR})
+    ${SOCKPP_PATH}/include
+)
 
 # Add all libs: z80ex-static, z80ex_dasm-static, 
 target_link_libraries (idp-emu 
     z80ex-static
-    ${SOCKPP_STATIC_LIBRARY}
+    sockpp-static
     structopt
 )

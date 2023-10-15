@@ -5,7 +5,7 @@
             "name": "Debug idp-emu",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/src/idp-emu/idp-emu",
+            "program": "${workspaceFolder}/build/tests/gdb-tests",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
