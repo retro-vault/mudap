@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug idp-emu",
+            "name": "Debug idp-dbg",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/tests/gdb-tests",
@@ -19,7 +19,7 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "build idp-emu",
+            "preLaunchTask": "build idp-dbg",
             "miDebuggerPath": "/usr/bin/gdb"
         }
     ]
