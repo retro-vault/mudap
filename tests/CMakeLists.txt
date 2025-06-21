@@ -1,13 +1,24 @@
-project(idp-dbg)
+include(FetchContent)
 
-# We want a debug version for the IDE.
-set(CMAKE_BUILD_TYPE "Debug")
+FetchContent_Declare(
+  googletest
+  GIT_REPOSITORY https://github.com/google/googletest.git
+  GIT_TAG        v1.14.0
+)
+FetchContent_MakeAvailable(googletest)
 
-# Include files.
-include_directories(${GTEST_PATH}/include)
+enable_testing()
 
-# Test executable.
-add_executable(gdb-tests main.cpp test-executive.cpp)
+# Automatically add all .cpp files in tests/
+file(GLOB TEST_SOURCES CONFIGURE_DEPENDS *.cpp)
 
-# Link in google tests.
-target_link_libraries(gdb-tests gtest gtest_main)
+add_executable(idp_tests ${TEST_SOURCES})
+
+target_link_libraries(idp_tests
+    PRIVATE
+        gtest_main
+)
+
+# This line is CRUCIAL for CTest to discover tests
+include(GoogleTest)
+gtest_discover_tests(idp_tests)

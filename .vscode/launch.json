@@ -1,26 +1,18 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Debug idp-dbg",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/build/tests/gdb-tests",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "gdb",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "preLaunchTask": "build idp-dbg",
-            "miDebuggerPath": "/usr/bin/gdb"
-        }
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+       "name": "Run tests (build + ctest)",
+      "type": "cppdbg",
+      "request": "launch",
+      "preLaunchTask": "Configure, build, and run tests",
+      "program": "${workspaceFolder}/build/tests/idp_tests",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb"
+    }
+  ]
 }

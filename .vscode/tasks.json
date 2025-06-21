@@ -1,18 +1,21 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "build idp-dbg",
-            "type": "shell",
-            "command": "cmake",
-            "args": [
-                "--build",
-                "${workspaceFolder}/build"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        }
-    ]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Configure, build, and run tests",
+      "type": "shell",
+      "command": "[ ! -d build ] && cmake -B build -DBUILD_TESTS=ON || true; cmake --build build && ctest --test-dir build --output-on-failure",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    }
+  ]
 }
