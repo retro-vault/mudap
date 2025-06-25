@@ -9,6 +9,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Force static libraries for everything
 set(BUILD_SHARED_LIBS OFF)
 
+# We want a debug build by default
+if(NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE Debug CACHE STRING "Build type" FORCE)
+endif()
+
 # --- Fetch all external dependencies ---
 include(FetchContent)
 

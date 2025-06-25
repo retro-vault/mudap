@@ -2,8 +2,7 @@
 
 namespace dap
 {
-
-      dap::dap() = default;
+    dap::dap() = default;
 
     void dap::register_handler(const std::string &command, dap_handler handler)
     {

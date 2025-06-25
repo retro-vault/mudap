@@ -2,7 +2,6 @@
 
 namespace dap
 {
-
     response::response(int request_seq, const std::string &command)
     {
         _json["type"] = "response";

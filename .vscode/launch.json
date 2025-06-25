@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-       "name": "Run tests (build + ctest)",
+      "name": "Run tests (build + ctest)",
       "type": "cppdbg",
       "request": "launch",
       "preLaunchTask": "Configure, build, and run tests",
@@ -13,6 +13,20 @@
       "console": "integratedTerminal",
       "MIMode": "gdb",
       "miDebuggerPath": "/usr/bin/gdb"
+    },
+    {
+      "name": "Run DAP server (debugger)",
+      "type": "cppdbg",
+      "request": "launch",
+      "preLaunchTask": "Build DAP server",
+      "program": "${workspaceFolder}/bin/idp-dbg",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb"
     }
   ]
 }
+
