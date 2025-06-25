@@ -23,6 +23,7 @@ add_executable(idp_tests ${TEST_SOURCES})
 target_link_libraries(idp_tests
     PRIVATE
         gtest_main
+        dap
 )
 
 # Discover and register the tests for `ctest`

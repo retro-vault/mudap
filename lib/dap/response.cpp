@@ -16,19 +16,16 @@ namespace dap
         _json["success"] = ok;
         return *this;
     }
-
     response &response::message(const std::string &msg)
     {
         _json["message"] = msg;
         return *this;
     }
-
-    response &response::result(const nlohmann::json &result_data)
+    response &response::result(const json &result_data)
     {
         _json["body"] = result_data;
         return *this;
     }
-
     std::string response::str() const
     {
         return _json.dump();

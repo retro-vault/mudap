@@ -1,51 +1,43 @@
-#include "dap/dap.h"
-#include <nlohmann/json.hpp>
+#include <dap/dap.h>
 
 namespace dap
 {
 
-    dap::dap() = default;
+      dap::dap() = default;
 
     void dap::register_handler(const std::string &command, dap_handler handler)
     {
         std::lock_guard<std::mutex> lock(_mutex);
-        _handlers[command] = std::move(handler);
+        _handlers[command] = handler;
     }
 
-    std::string dap::handle_message(const std::string &json_str)
+    std::string dap::handle_message(const std::string &json_text)
     {
-        std::string command = extract_command(json_str);
-
-        if (command.empty())
-        {
-            return R"({"type":"error","message":"Invalid or missing command"})";
-        }
-
-        std::lock_guard<std::mutex> lock(_mutex);
-        auto it = _handlers.find(command);
-        if (it != _handlers.end())
-        {
-            return it->second(json_str);
-        }
-        else
-        {
-            return R"({"type":"error","message":"Unknown command"})";
-        }
-    }
-
-    std::string dap::extract_command(const std::string &json_str) const
-    {
+        request req;
         try
         {
-            json msg = json::parse(json_str);
-            if (msg.contains("command"))
-                return msg["command"].get<std::string>();
+            req = request::parse(json_text);
         }
         catch (...)
         {
-            // silently ignore errors
+            response resp(0, "<unknown>");
+            resp.success(false).message("Malformed request");
+            return resp.str();
         }
-        return "";
+        std::lock_guard<std::mutex> lock(_mutex);
+        auto typed_it = _typed_handlers.find(req.command);
+        if (typed_it != _typed_handlers.end())
+        {
+            return typed_it->second(req);
+        }
+        auto it = _handlers.find(req.command);
+        if (it != _handlers.end())
+        {
+            return it->second(json_text);
+        }
+        response resp(req.seq, req.command);
+        resp.success(false).message("Unknown command: " + req.command);
+        return resp.str();
     }
 
 } // namespace dap
