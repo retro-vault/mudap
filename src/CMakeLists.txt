@@ -1,7 +1,7 @@
-# src/CMakeLists.txt
+# Collect all .cpp files in this directory for the executable
+file(GLOB SRC_FILES *.cpp)
 
-# Define the main executable
-add_executable(idp-dbg main.cpp)
+add_executable(idp-dbg ${SRC_FILES})
 
 # Place the binary in the top-level /bin folder
 set_target_properties(idp-dbg PROPERTIES
