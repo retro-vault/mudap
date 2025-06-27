@@ -100,6 +100,9 @@ int main()
         dispatcher.register_handler(
             "readMemory", [&](const nlohmann::json &req)
             { return debug_instance.handle_read_memory(req); });
+        dispatcher.register_handler(
+            "disassemble", [&](const nlohmann::json &req)
+            { return debug_instance.handle_disassemble(req); });
 
         while (sock)
         {

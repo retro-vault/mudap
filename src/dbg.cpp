@@ -1,4 +1,5 @@
 #include "dbg.h"
+#include <dap/dap.h>
 #include <nlohmann/json.hpp>
 #include <thread>
 #include <chrono>
@@ -7,28 +8,59 @@
 #include <fstream>
 #include <algorithm>
 #include <cstring>
+#include <z80ex.h>
+#include <z80ex_dasm.h>
+
+// z80ex callback signatures (must match z80ex.h)
+static uint8_t memread_cb(Z80EX_CONTEXT *, uint16_t addr, int /*m1_state*/, void *user_data)
+{
+    auto *dbg_ptr = static_cast<dbg *>(user_data);
+    return dbg_ptr->memory()[addr];
+}
+static void memwrite_cb(Z80EX_CONTEXT *, uint16_t addr, uint8_t value, void *user_data)
+{
+    auto *dbg_ptr = static_cast<dbg *>(user_data);
+    dbg_ptr->memory()[addr] = value;
+}
+static uint8_t portread_cb(Z80EX_CONTEXT *, uint16_t, void *) { return 0xFF; }
+static void portwrite_cb(Z80EX_CONTEXT *, uint16_t, uint8_t, void *) {}
+static uint8_t intread_cb(Z80EX_CONTEXT *, void *) { return 0; }
 
 dbg::dbg()
-    : cpu_(), memory_(0x10000, 0), breakpoints_(), event_seq_(1), launched_(false)
+    : cpu_(nullptr), memory_(0x10000, 0), breakpoints_(), event_seq_(1), launched_(false)
 {
+    cpu_ = z80ex_create(
+        memread_cb, this,
+        memwrite_cb, this,
+        portread_cb, this,
+        portwrite_cb, this,
+        intread_cb, this);
+}
+
+dbg::~dbg()
+{
+    if (cpu_)
+        z80ex_destroy(cpu_);
 }
 
 std::string dbg::handle_initialize(const dap::initialize_request &req)
 {
     dap::response resp(req.seq, req.command);
-    resp.success(true).result({{"supportsConfigurationDoneRequest", true},
-                               {"supportsSetVariable", false},
-                               {"supportsEvaluateForHovers", false},
-                               {"supportsReadMemoryRequest", true}});
+    resp.success(true).result({
+        {"supportsConfigurationDoneRequest", true},
+        {"supportsSetVariable", false},
+        {"supportsEvaluateForHovers", false},
+        {"supportsReadMemoryRequest", true},
+        {"supportsDisassembleRequest", true},
+        {"supportsInstructionBreakpoints", true}, // Optional
+        {"supportsSteppingGranularity", true}     // Optional
+    });
     return resp.str();
 }
 
 std::string dbg::handle_launch(const dap::launch_request &req)
 {
-    // Manually zero all registers and wtc structs to "reset" the CPU
-    std::memset(&cpu_.reg, 0, sizeof(cpu_.reg));
-    std::memset(&cpu_.wtc, 0, sizeof(cpu_.wtc));
-
+    z80ex_reset(cpu_);
     std::fill(memory_.begin(), memory_.end(), 0);
 
     // Load binary if specified in arguments
@@ -90,7 +122,7 @@ std::string dbg::handle_threads(const dap::threads_request &req)
 
 std::string dbg::handle_stack_trace(const dap::stack_trace_request &req)
 {
-    uint16_t pc = cpu_.reg.PC;
+    uint16_t pc = z80ex_get_reg(cpu_, regPC);
     nlohmann::json frame = {
         {"id", 1},
         {"name", "PC"},
@@ -117,84 +149,34 @@ std::string dbg::handle_variables(const dap::variables_request &req)
 
     if (req.variables_reference == 100)
     {
-        auto &reg = cpu_.reg;
-        {
-            nlohmann::json v;
-            v["name"] = "AF";
-            v["value"] = format_hex((reg.pair.A << 8) | reg.pair.F, 4);
-            v["variablesReference"] = 0;
-            vars.push_back(v);
-        }
-        {
-            nlohmann::json v;
-            v["name"] = "BC";
-            v["value"] = format_hex((reg.pair.B << 8) | reg.pair.C, 4);
-            v["variablesReference"] = 0;
-            vars.push_back(v);
-        }
-        {
-            nlohmann::json v;
-            v["name"] = "DE";
-            v["value"] = format_hex((reg.pair.D << 8) | reg.pair.E, 4);
-            v["variablesReference"] = 0;
-            vars.push_back(v);
-        }
-        {
-            nlohmann::json v;
-            v["name"] = "HL";
-            v["value"] = format_hex((reg.pair.H << 8) | reg.pair.L, 4);
-            v["variablesReference"] = 0;
-            vars.push_back(v);
-        }
-        {
-            nlohmann::json v;
-            v["name"] = "IX";
-            v["value"] = format_hex(reg.IX, 4);
-            v["variablesReference"] = 0;
-            vars.push_back(v);
-        }
-        {
-            nlohmann::json v;
-            v["name"] = "IY";
-            v["value"] = format_hex(reg.IY, 4);
-            v["variablesReference"] = 0;
-            vars.push_back(v);
-        }
-        {
-            nlohmann::json v;
-            v["name"] = "SP";
-            v["value"] = format_hex(reg.SP, 4);
-            v["variablesReference"] = 0;
-            vars.push_back(v);
-        }
-        {
-            nlohmann::json v;
-            v["name"] = "PC";
-            v["value"] = format_hex(reg.PC, 4);
-            v["variablesReference"] = 0;
-            vars.push_back(v);
-        }
-        {
-            nlohmann::json v;
-            v["name"] = "R";
-            v["value"] = format_hex(reg.R, 2);
-            v["variablesReference"] = 0;
-            vars.push_back(v);
-        }
-        {
-            nlohmann::json v;
-            v["name"] = "I";
-            v["value"] = format_hex(reg.I, 2);
-            v["variablesReference"] = 0;
-            vars.push_back(v);
-        }
+// Use Z80_REG_T enums from z80ex.h
+#define Z80REG(name, regid, width)                                  \
+    {                                                               \
+        nlohmann::json v;                                           \
+        v["name"] = #name;                                          \
+        v["value"] = format_hex(z80ex_get_reg(cpu_, regid), width); \
+        v["variablesReference"] = 0;                                \
+        vars.push_back(v);                                          \
+    }
+        Z80REG(AF, regAF, 4)
+        Z80REG(BC, regBC, 4)
+        Z80REG(DE, regDE, 4)
+        Z80REG(HL, regHL, 4)
+        Z80REG(IX, regIX, 4)
+        Z80REG(IY, regIY, 4)
+        Z80REG(SP, regSP, 4)
+        Z80REG(PC, regPC, 4)
+        Z80REG(R, regR, 2)
+        Z80REG(I, regI, 2)
+        // F is the low byte of regAF
         {
             nlohmann::json v;
             v["name"] = "F";
-            v["value"] = format_hex(reg.pair.F, 2);
+            v["value"] = format_hex(z80ex_get_reg(cpu_, regAF) & 0xFF, 2);
             v["variablesReference"] = 0;
             vars.push_back(v);
         }
+#undef Z80REG
     }
 
     dap::response resp(req.seq, req.command);
@@ -207,15 +189,14 @@ std::string dbg::handle_continue(const dap::continue_request &req)
     bool stopped = false;
     for (int step = 0; step < 100000; ++step)
     {
-        uint16_t pc = cpu_.reg.PC;
+        uint16_t pc = z80ex_get_reg(cpu_, regPC);
         if (std::find(breakpoints_.begin(), breakpoints_.end(), static_cast<int>(pc + 1)) != breakpoints_.end())
         {
             stopped = true;
             break;
         }
-        // Suzuki Z80 has no single-step public method; you must implement stepping here if needed.
-        // For now, just increment PC as a placeholder for stepping:
-        cpu_.reg.PC += 1;
+        // Step CPU
+        z80ex_step(cpu_);
         if (!launched_)
             break;
     }
@@ -244,22 +225,84 @@ std::string dbg::handle_continue(const dap::continue_request &req)
     return resp.str();
 }
 
+// Callback to read a byte from your memory vector for disassembler
+static uint8_t dasm_readbyte_cb(Z80EX_WORD addr, void *user_data)
+{
+    auto *memory = static_cast<std::vector<uint8_t> *>(user_data);
+    if (addr < memory->size())
+        return (*memory)[addr];
+    else
+        return 0xFF;
+}
+
 std::string dbg::handle_source(const nlohmann::json &req)
 {
-    // Disassemble 256 bytes from PC for dummy.bin
     std::ostringstream oss;
-    uint16_t pc = cpu_.reg.PC;
+    uint16_t pc = z80ex_get_reg(cpu_, regPC);
+    char dasm_buf[64];
+
     for (int i = 0; i < 256 && (pc + i) < memory_.size();)
     {
         uint16_t addr = pc + i;
+        int ilen = z80ex_dasm(
+            dasm_buf, sizeof(dasm_buf), 0, nullptr, nullptr,
+            dasm_readbyte_cb, addr, &memory_);
+
         oss << std::setfill('0') << std::setw(4) << std::hex << addr << ": ";
-        // You might want to implement actual disassembly here.
-        oss << "??" << "\n";
-        i += 1; // Placeholder: advance by 1
+        // Hex dump
+        for (int j = 0; j < ilen && (addr + j) < memory_.size(); ++j)
+            oss << std::setw(2) << std::setfill('0') << (int)memory_[addr + j] << " ";
+        // Pad hex
+        for (int j = ilen; j < 4; ++j)
+            oss << "   ";
+        oss << "  " << dasm_buf << "\n";
+
+        i += (ilen > 0) ? ilen : 1;
     }
 
     dap::response resp(req["seq"], req["command"]);
     resp.success(true).result({{"content", oss.str()}});
+    return resp.str();
+}
+
+std::string dbg::handle_disassemble(const nlohmann::json &req)
+{
+    std::string memref = req["memoryReference"];
+    uint64_t address = std::stoull(memref, nullptr, 0); // supports "0x" prefix
+    int instr_count = req.value("instructionCount", 10);
+
+    nlohmann::json instructions = nlohmann::json::array();
+
+    for (int i = 0; i < instr_count;)
+    {
+        char dasm_buf[64];
+        int ilen = z80ex_dasm(
+            dasm_buf, sizeof(dasm_buf), 0, nullptr, nullptr,
+            dasm_readbyte_cb, address, &memory_);
+        if (ilen <= 0)
+            ilen = 1;
+        std::string bytes;
+        for (int j = 0; j < ilen; ++j)
+        {
+            char buf[4];
+            snprintf(buf, 4, "%02X", memory_[address + j]);
+            bytes += buf;
+        }
+        char addr_buf[16];
+        snprintf(addr_buf, sizeof(addr_buf), "0x%04X", (unsigned)address);
+
+        nlohmann::json instr = {
+            {"address", addr_buf},
+            {"instruction", dasm_buf},
+            {"size", ilen},
+            {"bytes", bytes}};
+        instructions.push_back(instr);
+        address += ilen;
+        i++;
+    }
+
+    dap::response resp(req["seq"], req["command"]);
+    resp.success(true).result({{"instructions", instructions}});
     return resp.str();
 }
 

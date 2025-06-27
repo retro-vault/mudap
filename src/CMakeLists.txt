@@ -15,10 +15,12 @@ target_link_libraries(idp-dbg
     structopt::structopt
     nlohmann_json::nlohmann_json
     dap  # your in-tree debug adapter protocol library
+    z80ex  # link against z80ex
+    z80ex_dasm  # link against z80ex disassembler
 )
 
-# Include Suzuki Z80 (header-only)
+# Include directories for z80ex (headers are in include/)
 target_include_directories(idp-dbg
   PRIVATE
-    ${z80suzuki_SOURCE_DIR}
+    ${z80ex_SOURCE_DIR}/include  # <-- z80ex headers
 )

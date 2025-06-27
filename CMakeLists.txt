@@ -17,12 +17,20 @@ endif()
 # --- Fetch all external dependencies ---
 include(FetchContent)
 
+# Use the actual z80ex repo by lipro
+set(Z80EX_BUILD_DASM ON CACHE BOOL "Build z80ex disassembler" FORCE)
 FetchContent_Declare(
-  z80suzuki
-  GIT_REPOSITORY https://github.com/suzukiplan/z80.git
+  z80ex
+  GIT_REPOSITORY https://github.com/lipro/z80ex.git
   GIT_TAG        master
 )
-FetchContent_MakeAvailable(z80suzuki)
+FetchContent_MakeAvailable(z80ex)
+
+message(STATUS "Available targets:")
+get_property(all_targets DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY BUILDSYSTEM_TARGETS)
+foreach(t ${all_targets})
+  message(STATUS "  target: ${t}")
+endforeach()
 
 FetchContent_Declare(
   sockpp
