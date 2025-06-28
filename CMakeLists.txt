@@ -56,6 +56,7 @@ FetchContent_MakeAvailable(nlohmann_json)
 # --- Add subdirectories ---
 add_subdirectory(lib)
 add_subdirectory(src)
+add_subdirectory(ext)
 
 option(BUILD_TESTS "Whether or not to build tests." ON)
 if (BUILD_TESTS)

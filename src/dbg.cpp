@@ -78,6 +78,49 @@ std::string dbg::handle_launch(const dap::launch_request &req)
 
     dap::response resp(req.seq, req.command);
     resp.success(true).result({});
+
+    // --- SEND "stopped" EVENT HERE ---
+    if (send_event_)
+    {
+        nlohmann::json stopped_event;
+        stopped_event["seq"] = event_seq_++;
+        stopped_event["type"] = "event";
+        stopped_event["event"] = "stopped";
+        stopped_event["body"] = {
+            {"reason", "entry"}, // "entry" = stopped at entry point
+            {"threadId", 1},
+            {"allThreadsStopped", true}};
+        send_event_(stopped_event.dump());
+    }
+    // --- END STOPPED EVENT ---
+
+    return resp.str();
+}
+
+std::string dbg::handle_set_instruction_breakpoints(const nlohmann::json &req)
+{
+    std::vector<uint16_t> new_bps;
+    std::vector<nlohmann::json> bps;
+
+    if (req["arguments"].contains("breakpoints"))
+    {
+        for (const auto &bp : req["arguments"]["breakpoints"])
+        {
+            // DAP expects offsets, which are memory addresses
+            uint16_t addr = std::stoul(bp["instructionReference"].get<std::string>(), nullptr, 0);
+            new_bps.push_back(addr);
+
+            nlohmann::json bp_resp;
+            bp_resp["verified"] = true;
+            bp_resp["instructionReference"] = bp["instructionReference"];
+            bps.push_back(bp_resp);
+        }
+    }
+    // Store instruction breakpoints:
+    instruction_breakpoints_ = new_bps;
+
+    dap::response resp(req["seq"], req["command"]);
+    resp.success(true).result({{"breakpoints", bps}});
     return resp.str();
 }
 
@@ -125,10 +168,13 @@ std::string dbg::handle_stack_trace(const dap::stack_trace_request &req)
     uint16_t pc = z80ex_get_reg(cpu_, regPC);
     nlohmann::json frame = {
         {"id", 1},
-        {"name", "PC"},
-        {"line", static_cast<int>(pc + 1)},
+        {"name", format_hex(pc, 4)},
+        {"line", 1},
         {"column", 1},
-        {"source", {{"name", "dummy.bin"}, {"sourceReference", 1}}}};
+        {"source", {
+                       {"name", "Disassembly"}, {"sourceReference", 1} // Unique int for disassembly, use same for all
+                   }},
+        {"instructionPointerReference", format_hex(pc, 4)}};
 
     dap::response resp(req.seq, req.command);
     resp.success(true).result({{"stackFrames", {frame}},

@@ -15,6 +15,7 @@ public:
     std::string handle_initialize(const dap::initialize_request &req);
     std::string handle_launch(const dap::launch_request &req);
     std::string handle_set_breakpoints(const dap::set_breakpoints_request &req);
+    std::string handle_set_instruction_breakpoints(const nlohmann::json &req);
     std::string handle_configuration_done(const dap::configuration_done_request &req);
     std::string handle_threads(const dap::threads_request &req);
     std::string handle_stack_trace(const dap::stack_trace_request &req);
@@ -34,6 +35,7 @@ private:
     Z80EX_CONTEXT *cpu_;
     std::vector<uint8_t> memory_;
     std::vector<int> breakpoints_;
+    std::vector<uint16_t> instruction_breakpoints_;
     int event_seq_;
     bool launched_;
     std::function<void(const std::string &)> send_event_;

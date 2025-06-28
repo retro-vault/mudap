@@ -1,0 +1,64 @@
+{
+  "name": "idp-gdb-debug",
+  "displayName": "IDP GDB Debugger",
+  "description": "Debug adapter for IDP GDB (Z80 JIT DAP)",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iskradelta/idp-dbg"
+  },
+  "engines": {
+    "vscode": "^1.88.0"
+  },
+  "categories": [
+    "Debuggers"
+  ],
+  "files": [
+    "package.json",
+    "LICENSE"
+  ],
+  "contributes": {
+    "debuggers": [
+      {
+        "type": "idp-gdb",
+        "label": "IDP GDB Debug",
+        "configurationAttributes": {
+          "launch": {
+            "required": ["program"],
+            "properties": {
+              "program": {
+                "type": "string",
+                "description": "Path to the program."
+              },
+              "debugServer": {
+                "type": "number",
+                "description": "Port for your debug adapter"
+              },
+              "showDisassembly": {
+                "type": "string",
+                "enum": ["auto", "always", "never"],
+                "default": "auto"
+              },
+              "trace": {
+                "type": "string",
+                "enum": ["off", "messages", "verbose"],
+                "default": "off"
+              }
+            }
+          }
+        },
+        "initialConfigurations": [
+          {
+            "name": "Debug IDP GDB",
+            "type": "idp-gdb",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/mavrica.bin",
+            "debugServer": 4711,
+            "showDisassembly": "always"
+          }
+        ],
+        "languages": ["c", "asm"]
+      }
+    ]
+  }
+}

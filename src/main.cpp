@@ -103,6 +103,9 @@ int main()
         dispatcher.register_handler(
             "disassemble", [&](const nlohmann::json &req)
             { return debug_instance.handle_disassemble(req); });
+        dispatcher.register_handler(
+            "setInstructionBreakpoints", [&](const nlohmann::json &req)
+            { return debug_instance.handle_set_instruction_breakpoints(req); });
 
         while (sock)
         {

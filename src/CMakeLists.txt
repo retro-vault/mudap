@@ -2,6 +2,7 @@
 file(GLOB SRC_FILES *.cpp)
 
 add_executable(idp-dbg ${SRC_FILES})
+add_dependencies(idp-dbg vscode_ext)
 
 # Place the binary in the top-level /bin folder
 set_target_properties(idp-dbg PROPERTIES
