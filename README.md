@@ -2,7 +2,7 @@
 
 # idp-dbg
 
-`idp-dbg` is a cross-debugging toolchain for Z80 programs, intended for integration with Visual Studio Code on Linux. It supports the Microsoft Debug Adapter Protocol (DAP) and is compatible with the DeZog debugging extension. The system is designed to provide future support for emulating the Iskra Delta Partner, an 8-bit computer developed by Iskra Delta in the 1980s.
+`idp-dbg` is a cross-debugging toolchain for Z80 programs, intended for integration with Visual Studio Code on Linux. It supports the Microsoft Debug Adapter Protocol (DAP). The system is designed to provide future support for emulating the Iskra Delta Partner, an 8-bit computer developed by Iskra Delta in the 1980s.
 
 ## Features
 
@@ -75,4 +75,4 @@ This project is licensed under the [MIT License](LICENSE).
 [standard.badge]: https://img.shields.io/badge/standard-C89-blue.svg
 [license.url]: https://github.com/tstih/libcpm3-z80/blob/main/LICENSE
 [license.badge]: https://img.shields.io/badge/license-MIT-blue.svg
-[status.badge]: https://img.shields.io/badge/status-development-red.svg
+[status.badge]: https://img.shields.io/badge/status-alpha-orange.svg

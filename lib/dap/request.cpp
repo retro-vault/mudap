@@ -145,4 +145,76 @@ namespace dap
         return r;
     }
 
+    source_request source_request::from(const request &req)
+    {
+        source_request r;
+        r.seq = req.seq;
+        r.type = req.type;
+        r.command = req.command;
+        r.arguments = req.arguments;
+
+        if (req.arguments.contains("sourceReference"))
+            r.source_reference = req.arguments["sourceReference"].get<int>();
+        else if (req.arguments.contains("source") && req.arguments["source"].contains("sourceReference"))
+            r.source_reference = req.arguments["source"]["sourceReference"].get<int>();
+
+        return r;
+    }
+
+    read_memory_request read_memory_request::from(const request &req)
+    {
+        read_memory_request r;
+        r.seq = req.seq;
+        r.type = req.type;
+        r.command = req.command;
+        r.arguments = req.arguments;
+
+        r.memory_reference = req.arguments.value("memoryReference", 0);
+        r.offset = req.arguments.value("offset", 0);
+        r.count = req.arguments.value("count", 0);
+        return r;
+    }
+
+    disassemble_request disassemble_request::from(const request &req)
+    {
+        disassemble_request r;
+        r.seq = req.seq;
+        r.type = req.type;
+        r.command = req.command;
+        r.arguments = req.arguments;
+
+        r.memory_reference = req.arguments.value("memoryReference", 0);
+        r.offset = req.arguments.value("offset", 0);
+        r.instruction_offset = req.arguments.value("instructionOffset", 0);
+        r.instruction_count = req.arguments.value("instructionCount", 0);
+        return r;
+    }
+
+    set_instruction_breakpoints_request set_instruction_breakpoints_request::from(const request &req)
+    {
+        set_instruction_breakpoints_request r;
+        r.seq = req.seq;
+        r.type = req.type;
+        r.command = req.command;
+        r.arguments = req.arguments;
+
+        if (req.arguments.contains("breakpoints"))
+            r.breakpoints = req.arguments["breakpoints"].get<std::vector<json>>();
+
+        return r;
+    }
+
+    next_request next_request::next_request::from(const request &req)
+    {
+        next_request r;
+        r.seq = req.seq;
+        r.type = req.type;
+        r.command = req.command;
+        r.arguments = req.arguments;
+
+        if (req.arguments.contains("threadId"))
+            r.thread_id = req.arguments["threadId"];
+        return r;
+    }
+
 } // namespace dap

@@ -97,29 +97,26 @@ std::string dbg::handle_launch(const dap::launch_request &req)
     return resp.str();
 }
 
-std::string dbg::handle_set_instruction_breakpoints(const nlohmann::json &req)
+std::string dbg::handle_set_instruction_breakpoints(
+    const dap::set_instruction_breakpoints_request &req)
 {
     std::vector<uint16_t> new_bps;
     std::vector<nlohmann::json> bps;
 
-    if (req["arguments"].contains("breakpoints"))
+    for (const auto &bp : req.breakpoints)
     {
-        for (const auto &bp : req["arguments"]["breakpoints"])
-        {
-            // DAP expects offsets, which are memory addresses
-            uint16_t addr = std::stoul(bp["instructionReference"].get<std::string>(), nullptr, 0);
-            new_bps.push_back(addr);
+        // Expecting string-formatted addresses like "0x1234"
+        std::string ref = bp.value("instructionReference", "0");
+        uint16_t addr = static_cast<uint16_t>(std::stoul(ref, nullptr, 0));
+        new_bps.push_back(addr);
 
-            nlohmann::json bp_resp;
-            bp_resp["verified"] = true;
-            bp_resp["instructionReference"] = bp["instructionReference"];
-            bps.push_back(bp_resp);
-        }
+        bps.push_back({{"verified", true},
+                       {"instructionReference", ref}});
     }
-    // Store instruction breakpoints:
+
     instruction_breakpoints_ = new_bps;
 
-    dap::response resp(req["seq"], req["command"]);
+    dap::response resp(req.seq, req.command);
     resp.success(true).result({{"breakpoints", bps}});
     return resp.str();
 }
@@ -185,7 +182,9 @@ std::string dbg::handle_stack_trace(const dap::stack_trace_request &req)
 std::string dbg::handle_scopes(const dap::scopes_request &req)
 {
     dap::response resp(req.seq, req.command);
-    resp.success(true).result({{"scopes", {{{"name", "Registers"}, {"variablesReference", 100}, {"presentationHint", "registers"}, {"expensive", false}}}}});
+    resp.success(true).result(
+        {{"scopes",
+          {{{"name", "Registers"}, {"variablesReference", 100}, {"presentationHint", "registers"}, {"expensive", false}}}}});
     return resp.str();
 }
 
@@ -195,7 +194,18 @@ std::string dbg::handle_variables(const dap::variables_request &req)
 
     if (req.variables_reference == 100)
     {
-// Use Z80_REG_T enums from z80ex.h
+        // "Registers" root → returns subsystems
+        vars.push_back({
+            {"name", "CPU"},
+            {"value", ""},
+            {"variablesReference", 101},
+        });
+
+        // If you later support SIO, CTC, etc. add them here
+        // vars.push_back({{"name", "CTC"}, {"value", ""}, {"variablesReference", 102}});
+    }
+    else if (req.variables_reference == 101)
+    {
 #define Z80REG(name, regid, width)                                  \
     {                                                               \
         nlohmann::json v;                                           \
@@ -214,15 +224,12 @@ std::string dbg::handle_variables(const dap::variables_request &req)
         Z80REG(PC, regPC, 4)
         Z80REG(R, regR, 2)
         Z80REG(I, regI, 2)
-        // F is the low byte of regAF
-        {
-            nlohmann::json v;
-            v["name"] = "F";
-            v["value"] = format_hex(z80ex_get_reg(cpu_, regAF) & 0xFF, 2);
-            v["variablesReference"] = 0;
-            vars.push_back(v);
-        }
 #undef Z80REG
+
+        // F is the low byte of regAF
+        vars.push_back({{"name", "F"},
+                        {"value", format_hex(z80ex_get_reg(cpu_, regAF) & 0xFF, 2)},
+                        {"variablesReference", 0}});
     }
 
     dap::response resp(req.seq, req.command);
@@ -281,7 +288,7 @@ static uint8_t dasm_readbyte_cb(Z80EX_WORD addr, void *user_data)
         return 0xFF;
 }
 
-std::string dbg::handle_source(const nlohmann::json &req)
+std::string dbg::handle_source(const dap::source_request &req)
 {
     std::ostringstream oss;
     uint16_t pc = z80ex_get_reg(cpu_, regPC);
@@ -290,32 +297,35 @@ std::string dbg::handle_source(const nlohmann::json &req)
     for (int i = 0; i < 256 && (pc + i) < memory_.size();)
     {
         uint16_t addr = pc + i;
+        int tstates_var = 0, tstates2_var = 0;
         int ilen = z80ex_dasm(
-            dasm_buf, sizeof(dasm_buf), 0, nullptr, nullptr,
+            dasm_buf, sizeof(dasm_buf), 0, &tstates_var, &tstates2_var,
             dasm_readbyte_cb, addr, &memory_);
 
         oss << std::setfill('0') << std::setw(4) << std::hex << addr << ": ";
+
         // Hex dump
         for (int j = 0; j < ilen && (addr + j) < memory_.size(); ++j)
             oss << std::setw(2) << std::setfill('0') << (int)memory_[addr + j] << " ";
+
         // Pad hex
         for (int j = ilen; j < 4; ++j)
             oss << "   ";
-        oss << "  " << dasm_buf << "\n";
 
+        oss << "  " << dasm_buf << "\n";
         i += (ilen > 0) ? ilen : 1;
     }
 
-    dap::response resp(req["seq"], req["command"]);
+    dap::response resp(req.seq, req.command);
     resp.success(true).result({{"content", oss.str()}});
     return resp.str();
 }
 
-std::string dbg::handle_disassemble(const nlohmann::json &req)
+std::string dbg::handle_disassemble(const dap::disassemble_request &req)
 {
-    std::string memref = req["memoryReference"];
-    uint64_t address = std::stoull(memref, nullptr, 0); // supports "0x" prefix
-    int instr_count = req.value("instructionCount", 10);
+    // Parse memory reference (supports "0x" prefix)
+    uint64_t address = static_cast<uint64_t>(req.memory_reference);
+    int instr_count = req.instruction_count;
 
     nlohmann::json instructions = nlohmann::json::array();
 
@@ -325,48 +335,99 @@ std::string dbg::handle_disassemble(const nlohmann::json &req)
         int ilen = z80ex_dasm(
             dasm_buf, sizeof(dasm_buf), 0, nullptr, nullptr,
             dasm_readbyte_cb, address, &memory_);
+
         if (ilen <= 0)
             ilen = 1;
+
         std::string bytes;
         for (int j = 0; j < ilen; ++j)
         {
             char buf[4];
-            snprintf(buf, 4, "%02X", memory_[address + j]);
+            snprintf(buf, sizeof(buf), "%02X", memory_[address + j]);
             bytes += buf;
         }
+
         char addr_buf[16];
         snprintf(addr_buf, sizeof(addr_buf), "0x%04X", (unsigned)address);
 
-        nlohmann::json instr = {
-            {"address", addr_buf},
-            {"instruction", dasm_buf},
-            {"size", ilen},
-            {"bytes", bytes}};
-        instructions.push_back(instr);
+        instructions.push_back({{"address", addr_buf},
+                                {"instruction", dasm_buf},
+                                {"size", ilen},
+                                {"bytes", bytes}});
+
         address += ilen;
-        i++;
+        ++i;
     }
 
-    dap::response resp(req["seq"], req["command"]);
+    dap::response resp(req.seq, req.command);
     resp.success(true).result({{"instructions", instructions}});
     return resp.str();
 }
 
-std::string dbg::handle_read_memory(const nlohmann::json &req)
+std::string dbg::handle_read_memory(const dap::read_memory_request &req)
 {
+    // Parse the memory reference (assuming it's a hex string)
     size_t addr = 0;
-    std::istringstream iss(req["memoryReference"].get<std::string>());
-    iss >> std::hex >> addr;
-    int count = std::min(req.value("count", 1), (int)memory_.size() - (int)addr);
+    addr = static_cast<size_t>(req.memory_reference);
 
+    // Calculate how many bytes to read
+    int count = std::min(req.count, static_cast<int>(memory_.size() - addr));
+
+    // Format the output as a hex string
     std::ostringstream hexstr;
     for (int i = 0; i < count; ++i)
         hexstr << std::hex << std::setw(2) << std::setfill('0') << (int)memory_[addr + i];
 
-    dap::response resp(req["seq"], req["command"]);
-    resp.success(true).result({{"address", req["memoryReference"]},
+    // Build the response
+    dap::response resp(req.seq, req.command);
+    resp.success(true).result({{"address", req.memory_reference},
                                {"data", hexstr.str()},
                                {"unreadableBytes", 0}});
+
+    return resp.str();
+}
+
+std::string dbg::handle_next(const dap::next_request &req)
+{
+    // Current PC at start of step
+    uint16_t start_pc = z80ex_get_reg(cpu_, regPC);
+    bool stopped = false;
+
+    // Step repeatedly until PC changes (i.e., we leave the current instruction)
+    for (int step = 0; step < 100000; ++step)
+    {
+        z80ex_step(cpu_);
+        uint16_t pc = z80ex_get_reg(cpu_, regPC);
+        if (pc != start_pc)
+        {
+            stopped = true;
+            break;
+        }
+
+        if (!launched_)
+            break;
+    }
+
+    dap::response resp(req.seq, req.command);
+    resp.success(true).result({{"allThreadsContinued", true}});
+
+    if (stopped)
+    {
+        std::thread([this]()
+                    {
+            std::this_thread::sleep_for(std::chrono::milliseconds(50));
+            nlohmann::json j;
+            j["seq"] = event_seq_++;
+            j["type"] = "event";
+            j["event"] = "stopped";
+            j["body"] = {
+                {"reason", "step"},
+                {"threadId", 1},
+                {"allThreadsStopped", true}};
+            if (send_event_) send_event_(j.dump()); })
+            .detach();
+    }
+
     return resp.str();
 }
 

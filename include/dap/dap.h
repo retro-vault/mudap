@@ -95,6 +95,41 @@ namespace dap
         static continue_request from(const request &req);
     };
 
+    struct source_request : public request
+    {
+        int source_reference = 0;
+        static source_request from(const request &req);
+    };
+
+    struct read_memory_request : public request
+    {
+        int memory_reference = 0;
+        int offset = 0;
+        int count = 0;
+        static read_memory_request from(const request &req);
+    };
+
+    struct disassemble_request : public request
+    {
+        int memory_reference = 0;
+        int offset = 0;
+        int instruction_offset = 0;
+        int instruction_count = 0;
+        static disassemble_request from(const request &req);
+    };
+
+    struct set_instruction_breakpoints_request : public request
+    {
+        std::vector<json> breakpoints;
+        static set_instruction_breakpoints_request from(const request &req);
+    };
+
+    struct next_request : public request
+    {
+        int thread_id = 0;
+        static next_request from(const request &req);
+    };
+
     class response
     {
     public:

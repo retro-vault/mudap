@@ -94,18 +94,21 @@ int main()
         dispatcher.register_typed_handler<dap::continue_request>(
             "continue", [&](const dap::continue_request &req)
             { return debug_instance.handle_continue(req); });
-        dispatcher.register_handler(
-            "source", [&](const nlohmann::json &req)
+        dispatcher.register_typed_handler<dap::source_request>(
+            "source", [&](const dap::source_request &req)
             { return debug_instance.handle_source(req); });
-        dispatcher.register_handler(
-            "readMemory", [&](const nlohmann::json &req)
+        dispatcher.register_typed_handler<dap::read_memory_request>(
+            "readMemory", [&](const dap::read_memory_request &req)
             { return debug_instance.handle_read_memory(req); });
-        dispatcher.register_handler(
-            "disassemble", [&](const nlohmann::json &req)
+        dispatcher.register_typed_handler<dap::disassemble_request>(
+            "disassemble", [&](const dap::disassemble_request &req)
             { return debug_instance.handle_disassemble(req); });
-        dispatcher.register_handler(
-            "setInstructionBreakpoints", [&](const nlohmann::json &req)
+        dispatcher.register_typed_handler<dap::set_instruction_breakpoints_request>(
+            "setInstructionBreakpoints", [&](const dap::set_instruction_breakpoints_request &req)
             { return debug_instance.handle_set_instruction_breakpoints(req); });
+        dispatcher.register_typed_handler<dap::next_request>(
+            "next", [&](const dap::next_request &req)
+            { return debug_instance.handle_next(req); });
 
         while (sock)
         {
