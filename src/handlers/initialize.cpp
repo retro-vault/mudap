@@ -11,6 +11,7 @@ std::string dbg::handle_initialize(const dap::initialize_request &req)
         {"supportsEvaluateForHovers", false},
         {"supportsReadMemoryRequest", true},
         {"supportsDisassembleRequest", true},
+        {"supportsBreakpoints", true},            // Optional
         {"supportsInstructionBreakpoints", true}, // Optional
         {"supportsSteppingGranularity", true}     // Optional
     });

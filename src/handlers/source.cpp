@@ -4,30 +4,28 @@
 
 std::string dbg::handle_source(const dap::source_request &req)
 {
-    std::ostringstream oss;
-    uint16_t pc = z80ex_get_reg(cpu_, regPC);
-    char dasm_buf[64];
-
-    for (int i = 0; i < 256 && (pc + i) < memory_.size();)
+    if (req.source_reference != 1)
     {
-        uint16_t addr = pc + i;
-        int tstates_var = 0, tstates2_var = 0;
+        // Invalid or unsupported reference
+        dap::response resp(req.seq, req.command);
+        resp.success(false).message("Unknown sourceReference");
+        return resp.str();
+    }
+
+    std::ostringstream oss;
+    char dasm_buf[64];
+    uint16_t addr = 0;
+
+    for (int i = 0; i < 256 && addr < memory_.size();)
+    {
+        int ts1, ts2;
         int ilen = z80ex_dasm(
-            dasm_buf, sizeof(dasm_buf), 0, &tstates_var, &tstates2_var,
+            dasm_buf, sizeof(dasm_buf), 0, &ts1, &ts2,
             dasm_readbyte_cb, addr, &memory_);
 
-        oss << std::setfill('0') << std::setw(4) << std::hex << addr << ": ";
-
-        // Hex dump
-        for (int j = 0; j < ilen && (addr + j) < memory_.size(); ++j)
-            oss << std::setw(2) << std::setfill('0') << (int)memory_[addr + j] << " ";
-
-        // Pad hex
-        for (int j = ilen; j < 4; ++j)
-            oss << "   ";
-
-        oss << "  " << dasm_buf << "\n";
-        i += (ilen > 0) ? ilen : 1;
+        oss << format_hex(addr, 4) << ": " << dasm_buf << "\n";
+        addr += (ilen > 0) ? ilen : 1;
+        ++i;
     }
 
     dap::response resp(req.seq, req.command);

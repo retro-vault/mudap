@@ -11,7 +11,7 @@ std::string dbg::handle_stack_trace(const dap::stack_trace_request &req)
         {"line", pc + 1},
         {"column", 1},
         {"source", {{"name", "Disassembly"}, {"sourceReference", 1}}},
-        {"memoryReference", format_hex(0, 4)}};
+        {"memoryReference", format_hex(pc, 4)}};
 
     dap::response resp(req.seq, req.command);
     resp.success(true).result({{"stackFrames", {frame}},
