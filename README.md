@@ -4,7 +4,9 @@
 
 `idp-dbg` is a cross-debugging toolchain for Z80 programs, designed for integration with Visual Studio Code on Linux. It implements the Microsoft Debug Adapter Protocol (DAP) and serves as both a lightweight emulator backend and a debug adapter frontend.
 
-This project is used by the **mavrica** project (located in the same GitHub root), which uses a Z80 just-in-time (JIT) compilation core to emulate a Z80 system. `idp-dbg` enables debugging of such emulators directly from VSCode.
+This project is used by the [mavrica](https://github.com/iskra-delta/mavrica) project (located in the same GitHub root), which uses a Z80 just-in-time (JIT) compilation core to emulate a Z80 system. `idp-dbg` enables debugging of such emulators directly from VSCode.
+
+![Screenshot](docs/images/idp-emu-alpha.png)
 
 ## Features
 
