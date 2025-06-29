@@ -2,8 +2,18 @@
 #include <string>
 #include <vector>
 #include <functional>
+#include <thread>
+#include <chrono>
+#include <sstream>
+#include <iomanip>
+#include <fstream>
+#include <algorithm>
+#include <cstring>
+
 #include <nlohmann/json.hpp>
 #include <z80ex.h>
+#include <z80ex_dasm.h>
+
 #include <dap/dap.h>
 
 class dbg
@@ -33,6 +43,8 @@ public:
 
     std::vector<uint8_t> &memory() { return memory_; }
     const std::vector<uint8_t> &memory() const { return memory_; }
+
+    static uint8_t dasm_readbyte_cb(Z80EX_WORD addr, void *user_data);
 
 private:
     Z80EX_CONTEXT *cpu_;
