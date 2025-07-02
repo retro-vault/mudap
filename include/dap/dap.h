@@ -130,6 +130,22 @@ namespace dap
         static next_request from(const request &req);
     };
 
+    struct step_in_request : public request
+    {
+        int thread_id = 0;
+        std::string granularity;
+
+        static step_in_request from(const request &req);
+    };
+
+    struct step_out_request : public request
+    {
+        int thread_id = 0;
+        std::string granularity;
+
+        static step_out_request from(const request &req);
+    };
+
     class response
     {
     public:

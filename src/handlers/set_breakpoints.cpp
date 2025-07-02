@@ -2,7 +2,6 @@
 
 #include <dbg.h>
 
-
 std::string dbg::handle_set_breakpoints(const dap::set_breakpoints_request &req)
 {
     breakpoints_.clear();

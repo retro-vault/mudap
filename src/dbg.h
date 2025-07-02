@@ -9,6 +9,7 @@
 #include <fstream>
 #include <algorithm>
 #include <cstring>
+#include <iostream>
 
 #include <nlohmann/json.hpp>
 #include <z80ex.h>
@@ -38,6 +39,8 @@ public:
     std::string handle_read_memory(const dap::read_memory_request &req);
     std::string handle_disassemble(const dap::disassemble_request &req);
     std::string handle_next(const dap::next_request &req);
+    std::string handle_step_in(const dap::step_in_request &req);
+    std::string handle_step_out(const dap::step_out_request &req);
 
     void set_send_event(std::function<void(const std::string &)> fn);
 
@@ -54,6 +57,8 @@ private:
     int event_seq_;
     bool launched_;
     std::function<void(const std::string &)> send_event_;
+    std::string virtual_lst_path_ = "/__virtual__/listing.lst";
+    int virtual_lst_source_reference_ = 1;
 
     std::string format_hex(uint16_t value, int width);
 };

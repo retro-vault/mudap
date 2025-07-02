@@ -47,17 +47,11 @@
             }
           }
         },
-        "initialConfigurations": [
-          {
-            "name": "Debug IDP GDB",
-            "type": "idp-gdb",
-            "request": "launch",
-            "program": "${workspaceFolder}/build/mavrica.bin",
-            "debugServer": 4711,
-            "showDisassembly": "always"
-          }
-        ],
-        "languages": ["c", "asm"]
+        "languages": ["c", "asm"],
+        "capabilities": {
+          "supportsDisassembleRequest": true,
+          "supportsInstructionBreakpoints": true
+        }
       }
     ]
   }

@@ -175,35 +175,6 @@ namespace dap
         return r;
     }
 
-    disassemble_request disassemble_request::from(const request &req)
-    {
-        disassemble_request r;
-        r.seq = req.seq;
-        r.type = req.type;
-        r.command = req.command;
-        r.arguments = req.arguments;
-
-        r.memory_reference = req.arguments.value("memoryReference", 0);
-        r.offset = req.arguments.value("offset", 0);
-        r.instruction_offset = req.arguments.value("instructionOffset", 0);
-        r.instruction_count = req.arguments.value("instructionCount", 0);
-        return r;
-    }
-
-    set_instruction_breakpoints_request set_instruction_breakpoints_request::from(const request &req)
-    {
-        set_instruction_breakpoints_request r;
-        r.seq = req.seq;
-        r.type = req.type;
-        r.command = req.command;
-        r.arguments = req.arguments;
-
-        if (req.arguments.contains("breakpoints"))
-            r.breakpoints = req.arguments["breakpoints"].get<std::vector<json>>();
-
-        return r;
-    }
-
     next_request next_request::next_request::from(const request &req)
     {
         next_request r;
@@ -214,6 +185,32 @@ namespace dap
 
         if (req.arguments.contains("threadId"))
             r.thread_id = req.arguments["threadId"];
+        return r;
+    }
+
+    step_in_request step_in_request::from(const request &req)
+    {
+        step_in_request r;
+        r.seq = req.seq;
+        r.type = req.type;
+        r.command = req.command;
+        r.arguments = req.arguments;
+
+        r.thread_id = req.arguments.value("threadId", 0);
+        r.granularity = req.arguments.value("granularity", "");
+        return r;
+    }
+
+    step_out_request step_out_request::from(const request &req)
+    {
+        step_out_request r;
+        r.seq = req.seq;
+        r.type = req.type;
+        r.command = req.command;
+        r.arguments = req.arguments;
+
+        r.thread_id = req.arguments.value("threadId", 0);
+        r.granularity = req.arguments.value("granularity", "");
         return r;
     }
 

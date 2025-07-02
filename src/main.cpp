@@ -58,14 +58,15 @@ int main()
             std::cerr << "Error accepting connection: " << acc.last_error_str() << std::endl;
             continue;
         }
-        std::cout << "Client connected: " << peer.to_string() << std::endl;
+        std::cout << "\n--- Client connected: " << peer.to_string() << " ---\n";
 
         dap::dap dispatcher;
         dbg debug_instance;
 
-        // Allow dbg to send DAP events
         debug_instance.set_send_event([&](const std::string &event_json)
-                                      { send_dap_message(sock, event_json); });
+                                      {
+            std::cout << "[SEND EVENT] " << event_json << "\n";
+            send_dap_message(sock, event_json); });
 
         dispatcher.register_typed_handler<dap::initialize_request>(
             "initialize", [&](const dap::initialize_request &req)
@@ -100,28 +101,34 @@ int main()
         dispatcher.register_typed_handler<dap::read_memory_request>(
             "readMemory", [&](const dap::read_memory_request &req)
             { return debug_instance.handle_read_memory(req); });
-        dispatcher.register_typed_handler<dap::disassemble_request>(
-            "disassemble", [&](const dap::disassemble_request &req)
-            { return debug_instance.handle_disassemble(req); });
-        dispatcher.register_typed_handler<dap::set_instruction_breakpoints_request>(
-            "setInstructionBreakpoints", [&](const dap::set_instruction_breakpoints_request &req)
-            { return debug_instance.handle_set_instruction_breakpoints(req); });
         dispatcher.register_typed_handler<dap::next_request>(
             "next", [&](const dap::next_request &req)
             { return debug_instance.handle_next(req); });
+        dispatcher.register_typed_handler<dap::step_in_request>(
+            "stepIn", [&](const dap::step_in_request &req)
+            { return debug_instance.handle_step_in(req); });
+        dispatcher.register_typed_handler<dap::step_out_request>(
+            "stepOut", [&](const dap::step_out_request &req)
+            { return debug_instance.handle_step_out(req); });
 
         while (sock)
         {
             std::string req_json = read_dap_message(sock);
             if (req_json.empty())
                 break;
+
+            std::cout << "\n[RECEIVED] " << req_json << "\n";
+
             std::string resp_json = dispatcher.handle_message(req_json);
             if (!resp_json.empty())
             {
+                std::cout << "[RESPONSE] " << resp_json << "\n";
                 send_dap_message(sock, resp_json);
             }
         }
-        std::cout << "Client disconnected." << std::endl;
+
+        std::cout << "--- Client disconnected ---\n";
     }
+
     return 0;
 }
