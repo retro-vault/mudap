@@ -1,3 +1,12 @@
+// dbg.cpp
+// Debug Adapter Protocol (DAP) server implementation for Z80 emulation.
+//
+// This file implements the core runtime functions of the `dbg` class used
+// for handling Debug Adapter Protocol requests, formatting data, and
+// accessing memory via the z80ex disassembler.
+//
+// Copyright 2025 Tomaz Stih. All rights reserved.
+// MIT License.
 #include <dbg.h>
 
 void dbg::set_send_event(std::function<void(const std::string &)> fn)

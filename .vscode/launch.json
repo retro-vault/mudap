@@ -10,7 +10,6 @@
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
-      "console": "integratedTerminal",
       "MIMode": "gdb",
       "miDebuggerPath": "/usr/bin/gdb"
     },
@@ -23,7 +22,6 @@
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
-      "console": "integratedTerminal",
       "MIMode": "gdb",
       "miDebuggerPath": "/usr/bin/gdb"
     }

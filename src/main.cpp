@@ -1,25 +1,48 @@
-#include "dbg.h"
-#include <dap/dap.h>
+// main.cpp
+// DAP TCP server main loop.
+//
+// This file launches the TCP server for the Debug Adapter Protocol (DAP),
+// using sockpp for socket communication. It reads and dispatches incoming
+// DAP requests to the `dbg` instance, handling various debug operations
+// for a Z80 CPU emulated using z80ex.
+//
+// Copyright 2025 Tomaz Stih. All rights reserved.
+// MIT License.
+#include <iostream>
+
 #include <sockpp/tcp_acceptor.h>
 #include <sockpp/tcp_socket.h>
 #include <nlohmann/json.hpp>
-#include <iostream>
+
+#include <dap/dap.h>
+
+#include <dbg.h>
 
 constexpr int PORT = 4711;
 
 std::string read_dap_message(sockpp::tcp_socket &sock)
 {
-    std::string header;
+    std::string header;                 // Message hdr.
+
+    // Skip newlines before header.
     char c;
-    while (header.find("\r\n\r\n") == std::string::npos && sock.read(&c, 1) == 1)
+    while (header.find("\r\n\r\n") == 
+        std::string::npos && sock.read(&c, 1) == 1)
         header += c;
+    
+    // The emssage should start with Content-Length:
     size_t pos = header.find("Content-Length:");
     if (pos == std::string::npos)
         return {};
+    
+    // Read length.
     size_t len_start = pos + 15;
     size_t len_end = header.find("\r\n", len_start);
-    int content_length = std::stoi(header.substr(len_start, len_end - len_start));
+    int content_length = std::stoi(
+        header.substr(len_start, len_end - len_start));
     std::string payload(content_length, '\0');
+
+    // Now read all characters after content length.
     int received = 0;
     while (received < content_length)
     {
@@ -33,9 +56,10 @@ std::string read_dap_message(sockpp::tcp_socket &sock)
 
 void send_dap_message(sockpp::tcp_socket &sock, const std::string &json)
 {
-    std::string header = "Content-Length: " + std::to_string(json.size()) + "\r\n\r\n";
+    std::string body = json.c_str();
+    std::string header = "Content-Length: " + std::to_string(body.size()) + "\r\n\r\n";
     sock.write(header.c_str(), header.size());
-    sock.write(json.c_str(), json.size());
+    sock.write(body.c_str(), body.size());
 }
 
 int main()
@@ -110,6 +134,9 @@ int main()
         dispatcher.register_typed_handler<dap::step_out_request>(
             "stepOut", [&](const dap::step_out_request &req)
             { return debug_instance.handle_step_out(req); });
+        dispatcher.register_typed_handler<dap::set_instruction_breakpoints_request>(
+            "setInstructionBreakpoints", [&](const dap::set_instruction_breakpoints_request &req)
+            { return debug_instance.handle_set_instruction_breakpoints(req); });
 
         while (sock)
         {

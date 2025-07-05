@@ -1,8 +1,29 @@
-#include "dap/dap.h"
+// request.cpp
+// Request parsing and conversion for Debug Adapter Protocol (DAP).
+//
+// This file implements the `dap::request` class and its subclasses,
+// providing logic to parse generic JSON requests and convert them into
+// specific typed request structures like `initialize_request`, `launch_request`,
+// etc., based on the command field. This allows type-safe dispatch in the DAP handler.
+//
+// Copyright 2025 Tomaz Stih. All rights reserved.
+// MIT License.
 #include <stdexcept>
+
+#include <dap/dap.h>
 
 namespace dap
 {
+    template <typename T>
+    T base_copy(const request &req)
+    {
+        T r;
+        r.seq = req.seq;
+        r.type = req.type;
+        r.command = req.command;
+        r.arguments = req.arguments;
+        return r;
+    }
 
     // Helper function to parse JSON safely.
     static json parse_json_safely(const std::string &json_text)
@@ -20,23 +41,20 @@ namespace dap
     request request::parse(const std::string &json_text)
     {
         json j = parse_json_safely(json_text);
-        request req;
-        req.seq = j.value("seq", 0);
-        req.type = j.value("type", "");
-        req.command = j.value("command", "");
-        req.arguments = j.value("arguments", json::object());
-        return req;
+        request base;
+        base.seq = j.value("seq", 0);
+        base.type = j.value("type", "");
+        base.command = j.value("command", "");
+        base.arguments = j.value("arguments", json::object());
+        return base_copy<request>(base); // Apply conversion logic if any.
     }
 
-    // --- DAP request conversions ---
+
+    // --- DAP request conversions -----------------------------------
 
     initialize_request initialize_request::from(const request &req)
     {
-        initialize_request r;
-        r.seq = req.seq;
-        r.type = req.type;
-        r.command = req.command;
-        r.arguments = req.arguments;
+        initialize_request r = base_copy<initialize_request>(req);
         r.adapter_id = req.arguments.value("adapterID", "");
         r.client_id = req.arguments.value("clientID", "");
         r.client_name = req.arguments.value("clientName", "");
@@ -46,11 +64,7 @@ namespace dap
 
     launch_request launch_request::from(const request &req)
     {
-        launch_request r;
-        r.seq = req.seq;
-        r.type = req.type;
-        r.command = req.command;
-        r.arguments = req.arguments;
+        launch_request r = base_copy<launch_request>(req);
         r.no_debug = req.arguments.value("noDebug", false);
         r.program = req.arguments.value("program", "");
         return r;
@@ -58,22 +72,12 @@ namespace dap
 
     attach_request attach_request::from(const request &req)
     {
-        attach_request r;
-        r.seq = req.seq;
-        r.type = req.type;
-        r.command = req.command;
-        r.arguments = req.arguments;
-        // Add more attach-specific fields as needed
-        return r;
+        return base_copy<attach_request>(req);
     }
 
     set_breakpoints_request set_breakpoints_request::from(const request &req)
     {
-        set_breakpoints_request r;
-        r.seq = req.seq;
-        r.type = req.type;
-        r.command = req.command;
-        r.arguments = req.arguments;
+        set_breakpoints_request r = base_copy<set_breakpoints_request>(req);
         r.source = req.arguments.value("source", json::object());
         r.breakpoints = req.arguments.value("breakpoints", json::array());
         return r;
@@ -81,31 +85,17 @@ namespace dap
 
     configuration_done_request configuration_done_request::from(const request &req)
     {
-        configuration_done_request r;
-        r.seq = req.seq;
-        r.type = req.type;
-        r.command = req.command;
-        r.arguments = req.arguments;
-        return r;
+        return base_copy<configuration_done_request>(req);
     }
 
     threads_request threads_request::from(const request &req)
     {
-        threads_request r;
-        r.seq = req.seq;
-        r.type = req.type;
-        r.command = req.command;
-        r.arguments = req.arguments;
-        return r;
+        return base_copy<threads_request>(req);
     }
 
     stack_trace_request stack_trace_request::from(const request &req)
     {
-        stack_trace_request r;
-        r.seq = req.seq;
-        r.type = req.type;
-        r.command = req.command;
-        r.arguments = req.arguments;
+        stack_trace_request r = base_copy<stack_trace_request>(req);
         r.thread_id = req.arguments.value("threadId", 0);
         r.start_frame = req.arguments.value("startFrame", 0);
         r.levels = req.arguments.value("levels", 0);
@@ -114,48 +104,33 @@ namespace dap
 
     scopes_request scopes_request::from(const request &req)
     {
-        scopes_request r;
-        r.seq = req.seq;
-        r.type = req.type;
-        r.command = req.command;
-        r.arguments = req.arguments;
+        scopes_request r = base_copy<scopes_request>(req);
         r.frame_id = req.arguments.value("frameId", 0);
         return r;
     }
 
     variables_request variables_request::from(const request &req)
     {
-        variables_request r;
-        r.seq = req.seq;
-        r.type = req.type;
-        r.command = req.command;
-        r.arguments = req.arguments;
+        variables_request r = base_copy<variables_request>(req);
         r.variables_reference = req.arguments.value("variablesReference", 0);
         return r;
     }
 
     continue_request continue_request::from(const request &req)
     {
-        continue_request r;
-        r.seq = req.seq;
-        r.type = req.type;
-        r.command = req.command;
-        r.arguments = req.arguments;
+        continue_request r = base_copy<continue_request>(req);
         r.thread_id = req.arguments.value("threadId", 0);
         return r;
     }
 
     source_request source_request::from(const request &req)
     {
-        source_request r;
-        r.seq = req.seq;
-        r.type = req.type;
-        r.command = req.command;
-        r.arguments = req.arguments;
+        source_request r = base_copy<source_request>(req);
 
         if (req.arguments.contains("sourceReference"))
             r.source_reference = req.arguments["sourceReference"].get<int>();
-        else if (req.arguments.contains("source") && req.arguments["source"].contains("sourceReference"))
+        else if (req.arguments.contains("source") &&
+                 req.arguments["source"].contains("sourceReference"))
             r.source_reference = req.arguments["source"]["sourceReference"].get<int>();
 
         return r;
@@ -163,39 +138,23 @@ namespace dap
 
     read_memory_request read_memory_request::from(const request &req)
     {
-        read_memory_request r;
-        r.seq = req.seq;
-        r.type = req.type;
-        r.command = req.command;
-        r.arguments = req.arguments;
-
+        read_memory_request r = base_copy<read_memory_request>(req);
         r.memory_reference = req.arguments.value("memoryReference", 0);
         r.offset = req.arguments.value("offset", 0);
         r.count = req.arguments.value("count", 0);
         return r;
     }
 
-    next_request next_request::next_request::from(const request &req)
+    next_request next_request::from(const request &req)
     {
-        next_request r;
-        r.seq = req.seq;
-        r.type = req.type;
-        r.command = req.command;
-        r.arguments = req.arguments;
-
-        if (req.arguments.contains("threadId"))
-            r.thread_id = req.arguments["threadId"];
+        next_request r = base_copy<next_request>(req);
+        r.thread_id = req.arguments.value("threadId", 0);
         return r;
     }
 
     step_in_request step_in_request::from(const request &req)
     {
-        step_in_request r;
-        r.seq = req.seq;
-        r.type = req.type;
-        r.command = req.command;
-        r.arguments = req.arguments;
-
+        step_in_request r = base_copy<step_in_request>(req);
         r.thread_id = req.arguments.value("threadId", 0);
         r.granularity = req.arguments.value("granularity", "");
         return r;
@@ -203,14 +162,16 @@ namespace dap
 
     step_out_request step_out_request::from(const request &req)
     {
-        step_out_request r;
-        r.seq = req.seq;
-        r.type = req.type;
-        r.command = req.command;
-        r.arguments = req.arguments;
-
+        step_out_request r = base_copy<step_out_request>(req);
         r.thread_id = req.arguments.value("threadId", 0);
         r.granularity = req.arguments.value("granularity", "");
+        return r;
+    }
+
+    set_instruction_breakpoints_request set_instruction_breakpoints_request::from(const request &req)
+    {
+        set_instruction_breakpoints_request r = base_copy<set_instruction_breakpoints_request>(req);
+        r.breakpoints = req.arguments.value("breakpoints", std::vector<json>{});
         return r;
     }
 

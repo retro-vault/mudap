@@ -1,3 +1,12 @@
+// response.cpp
+// Response builder for Debug Adapter Protocol (DAP).
+//
+// This file implements the `dap::response` class, which formats and
+// serializes standard DAP responses. It supports marking success,
+// attaching messages, and including result payloads.
+//
+// Copyright 2025 Tomaz Stih. All rights reserved.
+// MIT License.
 #include "dap/dap.h"
 
 namespace dap

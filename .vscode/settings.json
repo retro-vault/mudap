@@ -1,4 +1,7 @@
 {
+    "editor.formatOnSave": false,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
     "files.associations": {
         "any": "cpp",
         "array": "cpp",

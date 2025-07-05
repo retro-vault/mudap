@@ -1,4 +1,5 @@
 #include <dap/dap.h>
+
 #include <dbg.h>
 
 // Assume these are members of dbg class:
@@ -59,6 +60,8 @@ std::string dbg::handle_source(const dap::source_request &req)
     }
 
     dap::response resp(req.seq, req.command);
-    resp.success(true).result({{"content", oss.str()}});
+    resp.success(true)
+        .result({{"content", oss.str()},
+                 {"mimeType", "text/x-asm"}});
     return resp.str();
 }

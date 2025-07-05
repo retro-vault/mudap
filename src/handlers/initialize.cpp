@@ -10,8 +10,10 @@ std::string dbg::handle_initialize(const dap::initialize_request &req)
         resp
             .success(true)
             .result({{"supportsConfigurationDoneRequest", true},
-                     {"supportsDisassembleRequest", true},
+                     //{"supportsDisassembleRequest", true},
+                     {"supportsBreakpointLocationsRequest", true},
                      {"supportsInstructionBreakpoints", true},
+                     {"supportsLoadedSourcesRequest", true},
                      {"supportsStepBack", false},
                      {"supportsRestartFrame", false},
                      {"supportsEvaluateForHovers", false},
