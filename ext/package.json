@@ -1,11 +1,11 @@
 {
-  "name": "idp-gdb-debug",
-  "displayName": "IDP GDB Debugger",
-  "description": "Debug adapter for IDP GDB (Z80 JIT DAP)",
+  "name": "mudap-debug",
+  "displayName": "µdap Debugger",
+  "description": "Debug adapter for micros.",
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/iskradelta/idp-dbg"
+    "url": "https://github.com/retro-vault/mudap"
   },
   "engines": {
     "vscode": "^1.88.0"
@@ -20,8 +20,8 @@
   "contributes": {
     "debuggers": [
       {
-        "type": "idp-gdb",
-        "label": "IDP GDB Debug",
+        "type": "mudap-gdb",
+        "label": "µdap Debugger",
         "configurationAttributes": {
           "launch": {
             "required": ["program"],
@@ -33,25 +33,11 @@
               "debugServer": {
                 "type": "number",
                 "description": "Port for your debug adapter"
-              },
-              "showDisassembly": {
-                "type": "string",
-                "enum": ["auto", "always", "never"],
-                "default": "auto"
-              },
-              "trace": {
-                "type": "string",
-                "enum": ["off", "messages", "verbose"],
-                "default": "off"
               }
             }
           }
         },
-        "languages": ["c", "asm"],
-        "capabilities": {
-          "supportsDisassembleRequest": true,
-          "supportsInstructionBreakpoints": true
-        }
+        "languages": ["c", "asm"]
       }
     ]
   }

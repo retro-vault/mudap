@@ -1,7 +1,7 @@
 # Top-level CMakeLists.txt
 
 cmake_minimum_required(VERSION 3.25)
-project(idp-dbg LANGUAGES CXX)
+project(mudap LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -55,7 +55,7 @@ FetchContent_MakeAvailable(nlohmann_json)
 
 # --- Add subdirectories ---
 add_subdirectory(lib)
-add_subdirectory(src)
+# add_subdirectory(src)
 add_subdirectory(ext)
 
 option(BUILD_TESTS "Whether or not to build tests." ON)

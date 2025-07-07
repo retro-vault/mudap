@@ -15,6 +15,9 @@
 #include <unordered_map>
 #include <functional>
 #include <mutex>
+#include <sstream>
+#include <iostream>
+
 #include <nlohmann/json.hpp>
 
 namespace dap
@@ -199,12 +202,10 @@ namespace dap
     public:
         dap();
 
-        // Register raw JSON handler.
+        // Register dispatch functions.
         void register_handler(
             const std::string &command,
             dap_handler handler);
-
-        // Register typed request handler.
         template <typename request_t>
         void register_typed_handler(
             const std::string &command,
@@ -215,8 +216,16 @@ namespace dap
                 return handler(request_t::from(req));
             };
         }
+        void set_event_sender(std::function<void(const std::string &)> sender);
 
+        // Run DAP server.
+        void run(std::istream &in, std::ostream &out);
+
+    private:
+        // Helper functions.
         std::string handle_message(const std::string &json);
+        std::string read_message(std::istream &in);
+        void send_message(std::ostream &out, const std::string &json);
 
     private:
         std::unordered_map              // Raw handlers.
@@ -224,6 +233,8 @@ namespace dap
         std::unordered_map              // Typed handlers.
             <std::string, std::function<std::string(const request &)>> _typed_handlers; 
         std::mutex _mutex;              // Concurrency guard.
+        std::function                   // Send event handler.
+            <void(const std::string &)> send_event_;
     };
 
 } // namespace dap

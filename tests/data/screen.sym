@@ -1,0 +1,814 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 1.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+    .__.$$$.                                                    =  2710 L
+    .__.ABS.                                                    =  0000 G
+    .__.CPU.                                                    =  0000 L
+    .__.H$L.                                                    =  0000 L
+  0 A$screentomaz/Work/ura/build/ura/screen$104                    0017 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$105                    0019 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$106                    001D GR
+  0 A$screentomaz/Work/ura/build/ura/screen$107                    001F GR
+  0 A$screentomaz/Work/ura/build/ura/screen$108                    0022 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$109                    0023 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$113                    0024 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$114                    0027 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$115                    002A GR
+  0 A$screentomaz/Work/ura/build/ura/screen$116                    002B GR
+  0 A$screentomaz/Work/ura/build/ura/screen$117                    002C GR
+  0 A$screentomaz/Work/ura/build/ura/screen$118                    002D GR
+  0 A$screentomaz/Work/ura/build/ura/screen$119                    002E GR
+  0 A$screentomaz/Work/ura/build/ura/screen$120                    002F GR
+  0 A$screentomaz/Work/ura/build/ura/screen$121                    0030 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$122                    0031 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$123                    0032 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$127                    0033 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$128                    0036 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$129                    0039 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$130                    003A GR
+  0 A$screentomaz/Work/ura/build/ura/screen$131                    003D GR
+  0 A$screentomaz/Work/ura/build/ura/screen$132                    003E GR
+  0 A$screentomaz/Work/ura/build/ura/screen$133                    003F GR
+  0 A$screentomaz/Work/ura/build/ura/screen$134                    0042 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$135                    0045 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$136                    0046 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$137                    0049 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$138                    004A GR
+  0 A$screentomaz/Work/ura/build/ura/screen$139                    004C GR
+  0 A$screentomaz/Work/ura/build/ura/screen$140                    004D GR
+  0 A$screentomaz/Work/ura/build/ura/screen$141                    004E GR
+  0 A$screentomaz/Work/ura/build/ura/screen$142                    004F GR
+  0 A$screentomaz/Work/ura/build/ura/screen$143                    0050 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$144                    0052 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$145                    0053 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$146                    0055 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$147                    0056 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$148                    0057 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$149                    005A GR
+  0 A$screentomaz/Work/ura/build/ura/screen$150                    005B GR
+  0 A$screentomaz/Work/ura/build/ura/screen$151                    005C GR
+  0 A$screentomaz/Work/ura/build/ura/screen$152                    005D GR
+  0 A$screentomaz/Work/ura/build/ura/screen$153                    005E GR
+  0 A$screentomaz/Work/ura/build/ura/screen$154                    005F GR
+  0 A$screentomaz/Work/ura/build/ura/screen$155                    0060 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$156                    0062 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$157                    0063 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$158                    0066 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$159                    0069 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$160                    006C GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 2.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$screentomaz/Work/ura/build/ura/screen$164                    006F GR
+  0 A$screentomaz/Work/ura/build/ura/screen$165                    0070 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$166                    0072 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$167                    0075 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$168                    0078 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$169                    0079 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$170                    007C GR
+  0 A$screentomaz/Work/ura/build/ura/screen$171                    007D GR
+  0 A$screentomaz/Work/ura/build/ura/screen$172                    007E GR
+  0 A$screentomaz/Work/ura/build/ura/screen$173                    007F GR
+  0 A$screentomaz/Work/ura/build/ura/screen$174                    0081 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$175                    0082 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$176                    0083 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$177                    0085 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$178                    0086 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$179                    0087 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$180                    0089 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$181                    008A GR
+  0 A$screentomaz/Work/ura/build/ura/screen$182                    008B GR
+  0 A$screentomaz/Work/ura/build/ura/screen$183                    008E GR
+  0 A$screentomaz/Work/ura/build/ura/screen$184                    008F GR
+  0 A$screentomaz/Work/ura/build/ura/screen$185                    0090 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$186                    0091 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$187                    0092 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$188                    0095 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$189                    0098 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$190                    009B GR
+  0 A$screentomaz/Work/ura/build/ura/screen$194                    009E GR
+  0 A$screentomaz/Work/ura/build/ura/screen$195                    00A1 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$196                    00A2 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$197                    00A5 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$198                    00A8 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$199                    00A9 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$200                    00AC GR
+  0 A$screentomaz/Work/ura/build/ura/screen$201                    00AD GR
+  0 A$screentomaz/Work/ura/build/ura/screen$202                    00AE GR
+  0 A$screentomaz/Work/ura/build/ura/screen$203                    00AF GR
+  0 A$screentomaz/Work/ura/build/ura/screen$204                    00B0 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$205                    00B1 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$206                    00B2 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$207                    00B5 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$208                    00B6 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$209                    00B9 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$210                    00BC GR
+  0 A$screentomaz/Work/ura/build/ura/screen$211                    00BD GR
+  0 A$screentomaz/Work/ura/build/ura/screen$212                    00BE GR
+  0 A$screentomaz/Work/ura/build/ura/screen$213                    00BF GR
+  0 A$screentomaz/Work/ura/build/ura/screen$214                    00C0 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$215                    00C1 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$216                    00C4 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$220                    00C5 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$221                    00C8 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$222                    00C9 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$223                    00CC GR
+  0 A$screentomaz/Work/ura/build/ura/screen$224                    00CD GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 3.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$screentomaz/Work/ura/build/ura/screen$225                    00D0 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$226                    00D3 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$227                    00D4 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$228                    00D7 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$229                    00DA GR
+  0 A$screentomaz/Work/ura/build/ura/screen$230                    00DB GR
+  0 A$screentomaz/Work/ura/build/ura/screen$231                    00DE GR
+  0 A$screentomaz/Work/ura/build/ura/screen$232                    00DF GR
+  0 A$screentomaz/Work/ura/build/ura/screen$233                    00E0 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$234                    00E1 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$235                    00E2 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$236                    00E3 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$237                    00E5 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$238                    00E6 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$239                    00E7 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$240                    00EA GR
+  0 A$screentomaz/Work/ura/build/ura/screen$241                    00ED GR
+  0 A$screentomaz/Work/ura/build/ura/screen$242                    00EE GR
+  0 A$screentomaz/Work/ura/build/ura/screen$243                    00EF GR
+  0 A$screentomaz/Work/ura/build/ura/screen$244                    00F0 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$245                    00F1 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$246                    00F2 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$247                    00F3 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$248                    00F4 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$249                    00F6 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$250                    00F8 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$251                    00F9 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$253                    00FA GR
+  0 A$screentomaz/Work/ura/build/ura/screen$254                    00FC GR
+  0 A$screentomaz/Work/ura/build/ura/screen$255                    00FE GR
+  0 A$screentomaz/Work/ura/build/ura/screen$256                    00FF GR
+  0 A$screentomaz/Work/ura/build/ura/screen$257                    0101 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$258                    0102 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$259                    0105 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$260                    0106 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$261                    0107 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$262                    0109 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$263                    010A GR
+  0 A$screentomaz/Work/ura/build/ura/screen$264                    010B GR
+  0 A$screentomaz/Work/ura/build/ura/screen$265                    010C GR
+  0 A$screentomaz/Work/ura/build/ura/screen$266                    010E GR
+  0 A$screentomaz/Work/ura/build/ura/screen$267                    010F GR
+  0 A$screentomaz/Work/ura/build/ura/screen$268                    0112 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$269                    0113 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$270                    0114 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$271                    0115 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$272                    0116 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$273                    0117 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$274                    0118 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$275                    011B GR
+  0 A$screentomaz/Work/ura/build/ura/screen$276                    011C GR
+  0 A$screentomaz/Work/ura/build/ura/screen$277                    011D GR
+  0 A$screentomaz/Work/ura/build/ura/screen$278                    0120 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$282                    0123 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$283                    0126 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 4.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$screentomaz/Work/ura/build/ura/screen$284                    0127 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$285                    012A GR
+  0 A$screentomaz/Work/ura/build/ura/screen$286                    012B GR
+  0 A$screentomaz/Work/ura/build/ura/screen$287                    012E GR
+  0 A$screentomaz/Work/ura/build/ura/screen$288                    0131 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$289                    0132 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$290                    0135 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$291                    0138 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$292                    0139 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$293                    013C GR
+  0 A$screentomaz/Work/ura/build/ura/screen$294                    013D GR
+  0 A$screentomaz/Work/ura/build/ura/screen$295                    013E GR
+  0 A$screentomaz/Work/ura/build/ura/screen$296                    013F GR
+  0 A$screentomaz/Work/ura/build/ura/screen$297                    0140 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$298                    0142 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$299                    0143 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$300                    0144 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$301                    0147 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$302                    014A GR
+  0 A$screentomaz/Work/ura/build/ura/screen$303                    014B GR
+  0 A$screentomaz/Work/ura/build/ura/screen$304                    014C GR
+  0 A$screentomaz/Work/ura/build/ura/screen$305                    014D GR
+  0 A$screentomaz/Work/ura/build/ura/screen$306                    014E GR
+  0 A$screentomaz/Work/ura/build/ura/screen$307                    014F GR
+  0 A$screentomaz/Work/ura/build/ura/screen$308                    0151 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$309                    0153 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$310                    0154 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$312                    0155 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$313                    0157 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$314                    0159 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$315                    015A GR
+  0 A$screentomaz/Work/ura/build/ura/screen$316                    015C GR
+  0 A$screentomaz/Work/ura/build/ura/screen$317                    015D GR
+  0 A$screentomaz/Work/ura/build/ura/screen$318                    0160 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$319                    0161 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$320                    0163 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$321                    0164 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$322                    0165 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$323                    0166 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$324                    0167 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$325                    0169 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$326                    016C GR
+  0 A$screentomaz/Work/ura/build/ura/screen$327                    016D GR
+  0 A$screentomaz/Work/ura/build/ura/screen$328                    016E GR
+  0 A$screentomaz/Work/ura/build/ura/screen$329                    016F GR
+  0 A$screentomaz/Work/ura/build/ura/screen$330                    0170 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$331                    0171 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$332                    0172 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$333                    0175 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$334                    0176 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$335                    0177 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$339                    0178 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$340                    017B GR
+  0 A$screentomaz/Work/ura/build/ura/screen$341                    017E GR
+  0 A$screentomaz/Work/ura/build/ura/screen$342                    017F GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 5.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$screentomaz/Work/ura/build/ura/screen$343                    0180 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$344                    0181 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$345                    0183 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$346                    0184 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$347                    0185 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$348                    0188 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$349                    018B GR
+  0 A$screentomaz/Work/ura/build/ura/screen$350                    018C GR
+  0 A$screentomaz/Work/ura/build/ura/screen$351                    018D GR
+  0 A$screentomaz/Work/ura/build/ura/screen$352                    018E GR
+  0 A$screentomaz/Work/ura/build/ura/screen$353                    0191 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$354                    0194 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$355                    0195 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$359                    0196 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$360                    0198 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$365                    019A GR
+  0 A$screentomaz/Work/ura/build/ura/screen$378                    019B GR
+  0 A$screentomaz/Work/ura/build/ura/screen$379                    019D GR
+  0 A$screentomaz/Work/ura/build/ura/screen$380                    019E GR
+  0 A$screentomaz/Work/ura/build/ura/screen$381                    019F GR
+  0 A$screentomaz/Work/ura/build/ura/screen$382                    01A2 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$383                    01A3 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$384                    01A6 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$385                    01A7 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$386                    01AA GR
+  0 A$screentomaz/Work/ura/build/ura/screen$387                    01AB GR
+  0 A$screentomaz/Work/ura/build/ura/screen$388                    01AE GR
+  0 A$screentomaz/Work/ura/build/ura/screen$389                    01B1 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$390                    01B2 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$398                    01B3 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$408                    01B4 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$409                    01B6 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$410                    01BA GR
+  0 A$screentomaz/Work/ura/build/ura/screen$411                    01BC GR
+  0 A$screentomaz/Work/ura/build/ura/screen$412                    01BF GR
+  0 A$screentomaz/Work/ura/build/ura/screen$413                    01C0 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$417                    01C1 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$418                    01C4 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$419                    01C7 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$420                    01C8 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$421                    01CB GR
+  0 A$screentomaz/Work/ura/build/ura/screen$422                    01CC GR
+  0 A$screentomaz/Work/ura/build/ura/screen$423                    01CF GR
+  0 A$screentomaz/Work/ura/build/ura/screen$424                    01D2 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$425                    01D5 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$429                    01D8 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$430                    01DB GR
+  0 A$screentomaz/Work/ura/build/ura/screen$431                    01DE GR
+  0 A$screentomaz/Work/ura/build/ura/screen$432                    01DF GR
+  0 A$screentomaz/Work/ura/build/ura/screen$433                    01E2 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$434                    01E3 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$435                    01E6 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$436                    01E9 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$437                    01EC GR
+  0 A$screentomaz/Work/ura/build/ura/screen$441                    01EF GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 6.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$screentomaz/Work/ura/build/ura/screen$442                    01F2 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$443                    01F5 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$444                    01F8 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$445                    01FB GR
+  0 A$screentomaz/Work/ura/build/ura/screen$446                    01FE GR
+  0 A$screentomaz/Work/ura/build/ura/screen$447                    0201 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$448                    0202 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$449                    0203 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$450                    0204 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$451                    0205 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$452                    0208 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$453                    0209 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$454                    020C GR
+  0 A$screentomaz/Work/ura/build/ura/screen$455                    020F GR
+  0 A$screentomaz/Work/ura/build/ura/screen$456                    0212 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$457                    0215 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$458                    0218 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$459                    021B GR
+  0 A$screentomaz/Work/ura/build/ura/screen$460                    021C GR
+  0 A$screentomaz/Work/ura/build/ura/screen$461                    021F GR
+  0 A$screentomaz/Work/ura/build/ura/screen$462                    0222 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$463                    0223 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$464                    0226 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$465                    0229 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$466                    022A GR
+  0 A$screentomaz/Work/ura/build/ura/screen$467                    022D GR
+  0 A$screentomaz/Work/ura/build/ura/screen$468                    0230 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$469                    0231 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$470                    0234 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$471                    0235 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$472                    0236 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$473                    0237 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$474                    0238 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$475                    023B GR
+  0 A$screentomaz/Work/ura/build/ura/screen$476                    023E GR
+  0 A$screentomaz/Work/ura/build/ura/screen$477                    0241 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$478                    0244 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$479                    0247 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$480                    0249 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$481                    024C GR
+  0 A$screentomaz/Work/ura/build/ura/screen$482                    024F GR
+  0 A$screentomaz/Work/ura/build/ura/screen$483                    0251 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$484                    0254 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$485                    0257 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$486                    025A GR
+  0 A$screentomaz/Work/ura/build/ura/screen$487                    025B GR
+  0 A$screentomaz/Work/ura/build/ura/screen$488                    025C GR
+  0 A$screentomaz/Work/ura/build/ura/screen$489                    025D GR
+  0 A$screentomaz/Work/ura/build/ura/screen$490                    025E GR
+  0 A$screentomaz/Work/ura/build/ura/screen$491                    0261 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$492                    0262 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$493                    0265 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$494                    0268 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$495                    026B GR
+  0 A$screentomaz/Work/ura/build/ura/screen$496                    026E GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 7.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$screentomaz/Work/ura/build/ura/screen$497                    0271 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$498                    0274 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$499                    0275 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$500                    0278 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$501                    027B GR
+  0 A$screentomaz/Work/ura/build/ura/screen$502                    027C GR
+  0 A$screentomaz/Work/ura/build/ura/screen$503                    027F GR
+  0 A$screentomaz/Work/ura/build/ura/screen$504                    0282 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$505                    0283 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$506                    0286 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$507                    0289 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$508                    028A GR
+  0 A$screentomaz/Work/ura/build/ura/screen$509                    028D GR
+  0 A$screentomaz/Work/ura/build/ura/screen$510                    028E GR
+  0 A$screentomaz/Work/ura/build/ura/screen$511                    028F GR
+  0 A$screentomaz/Work/ura/build/ura/screen$512                    0290 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$513                    0291 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$514                    0292 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$515                    0293 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$516                    0296 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$517                    0299 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$518                    029A GR
+  0 A$screentomaz/Work/ura/build/ura/screen$519                    029D GR
+  0 A$screentomaz/Work/ura/build/ura/screen$520                    02A0 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$521                    02A1 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$522                    02A4 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$523                    02A5 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$524                    02A6 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$525                    02A7 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$526                    02A8 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$527                    02AB GR
+  0 A$screentomaz/Work/ura/build/ura/screen$528                    02AE GR
+  0 A$screentomaz/Work/ura/build/ura/screen$529                    02B1 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$533                    02B4 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$534                    02B7 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$535                    02BA GR
+  0 A$screentomaz/Work/ura/build/ura/screen$536                    02BB GR
+  0 A$screentomaz/Work/ura/build/ura/screen$537                    02BE GR
+  0 A$screentomaz/Work/ura/build/ura/screen$538                    02C1 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$539                    02C2 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$540                    02C5 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$541                    02C8 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$542                    02C9 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$543                    02CC GR
+  0 A$screentomaz/Work/ura/build/ura/screen$544                    02CF GR
+  0 A$screentomaz/Work/ura/build/ura/screen$545                    02D0 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$546                    02D3 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$547                    02D4 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$548                    02D5 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$549                    02D6 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$550                    02D7 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$551                    02DA GR
+  0 A$screentomaz/Work/ura/build/ura/screen$552                    02DD GR
+  0 A$screentomaz/Work/ura/build/ura/screen$553                    02E0 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$554                    02E3 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 8.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$screentomaz/Work/ura/build/ura/screen$555                    02E6 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$556                    02E9 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$557                    02EA GR
+  0 A$screentomaz/Work/ura/build/ura/screen$558                    02ED GR
+  0 A$screentomaz/Work/ura/build/ura/screen$559                    02F0 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$560                    02F1 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$561                    02F4 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$562                    02F7 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$563                    02F8 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$564                    02FB GR
+  0 A$screentomaz/Work/ura/build/ura/screen$565                    02FE GR
+  0 A$screentomaz/Work/ura/build/ura/screen$566                    02FF GR
+  0 A$screentomaz/Work/ura/build/ura/screen$567                    0302 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$568                    0303 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$569                    0304 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$570                    0305 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$571                    0306 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$572                    0307 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$573                    0308 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$574                    030B GR
+  0 A$screentomaz/Work/ura/build/ura/screen$575                    030E GR
+  0 A$screentomaz/Work/ura/build/ura/screen$576                    030F GR
+  0 A$screentomaz/Work/ura/build/ura/screen$577                    0312 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$578                    0315 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$579                    0316 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$580                    0319 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$581                    031A GR
+  0 A$screentomaz/Work/ura/build/ura/screen$582                    031B GR
+  0 A$screentomaz/Work/ura/build/ura/screen$586                    031C GR
+  0 A$screentomaz/Work/ura/build/ura/screen$587                    031D GR
+  0 A$screentomaz/Work/ura/build/ura/screen$588                    031E GR
+  0 A$screentomaz/Work/ura/build/ura/screen$589                    0321 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$590                    0324 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$591                    0325 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$592                    0328 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$593                    032B GR
+  0 A$screentomaz/Work/ura/build/ura/screen$594                    032C GR
+  0 A$screentomaz/Work/ura/build/ura/screen$595                    032F GR
+  0 A$screentomaz/Work/ura/build/ura/screen$596                    0330 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$597                    0331 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$598                    0334 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$599                    0337 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$600                    0338 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$601                    0339 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$602                    033C GR
+  0 A$screentomaz/Work/ura/build/ura/screen$603                    033F GR
+  0 A$screentomaz/Work/ura/build/ura/screen$604                    0342 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$605                    0343 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$606                    0344 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$607                    0347 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$611                    0348 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$612                    0349 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$613                    034A GR
+  0 A$screentomaz/Work/ura/build/ura/screen$614                    034D GR
+  0 A$screentomaz/Work/ura/build/ura/screen$615                    034E GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 9.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$screentomaz/Work/ura/build/ura/screen$616                    034F GR
+  0 A$screentomaz/Work/ura/build/ura/screen$617                    0350 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$618                    0351 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$619                    0354 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$620                    0357 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$621                    0358 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$622                    0359 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$626                    035A GR
+  0 A$screentomaz/Work/ura/build/ura/screen$627                    035D GR
+  0 A$screentomaz/Work/ura/build/ura/screen$631                    0360 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$632                    0362 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$637                    0364 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$647                    0365 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$648                    0367 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$649                    036B GR
+  0 A$screentomaz/Work/ura/build/ura/screen$650                    036D GR
+  0 A$screentomaz/Work/ura/build/ura/screen$651                    0370 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$652                    0371 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$656                    0372 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$657                    0375 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$658                    0376 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$659                    0377 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$660                    037A GR
+  0 A$screentomaz/Work/ura/build/ura/screen$661                    037B GR
+  0 A$screentomaz/Work/ura/build/ura/screen$662                    037D GR
+  0 A$screentomaz/Work/ura/build/ura/screen$663                    0380 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$664                    0381 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$665                    0382 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$666                    0383 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$667                    0384 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$668                    0387 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$669                    0388 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$67                     0000 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$670                    0389 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$671                    038A GR
+  0 A$screentomaz/Work/ura/build/ura/screen$672                    038B GR
+  0 A$screentomaz/Work/ura/build/ura/screen$673                    038C GR
+  0 A$screentomaz/Work/ura/build/ura/screen$674                    038D GR
+  0 A$screentomaz/Work/ura/build/ura/screen$675                    0390 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$676                    0391 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$677                    0392 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$678                    0395 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$679                    0396 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$68                     0003 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$680                    0399 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$681                    039A GR
+  0 A$screentomaz/Work/ura/build/ura/screen$682                    039B GR
+  0 A$screentomaz/Work/ura/build/ura/screen$683                    039C GR
+  0 A$screentomaz/Work/ura/build/ura/screen$684                    039D GR
+  0 A$screentomaz/Work/ura/build/ura/screen$685                    03A0 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$686                    03A1 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$687                    03A2 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$688                    03A5 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$689                    03A6 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$69                     0004 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 10.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$screentomaz/Work/ura/build/ura/screen$690                    03A8 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$691                    03AB GR
+  0 A$screentomaz/Work/ura/build/ura/screen$692                    03AC GR
+  0 A$screentomaz/Work/ura/build/ura/screen$693                    03AD GR
+  0 A$screentomaz/Work/ura/build/ura/screen$694                    03B0 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$695                    03B3 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$696                    03B4 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$697                    03B7 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$698                    03BA GR
+  0 A$screentomaz/Work/ura/build/ura/screen$699                    03BD GR
+  0 A$screentomaz/Work/ura/build/ura/screen$70                     0007 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$700                    03BE GR
+  0 A$screentomaz/Work/ura/build/ura/screen$701                    03BF GR
+  0 A$screentomaz/Work/ura/build/ura/screen$702                    03C2 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$703                    03C3 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$704                    03C6 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$705                    03C7 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$706                    03C8 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$707                    03C9 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$708                    03CA GR
+  0 A$screentomaz/Work/ura/build/ura/screen$709                    03CB GR
+  0 A$screentomaz/Work/ura/build/ura/screen$710                    03CE GR
+  0 A$screentomaz/Work/ura/build/ura/screen$711                    03CF GR
+  0 A$screentomaz/Work/ura/build/ura/screen$712                    03D2 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$713                    03D3 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$714                    03D4 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$715                    03D7 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$716                    03D8 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$717                    03DB GR
+  0 A$screentomaz/Work/ura/build/ura/screen$718                    03DC GR
+  0 A$screentomaz/Work/ura/build/ura/screen$719                    03DD GR
+  0 A$screentomaz/Work/ura/build/ura/screen$720                    03DE GR
+  0 A$screentomaz/Work/ura/build/ura/screen$721                    03DF GR
+  0 A$screentomaz/Work/ura/build/ura/screen$722                    03E0 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$723                    03E3 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$724                    03E4 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$725                    03E5 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$726                    03E6 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$727                    03E7 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$728                    03EA GR
+  0 A$screentomaz/Work/ura/build/ura/screen$729                    03EB GR
+  0 A$screentomaz/Work/ura/build/ura/screen$730                    03EE GR
+  0 A$screentomaz/Work/ura/build/ura/screen$731                    03EF GR
+  0 A$screentomaz/Work/ura/build/ura/screen$732                    03F0 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$733                    03F3 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$734                    03F4 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$735                    03F7 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$736                    03F8 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$737                    03F9 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$738                    03FA GR
+  0 A$screentomaz/Work/ura/build/ura/screen$739                    03FB GR
+  0 A$screentomaz/Work/ura/build/ura/screen$74                     0008 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$740                    03FE GR
+  0 A$screentomaz/Work/ura/build/ura/screen$741                    03FF GR
+  0 A$screentomaz/Work/ura/build/ura/screen$742                    0402 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 11.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$screentomaz/Work/ura/build/ura/screen$743                    0403 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$744                    0404 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$745                    0407 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$746                    0408 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$747                    040B GR
+  0 A$screentomaz/Work/ura/build/ura/screen$748                    040C GR
+  0 A$screentomaz/Work/ura/build/ura/screen$749                    040F GR
+  0 A$screentomaz/Work/ura/build/ura/screen$750                    0410 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$751                    0411 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$752                    0414 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$756                    0415 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$757                    0416 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$758                    0419 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$760                    041C GR
+  0 A$screentomaz/Work/ura/build/ura/screen$761                    041F GR
+  0 A$screentomaz/Work/ura/build/ura/screen$762                    0421 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$763                    0424 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$764                    0425 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$765                    0426 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$766                    0427 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$767                    0429 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$771                    042C GR
+  0 A$screentomaz/Work/ura/build/ura/screen$772                    042F GR
+  0 A$screentomaz/Work/ura/build/ura/screen$773                    0432 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$774                    0434 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$775                    0436 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$776                    0438 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$777                    043A GR
+  0 A$screentomaz/Work/ura/build/ura/screen$778                    043B GR
+  0 A$screentomaz/Work/ura/build/ura/screen$779                    043C GR
+  0 A$screentomaz/Work/ura/build/ura/screen$78                     000B GR
+  0 A$screentomaz/Work/ura/build/ura/screen$780                    043F GR
+  0 A$screentomaz/Work/ura/build/ura/screen$781                    0440 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$782                    0441 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$783                    0444 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$784                    0447 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$785                    044A GR
+  0 A$screentomaz/Work/ura/build/ura/screen$786                    044B GR
+  0 A$screentomaz/Work/ura/build/ura/screen$787                    044C GR
+  0 A$screentomaz/Work/ura/build/ura/screen$788                    044D GR
+  0 A$screentomaz/Work/ura/build/ura/screen$789                    0450 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$79                     000C GR
+  0 A$screentomaz/Work/ura/build/ura/screen$790                    0453 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$791                    0454 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$792                    0457 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$793                    0458 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$794                    0459 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$795                    045A GR
+  0 A$screentomaz/Work/ura/build/ura/screen$799                    045B GR
+  0 A$screentomaz/Work/ura/build/ura/screen$80                     000D GR
+  0 A$screentomaz/Work/ura/build/ura/screen$800                    045C GR
+  0 A$screentomaz/Work/ura/build/ura/screen$801                    045F GR
+  0 A$screentomaz/Work/ura/build/ura/screen$802                    0460 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$803                    0461 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$804                    0464 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 12.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$screentomaz/Work/ura/build/ura/screen$805                    0465 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$806                    0468 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$807                    046B GR
+  0 A$screentomaz/Work/ura/build/ura/screen$808                    046C GR
+  0 A$screentomaz/Work/ura/build/ura/screen$809                    046D GR
+  0 A$screentomaz/Work/ura/build/ura/screen$81                     000F GR
+  0 A$screentomaz/Work/ura/build/ura/screen$810                    046E GR
+  0 A$screentomaz/Work/ura/build/ura/screen$811                    0471 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$812                    0472 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$813                    0474 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$814                    0477 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$815                    0478 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$816                    0479 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$817                    047C GR
+  0 A$screentomaz/Work/ura/build/ura/screen$818                    047D GR
+  0 A$screentomaz/Work/ura/build/ura/screen$819                    047E GR
+  0 A$screentomaz/Work/ura/build/ura/screen$82                     0010 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$820                    0481 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$824                    0482 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$825                    0483 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$826                    0484 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$827                    0487 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$828                    048A GR
+  0 A$screentomaz/Work/ura/build/ura/screen$829                    048D GR
+  0 A$screentomaz/Work/ura/build/ura/screen$83                     0013 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$830                    0490 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$831                    0491 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$832                    0492 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$833                    0493 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$834                    0494 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$835                    0495 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$836                    0496 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$837                    0497 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$838                    049A GR
+  0 A$screentomaz/Work/ura/build/ura/screen$839                    049D GR
+  0 A$screentomaz/Work/ura/build/ura/screen$840                    049E GR
+  0 A$screentomaz/Work/ura/build/ura/screen$841                    049F GR
+  0 A$screentomaz/Work/ura/build/ura/screen$845                    04A0 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$846                    04A3 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$847                    04A6 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$848                    04A9 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$853                    04AC GR
+  0 A$screentomaz/Work/ura/build/ura/screen$854                    04AE GR
+  0 A$screentomaz/Work/ura/build/ura/screen$859                    04B0 GR
+  0 A$screentomaz/Work/ura/build/ura/screen$94                     0014 GR
+  0 C$screen.c$12$0_0$33                                        =  0000 GR
+  0 C$screen.c$13$1_0$33                                        =  0000 GR
+  0 C$screen.c$14$1_0$33                                        =  0008 GR
+  0 C$screen.c$15$1_0$33                                        =  000B GR
+  0 C$screen.c$16$1_0$33                                        =  0014 GR
+  0 C$screen.c$17$1_0$33                                        =  0014 GR
+  0 C$screen.c$23$1_0$35                                        =  0017 GR
+  0 C$screen.c$26$1_0$35                                        =  0024 GR
+  0 C$screen.c$27$1_0$35                                        =  0033 GR
+  0 C$screen.c$28$1_0$35                                        =  006F GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 13.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 C$screen.c$32$1_0$35                                        =  009E GR
+  0 C$screen.c$36$1_0$35                                        =  0178 GR
+  0 C$screen.c$37$1_0$35                                        =  0123 GR
+  0 C$screen.c$38$1_0$35                                        =  00C5 GR
+  0 C$screen.c$40$1_0$35                                        =  019A GR
+  0 C$screen.c$42$1_0$36                                        =  019B GR
+  0 C$screen.c$45$1_0$36                                        =  019B GR
+  0 C$screen.c$49$1_0$36                                        =  01B3 GR
+  0 C$screen.c$51$1_0$38                                        =  01B4 GR
+  0 C$screen.c$54$1_0$38                                        =  01C1 GR
+  0 C$screen.c$55$1_0$38                                        =  01D8 GR
+  0 C$screen.c$57$1_0$38                                        =  01EF GR
+  0 C$screen.c$58$1_0$38                                        =  02B4 GR
+  0 C$screen.c$60$1_0$38                                        =  031C GR
+  0 C$screen.c$61$1_0$38                                        =  0348 GR
+  0 C$screen.c$63$1_0$38                                        =  035A GR
+  0 C$screen.c$64$1_0$38                                        =  0364 GR
+  0 C$screen.c$68$1_0$41                                        =  0365 GR
+  0 C$screen.c$75$2_0$41                                        =  0372 GR
+  0 C$screen.c$85$2_0$41                                        =  04A0 GR
+  0 C$screen.c$87$3_0$42                                        =  042C GR
+  0 C$screen.c$88$2_0$41                                        =  045B GR
+  0 C$screen.c$89$3_0$42                                        =  0482 GR
+  0 C$screen.c$91$2_0$41                                        =  04B0 GR
+  7 Fscreen$__xinit_glyphs$0_0$0                                =  0000 GR
+  0 Fscreen$_rotate$0$0                                         =  01B4 GR
+  2 Fscreen$glyphs$0_0$0                                        =  0000 GR
+  0 G$scr_calc_hands$0$0                                        =  0365 GR
+  0 G$scr_clear$0$0                                             =  0000 GR
+  0 G$scr_draw_logo$0$0                                         =  019B GR
+  0 G$scr_draw_num$0$0                                          =  0017 GR
+  0 XFscreen$_rotate$0$0                                        =  0364 GR
+  0 XG$scr_calc_hands$0$0                                       =  04B0 GR
+  0 XG$scr_clear$0$0                                            =  0014 GR
+  0 XG$scr_draw_logo$0$0                                        =  01B3 GR
+  0 XG$scr_draw_num$0$0                                         =  019A GR
+    ___fs2sint                                                     **** GX
+    ___fsadd                                                       **** GX
+    ___fsmul                                                       **** GX
+    ___fssub                                                       **** GX
+    ___sint2fs                                                     **** GX
+  0 __rotate                                                       01B4 R
+  7 __xinit__glyphs                                                0000 R
+    _fastcos                                                       **** GX
+    _fastsin                                                       **** GX
+    _g01                                                           **** GX
+    _g02                                                           **** GX
+    _g03                                                           **** GX
+    _g04                                                           **** GX
+    _g05                                                           **** GX
+    _g06                                                           **** GX
+    _g07                                                           **** GX
+    _g08                                                           **** GX
+    _g09                                                           **** GX
+    _g10                                                           **** GX
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 14.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+    _g11                                                           **** GX
+    _g12                                                           **** GX
+    _gcls                                                          **** GX
+  2 _glyphs                                                        0000 R
+    _gmesprite                                                     **** GX
+    _gputsprite                                                    **** GX
+    _gsetpage                                                      **** GX
+    _iskra                                                         **** GX
+  0 _scr_calc_hands                                                0365 GR
+  0 _scr_clear                                                     0000 GR
+  0 _scr_draw_logo                                                 019B GR
+  0 _scr_draw_num                                                  0017 GR
+
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 15.
+Hexadecimal [16-Bits]
+
+Area Table
+
+   0 _CODE                                      size  4B1   flags    0
+   1 _DATA                                      size    0   flags    0
+   2 _INITIALIZED                               size   18   flags    0
+   3 _DABS                                      size    0   flags    8
+   4 _HOME                                      size    0   flags    0
+   5 _GSINIT                                    size    0   flags    0
+   6 _GSFINAL                                   size    0   flags    0
+   7 _INITIALIZER                               size   18   flags    0
+   8 _CABS                                      size    0   flags    8
+

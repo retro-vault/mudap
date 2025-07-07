@@ -1,11 +1,12 @@
 # lib/dap/CMakeLists.txt
 
-# Add the DAP (Debug Adapter Protocol) static library
-add_library(dap STATIC
-    dap.cpp
-    request.cpp
-    response.cpp
+# Collect all .cpp source files recursively in this directory and subdirectories
+file(GLOB_RECURSE DAP_SOURCES CONFIGURE_DEPENDS
+    "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp"
 )
+
+# Add the DAP (Debug Adapter Protocol) static library
+add_library(dap STATIC ${DAP_SOURCES})
 
 # Public headers are expected to be in include/dap/
 target_include_directories(dap

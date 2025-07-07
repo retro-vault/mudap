@@ -49,9 +49,6 @@ public:
     std::string handle_step_in(const dap::step_in_request &req);
     std::string handle_step_out(const dap::step_out_request &req);
 
-    // Event emitter.
-    void set_send_event(std::function<void(const std::string &)> fn);
-
     // Memory access.
     std::vector<uint8_t> &memory();             // Mutable memory buffer.
     const std::vector<uint8_t> &memory() const; // Const memory buffer.
@@ -69,8 +66,6 @@ private:
     int event_seq_;                             // Event sequence counter.
     bool launched_;                             // Whether 'launch' has occurred.
 
-    std::function<void(const std::string &)>
-        send_event_;                            // Send event callback.
 
     std::string virtual_lst_path_ =             // Virtual disasm source path.
         "/__virtual__/listing.lst";

@@ -3,8 +3,9 @@
 //
 // This file implements the `dap::request` class and its subclasses,
 // providing logic to parse generic JSON requests and convert them into
-// specific typed request structures like `initialize_request`, `launch_request`,
-// etc., based on the command field. This allows type-safe dispatch in the DAP handler.
+// specific typed request structures like `initialize_request`, 
+// `launch_request`, etc., based on the command field. This allows 
+// type-safe dispatch in the DAP handler.
 //
 // Copyright 2025 Tomaz Stih. All rights reserved.
 // MIT License.
@@ -14,8 +15,11 @@
 
 namespace dap
 {
+    // --- Static helper functions. ----------------------------------
+
+    // Read common request members.
     template <typename T>
-    T base_copy(const request &req)
+    static T base_copy(const request &req)
     {
         T r;
         r.seq = req.seq;
@@ -34,10 +38,13 @@ namespace dap
         }
         catch (const std::exception &ex)
         {
-            throw std::runtime_error(std::string("Failed to parse JSON: ") + ex.what());
+            throw std::runtime_error(std::string("Failed to parse JSON: ") + 
+                ex.what());
         }
     }
 
+
+    // --- Request(s) member functions. ------------------------------
     request request::parse(const std::string &json_text)
     {
         json j = parse_json_safely(json_text);
@@ -51,7 +58,6 @@ namespace dap
 
 
     // --- DAP request conversions -----------------------------------
-
     initialize_request initialize_request::from(const request &req)
     {
         initialize_request r = base_copy<initialize_request>(req);

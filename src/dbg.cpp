@@ -9,11 +9,6 @@
 // MIT License.
 #include <dbg.h>
 
-void dbg::set_send_event(std::function<void(const std::string &)> fn)
-{
-    send_event_ = fn;
-}
-
 std::string dbg::format_hex(uint16_t value, int width)
 {
     std::ostringstream oss;

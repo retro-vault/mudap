@@ -1,0 +1,1974 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 1.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+    .__.$$$.                                                    =  2710 L
+    .__.ABS.                                                    =  0000 G
+    .__.CPU.                                                    =  0000 L
+    .__.H$L.                                                    =  0000 L
+  0 A$polye/tomaz/Work/ura/build/ura/poly$100                      001C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1000                     051B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1001                     051E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1002                     0521 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1003                     0522 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1004                     0523 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1005                     0524 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1006                     0525 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1007                     0526 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1008                     0527 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1009                     0528 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$101                      001D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1010                     0529 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1011                     052C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1013                     052E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1017                     0531 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1018                     0534 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$102                      0020 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1022                     0535 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1023                     0538 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1028                     053B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1029                     053E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$103                      0021 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1034                     0541 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1035                     0543 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1036                     0545 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1037                     0546 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1038                     0547 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1039                     054A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$104                      0022 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1040                     054B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1041                     054C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1042                     054F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1043                     0552 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1044                     0553 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1045                     0556 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1046                     0559 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1047                     055C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1048                     055D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1049                     055E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$105                      0025 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1050                     0561 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1051                     0564 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1052                     0565 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1053                     0566 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1054                     0567 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1055                     0568 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1056                     056B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1057                     056E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1058                     056F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1059                     0572 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 2.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1060                     0575 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1061                     0578 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1062                     0579 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1063                     057A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1064                     057B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1065                     057C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1066                     057D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1067                     0580 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1068                     0581 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1069                     0584 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1070                     0587 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1072                     0589 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1076                     058C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1080                     058F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1081                     0590 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1082                     0591 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1083                     0592 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1084                     0593 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1085                     0594 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1086                     0597 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1087                     059A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1088                     059B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1089                     059C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$109                      0026 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1094                     059E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1095                     05A1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1096                     05A2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1097                     05A3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1098                     05A4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1099                     05A5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$110                      002A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1100                     05A6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1101                     05A9 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1102                     05AA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1103                     05AB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1104                     05AE GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1105                     05AF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1106                     05B0 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1107                     05B1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1108                     05B4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$111                      002C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1112                     05B5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1117                     05B8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1118                     05BA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$112                      002D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1123                     05BC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$113                      002E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1133                     05BD GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1134                     05BF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1135                     05C3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1139                     05C5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$114                      002F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1140                     05C8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1141                     05CB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1142                     05CE GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 3.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1143                     05CF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1144                     05D1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1145                     05D2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1146                     05D3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1147                     05D4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1148                     05D5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1149                     05D6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$115                      0030 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1150                     05D7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1151                     05D8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1152                     05D9 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1153                     05DA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1154                     05DB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1155                     05DC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1156                     05DD GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1157                     05E0 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1158                     05E1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1159                     05E2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$116                      0031 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1160                     05E3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1161                     05E4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1165                     05E5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$117                      0032 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1170                     05E7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$118                      0033 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1180                     05E8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1181                     05EA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1182                     05EE GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1186                     05F0 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1187                     05F3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1188                     05F6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1189                     05F9 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$119                      0034 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1190                     05FA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1191                     05FB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1192                     05FC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1193                     05FD GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1194                     05FE GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1195                     05FF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1196                     0600 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1197                     0601 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1198                     0602 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1199                     0603 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$120                      0035 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1200                     0604 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1201                     0605 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1205                     0606 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$121                      0036 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1210                     0608 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$122                      0037 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1220                     0609 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1221                     060B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1222                     060F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1226                     0611 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1227                     0614 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 4.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1228                     0617 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1229                     0619 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$123                      0038 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1230                     061C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1235                     061E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1236                     0621 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1237                     0622 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1238                     0623 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1239                     0624 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$124                      003B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1240                     0625 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1241                     0628 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1242                     062B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1243                     062C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1244                     062F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1245                     0630 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1246                     0633 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1247                     0634 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1248                     0635 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1249                     0636 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$125                      003C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1250                     0637 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1251                     063A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1252                     063D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1253                     063E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1257                     0640 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$126                      003D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1262                     0643 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1267                     0645 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$127                      0040 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1277                     0646 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1278                     0648 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1279                     064C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1280                     064E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1281                     0651 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1282                     0652 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1286                     0653 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1287                     0656 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1288                     0658 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1289                     065B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1290                     065C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1291                     065D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1292                     065E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1296                     0660 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1300                     0663 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1301                     0666 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1305                     0668 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1306                     066B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1307                     066D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1308                     0670 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$131                      0041 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1312                     0672 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1313                     0675 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1314                     0676 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1315                     0677 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 5.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1316                     067A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$132                      0045 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1320                     067B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1321                     067E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1325                     067F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1327                     0681 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1328                     0682 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1329                     0685 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$133                      0047 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1330                     0686 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1331                     0687 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1332                     068A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1333                     068D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1334                     0690 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1335                     0693 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1336                     0696 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1337                     0699 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1339                     069B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$134                      0048 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1343                     069E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1344                     06A1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1345                     06A4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1346                     06A6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1347                     06A8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1348                     06AA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1349                     06AC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$135                      0049 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1350                     06AF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1351                     06B2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1352                     06B3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1353                     06B4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1354                     06B5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1355                     06B6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1356                     06B7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1357                     06B8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1358                     06BB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1359                     06BC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$136                      004A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1360                     06BF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1361                     06C0 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1362                     06C3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1364                     06C5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1365                     06C8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1366                     06C9 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1367                     06CA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$137                      004B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1372                     06CB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1373                     06CE GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1374                     06D1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1375                     06D2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1376                     06D5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1377                     06D6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1378                     06D7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1379                     06D8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$138                      004C GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 6.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1380                     06D9 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1381                     06DA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1382                     06DD GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1383                     06DE GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1384                     06DF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1385                     06E2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1386                     06E3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1387                     06E6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1388                     06E7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1389                     06E8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$139                      004D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1390                     06E9 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1391                     06EA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1392                     06EB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1393                     06EC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1397                     06EF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1398                     06F0 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$140                      004E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1403                     06F2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1404                     06F5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1408                     06F6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1409                     06F9 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$141                      004F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1410                     06FB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1411                     06FE GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1412                     0701 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1413                     0703 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1415                     0706 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1416                     0708 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$142                      0050 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1420                     070B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1421                     070C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1422                     070F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1423                     0710 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1424                     0711 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1425                     0714 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1426                     0715 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1427                     0716 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1428                     0718 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1429                     071B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$143                      0051 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1430                     071E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1431                     0721 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1432                     0724 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1434                     0726 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1435                     0729 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1436                     072B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1437                     072E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1438                     0731 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1439                     0733 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$144                      0054 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1441                     0736 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1442                     0739 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1443                     073C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1444                     073E GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 7.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1445                     0740 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1446                     0742 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1447                     0744 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1448                     0747 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1449                     074A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$145                      0055 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1450                     074B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1451                     074C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1455                     074D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1456                     0750 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1457                     0753 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1458                     0755 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1459                     0757 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$146                      0058 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1460                     0759 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1461                     075B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1462                     075E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1463                     075F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1464                     0762 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1465                     0765 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1466                     0766 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1467                     0769 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1468                     076C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1469                     076F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$147                      0059 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1470                     0770 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1471                     0771 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1472                     0772 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1473                     0775 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1474                     0776 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1475                     0777 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1476                     077A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1477                     077B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1478                     077C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1479                     077D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$148                      005A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1480                     077E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1481                     077F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1482                     0780 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1483                     0783 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1484                     0784 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1485                     0785 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1486                     0788 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1487                     078B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1488                     078E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1489                     0791 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$149                      005D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1490                     0794 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1491                     0797 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1493                     0799 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1497                     079C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1498                     079D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1499                     07A0 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1500                     07A1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1501                     07A2 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 8.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1502                     07A5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1503                     07A8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1504                     07AB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1505                     07AC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1506                     07AD GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1507                     07AE GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1508                     07AF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1509                     07B2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1510                     07B5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1511                     07B6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1512                     07B9 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1513                     07BC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1514                     07BD GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1515                     07C0 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1516                     07C3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1517                     07C4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1518                     07C5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1519                     07C8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1520                     07CB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1521                     07CC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1522                     07CD GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1527                     07CE GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1528                     07D1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1529                     07D4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$153                      005E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1530                     07D5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1531                     07D6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1532                     07D9 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1533                     07DC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1534                     07DD GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1535                     07DE GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1536                     07E1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1537                     07E2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1538                     07E3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1539                     07E4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$154                      0062 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1540                     07E5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1541                     07E6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1542                     07E7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1543                     07E8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1544                     07EB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1545                     07EE GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1546                     07EF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1547                     07F0 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$155                      0064 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1551                     07F1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1552                     07F2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1553                     07F5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1554                     07F6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1555                     07F7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1556                     07FA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1557                     07FB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1558                     07FC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1559                     07FD GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$156                      0065 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 9.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1560                     07FE GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1561                     07FF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1562                     0800 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1563                     0801 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1564                     0802 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1565                     0805 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1566                     0806 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1567                     0809 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1568                     080C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$157                      0066 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1570                     080E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1574                     0811 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1575                     0812 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1576                     0813 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1577                     0814 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1578                     0815 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$158                      0067 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1582                     0816 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1583                     0819 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1584                     081C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1585                     081D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1586                     081E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1587                     081F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1588                     0820 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1589                     0821 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$159                      0068 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1590                     0822 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1591                     0825 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1592                     0828 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1593                     0829 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1594                     082A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1595                     082D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1596                     0830 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1597                     0831 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$160                      0069 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1602                     0832 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1603                     0834 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1604                     0837 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1605                     0838 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1606                     083A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1607                     083D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1608                     083E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1609                     083F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$161                      006A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1614                     0842 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1615                     0845 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1616                     0846 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1617                     0847 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1618                     0848 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1619                     0849 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$162                      006B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1620                     084A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1621                     084B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1622                     084C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1623                     084D GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 10.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1624                     0850 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1625                     0853 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1626                     0854 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1627                     0855 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1628                     0856 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1629                     0857 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$163                      006C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1630                     0858 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1638                     0859 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1639                     085C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$164                      006D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1643                     085E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1645                     0860 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1646                     0861 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1647                     0864 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1648                     0865 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1649                     0866 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$165                      006E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1650                     0869 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1651                     086C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1652                     086D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1653                     086F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1654                     0872 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1655                     0873 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1656                     0876 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1657                     0877 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1658                     087A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$166                      0071 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1660                     087C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1664                     087F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1665                     0880 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1666                     0881 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1667                     0882 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1668                     0883 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1669                     0884 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$167                      0072 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1670                     0887 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1671                     0888 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1672                     0889 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1673                     088A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1674                     088B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1675                     088C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1676                     088D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$168                      0075 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1683                     088F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1684                     0890 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1685                     0891 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1686                     0894 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1687                     0895 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1688                     0898 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1689                     0899 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$169                      0076 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1690                     089A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1691                     089B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1692                     089E GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 11.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1693                     089F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1694                     08A0 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1695                     08A3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1696                     08A4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1697                     08A7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1698                     08A8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1699                     08A9 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$170                      0077 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1700                     08AA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1701                     08AB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1702                     08AC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1703                     08AD GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1704                     08AE GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1709                     08B1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$171                      007A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1710                     08B2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1715                     08B4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1716                     08B8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1717                     08BC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1721                     08BF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1725                     08C2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1726                     08C3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1727                     08C4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1728                     08C5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1729                     08C6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1730                     08C7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1731                     08C9 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1732                     08CA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1733                     08CB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1734                     08CD GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1735                     08CE GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1736                     08CF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1737                     08D0 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1741                     08D3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1742                     08D7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1746                     08DA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1747                     08DB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1748                     08DD GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1749                     08DE GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$175                      007B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1750                     08DF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1751                     08E0 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1752                     08E1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1753                     08E2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1754                     08E3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1755                     08E4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1756                     08E5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1757                     08E6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1758                     08E7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1759                     08E8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$176                      007F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1760                     08EB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1761                     08EC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1762                     08EF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1763                     08F2 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 12.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1764                     08F5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1765                     08F7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1766                     08FA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1767                     08FD GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1768                     08FF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1769                     0902 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$177                      0081 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1770                     0905 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1771                     0908 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1772                     0909 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1773                     090A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1774                     090B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1775                     090E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1776                     0910 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1777                     0913 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1778                     0916 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1779                     0918 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$178                      0082 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1780                     091B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1781                     091E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1782                     0921 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1783                     0922 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1784                     0925 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1785                     0926 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1786                     0927 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1787                     092A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1788                     092D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1789                     0930 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$179                      0083 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1790                     0931 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1791                     0933 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1795                     0935 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1796                     0936 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1797                     0937 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1798                     093A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1799                     093D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$180                      0084 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1800                     093E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1801                     093F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1802                     0940 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1803                     0943 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1804                     0946 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1805                     0947 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1806                     0948 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$181                      0085 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1811                     0949 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1812                     094C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1813                     094D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1814                     094F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1815                     0950 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1816                     0951 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1817                     0952 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1818                     0953 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1819                     0954 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$182                      0086 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 13.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1820                     0955 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1821                     0956 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1822                     0957 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1823                     0958 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1824                     0959 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1825                     095A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1826                     095D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1827                     095E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1828                     0961 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1829                     0964 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$183                      0087 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1830                     0967 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1831                     0969 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1832                     096C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1833                     096F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1834                     0971 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1835                     0974 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1836                     0977 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1837                     097A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1838                     097B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1839                     097C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$184                      0088 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1840                     097D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1841                     0980 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1842                     0982 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1843                     0985 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1844                     0988 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1845                     098A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1846                     098D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1847                     0990 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1848                     0993 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1849                     0994 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$185                      0089 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1850                     0997 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1851                     0998 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1852                     0999 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1853                     099C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1854                     099F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1855                     09A2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1856                     09A3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1857                     09A5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$186                      008A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1861                     09A7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1862                     09A8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1863                     09A9 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1864                     09AC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1865                     09AF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1866                     09B0 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1867                     09B1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1868                     09B2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1869                     09B5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$187                      008B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1870                     09B8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1871                     09B9 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1872                     09BA GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 14.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1877                     09BB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1878                     09BE GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1879                     09C1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$188                      008E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1880                     09C2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1881                     09C3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1885                     09C4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1886                     09C7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1887                     09CA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1888                     09CB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1889                     09CC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$189                      008F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1890                     09CD GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1891                     09CE GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1892                     09CF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1893                     09D0 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1894                     09D1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1895                     09D2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1896                     09D3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1897                     09D6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1898                     09D9 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1899                     09DA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$190                      0092 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1900                     09DB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1904                     09DC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1905                     09DF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1906                     09E2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1907                     09E5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1908                     09E6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1909                     09E7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$191                      0095 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1910                     09EA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1911                     09ED GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1912                     09EE GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1913                     09F1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1914                     09F2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1915                     09F3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1916                     09F4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1917                     09F5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1918                     09F6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$192                      0096 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1922                     09F8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1923                     09FB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1924                     09FE GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1925                     09FF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1926                     0A00 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1927                     0A01 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1928                     0A04 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1929                     0A07 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$193                      0099 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1930                     0A08 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1931                     0A0B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1932                     0A0C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1933                     0A0D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1934                     0A10 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 15.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1935                     0A13 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1936                     0A16 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1937                     0A17 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1938                     0A19 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$194                      009C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1942                     0A1B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1943                     0A1E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1944                     0A21 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1945                     0A22 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1946                     0A25 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1947                     0A26 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1948                     0A27 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1949                     0A2A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$195                      009D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1950                     0A2D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1951                     0A30 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1952                     0A31 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1953                     0A34 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1954                     0A35 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1955                     0A36 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1956                     0A39 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1957                     0A3C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1958                     0A3F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1959                     0A41 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$196                      009E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1960                     0A44 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1961                     0A47 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1966                     0A49 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1967                     0A4C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1968                     0A4F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1969                     0A50 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$197                      009F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1970                     0A52 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1974                     0A54 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1975                     0A57 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1976                     0A5A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1977                     0A5C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1978                     0A5F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1979                     0A62 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$198                      00A0 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1984                     0A64 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1985                     0A67 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1986                     0A6A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$199                      00A3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1991                     0A6D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1992                     0A70 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1993                     0A71 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1994                     0A72 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1995                     0A73 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1996                     0A74 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1997                     0A77 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1998                     0A78 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$1999                     0A79 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$200                      00A4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2000                     0A7A GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 16.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2001                     0A7D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2009                     0A80 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$201                      00A5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2013                     0A81 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2014                     0A84 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2015                     0A85 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2016                     0A88 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2017                     0A89 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2018                     0A8C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$202                      00A6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2020                     0A8E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2025                     0A91 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2026                     0A93 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$203                      00A7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2031                     0A95 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$204                      00A8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2041                     0A96 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2042                     0A98 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2043                     0A9C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2044                     0A9E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2045                     0AA1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2046                     0AA2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$205                      00A9 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2050                     0AA3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2051                     0AA6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2052                     0AA8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2053                     0AAB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2054                     0AAC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2055                     0AAD GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2056                     0AAE GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2060                     0AB0 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2064                     0AB3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2065                     0AB6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2066                     0AB7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2067                     0AB8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2068                     0ABB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2072                     0ABC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2074                     0ABF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2075                     0AC0 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2076                     0AC3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2077                     0AC4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2078                     0AC7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2079                     0ACA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2081                     0ACC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2085                     0ACF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2086                     0AD0 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2087                     0AD1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2088                     0AD3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2089                     0AD5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$209                      00AA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2090                     0AD7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2091                     0AD9 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2092                     0ADA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2093                     0ADD GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2094                     0ADE GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 17.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2095                     0ADF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2096                     0AE2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2097                     0AE3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2098                     0AE4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2099                     0AE5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$210                      00AE GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2100                     0AE6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2101                     0AE7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2102                     0AE8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2103                     0AEB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2104                     0AEC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2105                     0AED GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2106                     0AF0 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2107                     0AF1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2108                     0AF4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2109                     0AF5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$211                      00B0 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2110                     0AF6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2114                     0AF9 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2115                     0AFA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2116                     0AFB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2117                     0AFC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2118                     0AFD GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2119                     0AFE GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$212                      00B1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2120                     0AFF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2121                     0B00 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2122                     0B03 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2123                     0B04 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2124                     0B05 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2125                     0B08 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2126                     0B09 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2127                     0B0A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2128                     0B0B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2129                     0B0C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$213                      00B2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2130                     0B0D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2131                     0B0E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2132                     0B11 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2133                     0B12 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2134                     0B13 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2135                     0B16 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2136                     0B17 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2137                     0B18 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2138                     0B19 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2139                     0B1A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$214                      00B3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2140                     0B1B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2141                     0B1E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2142                     0B21 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2143                     0B22 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2144                     0B25 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2145                     0B28 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2146                     0B29 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2147                     0B2C GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 18.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2148                     0B2F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2149                     0B30 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$215                      00B4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2150                     0B31 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2151                     0B34 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2152                     0B37 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2153                     0B38 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2154                     0B39 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2158                     0B3A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2159                     0B3B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$216                      00B5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2164                     0B3D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2165                     0B40 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2166                     0B43 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2167                     0B44 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2168                     0B45 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2169                     0B46 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$217                      00B6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2170                     0B47 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2171                     0B48 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2172                     0B4B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2173                     0B4C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2174                     0B4D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2175                     0B50 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2176                     0B51 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2177                     0B54 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2178                     0B55 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2179                     0B56 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$218                      00B7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2180                     0B59 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2184                     0B5A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2185                     0B5D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2186                     0B60 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2187                     0B61 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2188                     0B62 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2189                     0B63 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$219                      00B8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2190                     0B64 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2191                     0B65 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2192                     0B66 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2193                     0B67 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2194                     0B68 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2195                     0B69 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2196                     0B6A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2197                     0B6B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2198                     0B6C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2199                     0B6D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$220                      00B9 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2200                     0B6E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2201                     0B6F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2202                     0B70 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2203                     0B73 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2204                     0B76 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2205                     0B77 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2206                     0B7A GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 19.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2207                     0B7D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2208                     0B7E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2209                     0B7F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$221                      00BA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2210                     0B80 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2211                     0B83 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2212                     0B86 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2213                     0B87 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2218                     0B88 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2219                     0B8A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$222                      00BD GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$2224                     0B8C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$223                      00BE GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$224                      00C1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$225                      00C4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$226                      00C5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$227                      00C8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$228                      00CB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$229                      00CC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$230                      00CD GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$231                      00CE GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$232                      00CF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$233                      00D2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$234                      00D3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$235                      00D4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$236                      00D5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$237                      00D6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$238                      00D7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$239                      00D8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$243                      00D9 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$244                      00DD GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$245                      00DF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$246                      00E0 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$247                      00E1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$248                      00E2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$249                      00E3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$250                      00E4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$251                      00E5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$252                      00E6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$253                      00E7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$254                      00E8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$255                      00E9 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$256                      00EC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$257                      00ED GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$258                      00F0 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$259                      00F3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$260                      00F6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$261                      00F9 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$262                      00FC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$264                      00FE GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$265                      0101 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$266                      0104 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$268                      0106 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$270                      0109 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$274                      010A GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 20.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$polye/tomaz/Work/ura/build/ura/poly$275                      010E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$276                      0110 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$277                      0111 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$278                      0112 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$279                      0113 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$280                      0114 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$281                      0115 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$282                      0116 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$283                      0117 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$284                      0118 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$285                      0119 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$286                      011A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$287                      011D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$288                      011E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$289                      0121 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$290                      0124 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$291                      0127 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$292                      012A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$293                      012D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$295                      012F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$296                      0132 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$297                      0135 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$299                      0137 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$301                      013A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$305                      013B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$306                      013F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$307                      0141 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$308                      0142 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$309                      0143 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$310                      0144 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$311                      0145 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$312                      0146 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$313                      0147 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$314                      0148 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$315                      0149 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$316                      014A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$317                      014B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$318                      014C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$319                      014F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$320                      0150 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$321                      0151 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$322                      0152 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$323                      0153 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$324                      0154 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$325                      0157 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$326                      0158 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$327                      0159 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$328                      015A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$329                      015D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$330                      015E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$331                      015F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$332                      0162 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$333                      0163 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$334                      0166 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$335                      0167 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 21.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$polye/tomaz/Work/ura/build/ura/poly$336                      0168 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$337                      0169 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$338                      016A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$339                      016B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$340                      016E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$341                      016F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$342                      0172 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$343                      0175 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$345                      0177 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$349                      017A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$350                      017B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$351                      017C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$352                      017D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$353                      017E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$355                      0180 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$356                      0183 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$357                      0184 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$359                      0186 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$360                      0187 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$361                      0188 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$362                      018A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$363                      018C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$364                      018D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$366                      018E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$367                      0190 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$368                      0192 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$369                      0193 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$370                      0194 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$371                      0195 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$372                      0196 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$376                      0197 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$377                      019B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$378                      019D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$379                      019E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$380                      019F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$381                      01A0 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$382                      01A1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$383                      01A2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$384                      01A3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$385                      01A4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$386                      01A5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$387                      01A6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$388                      01A7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$389                      01AA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$390                      01AB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$394                      01AD GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$395                      01B1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$399                      01B4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$400                      01B7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$404                      01B8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$405                      01BA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$410                      01BC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$420                      01BD GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$421                      01BF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$422                      01C3 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 22.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$polye/tomaz/Work/ura/build/ura/poly$423                      01C5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$424                      01C8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$425                      01C9 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$429                      01CA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$430                      01CD GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$431                      01D0 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$432                      01D2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$433                      01D3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$434                      01D4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$435                      01D5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$436                      01D6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$437                      01D7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$438                      01D8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$439                      01D9 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$440                      01DA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$441                      01DB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$442                      01DC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$443                      01DD GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$444                      01E0 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$445                      01E2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$446                      01E5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$447                      01E8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$448                      01EA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$449                      01ED GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$450                      01F0 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$451                      01F3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$452                      01F4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$453                      01F5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$454                      01F6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$455                      01F9 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$456                      01FA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$457                      01FD GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$458                      01FE GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$459                      0201 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$461                      0203 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$462                      0206 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$463                      0209 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$464                      020B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$465                      020E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$466                      0211 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$467                      0213 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$468                      0216 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$469                      0219 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$470                      021C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$471                      021D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$472                      021E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$473                      021F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$474                      0220 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$475                      0223 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$476                      0224 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$477                      0227 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$478                      022A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$480                      022C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$485                      022F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$486                      0232 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 23.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$polye/tomaz/Work/ura/build/ura/poly$491                      0235 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$492                      0238 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$493                      023A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$494                      023D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$495                      0240 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$496                      0242 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$497                      0245 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$498                      0248 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$499                      024B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$500                      024C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$501                      024D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$505                      024E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$506                      0251 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$507                      0253 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$508                      0256 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$509                      0259 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$510                      025B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$511                      025E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$512                      0261 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$513                      0263 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$514                      0266 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$515                      0269 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$516                      026B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$517                      026E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$518                      026F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$519                      0270 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$520                      0271 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$521                      0272 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$522                      0273 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$523                      0276 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$524                      0279 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$525                      027A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$526                      027B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$527                      027C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$528                      027F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$529                      0282 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$530                      0283 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$531                      0284 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$535                      0285 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$536                      0288 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$537                      028B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$538                      028E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$539                      0291 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$540                      0294 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$541                      0296 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$542                      0299 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$543                      029C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$544                      029E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$545                      02A1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$546                      02A4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$547                      02A7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$548                      02AA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$549                      02AD GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$550                      02B0 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$551                      02B2 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 24.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$polye/tomaz/Work/ura/build/ura/poly$552                      02B5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$553                      02B8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$554                      02BA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$555                      02BD GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$556                      02C0 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$557                      02C3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$558                      02C6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$559                      02C9 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$560                      02CC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$561                      02CE GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$562                      02D1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$563                      02D4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$564                      02D6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$566                      02D9 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$567                      02DC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$568                      02DF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$569                      02E0 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$570                      02E3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$571                      02E4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$572                      02E5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$573                      02E8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$574                      02EB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$575                      02EE GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$576                      02EF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$577                      02F0 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$581                      02F1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$582                      02F4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$583                      02F6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$584                      02F9 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$585                      02FC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$586                      02FE GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$590                      0301 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$591                      0304 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$592                      0307 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$593                      0308 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$594                      030A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$598                      030D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$599                      030E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$600                      030F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$601                      0310 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$602                      0311 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$603                      0312 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$604                      0315 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$605                      0318 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$606                      031B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$607                      031C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$608                      031D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$609                      031E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$610                      031F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$611                      0320 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$612                      0321 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$613                      0323 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$617                      0325 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$618                      0328 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$619                      032B GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 25.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$polye/tomaz/Work/ura/build/ura/poly$620                      032C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$621                      032D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$622                      032E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$623                      0331 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$624                      0334 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$625                      0335 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$626                      0337 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$630                      0339 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$631                      033C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$632                      033F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$633                      0340 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$634                      0341 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$635                      0342 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$636                      0345 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$638                      0347 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$642                      034A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$643                      034D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$644                      0350 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$645                      0351 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$646                      0352 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$650                      0353 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$651                      0356 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$652                      0359 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$653                      035A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$654                      035B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$655                      035C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$656                      035F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$657                      0362 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$658                      0363 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$659                      0364 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$663                      0365 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$664                      0368 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$665                      036B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$666                      036C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$667                      036D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$672                      036E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$673                      0371 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$674                      0374 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$678                      0376 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$683                      0379 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$684                      037C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$685                      037E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$686                      037F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$687                      0382 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$688                      0384 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$689                      0385 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$690                      0386 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$691                      0389 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$692                      038A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$693                      038B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$694                      038E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$695                      038F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$696                      0392 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$697                      0395 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$698                      0398 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 26.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$polye/tomaz/Work/ura/build/ura/poly$702                      039B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$703                      039E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$704                      03A1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$705                      03A2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$706                      03A3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$707                      03A4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$708                      03A7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$709                      03A8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$710                      03AB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$711                      03AC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$712                      03AF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$714                      03B1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$718                      03B4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$719                      03B7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$720                      03BA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$721                      03BB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$722                      03BC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$723                      03BD GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$724                      03BE GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$725                      03C1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$726                      03C2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$727                      03C3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$728                      03C6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$729                      03C7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$730                      03C8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$731                      03C9 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$732                      03CA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$733                      03CB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$737                      03CC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$738                      03CF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$739                      03D2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$740                      03D3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$741                      03D4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$742                      03D5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$743                      03D8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$744                      03DB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$745                      03DC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$746                      03DF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$747                      03E0 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$748                      03E1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$749                      03E2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$750                      03E3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$751                      03E4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$752                      03E5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$753                      03E6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$754                      03E7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$755                      03E8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$756                      03EB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$757                      03EE GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$758                      03EF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$759                      03F0 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$764                      03F1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$765                      03F4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$766                      03F7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$767                      03F8 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 27.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$polye/tomaz/Work/ura/build/ura/poly$768                      03F9 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$769                      03FA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$770                      03FD GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$771                      03FE GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$772                      0400 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$773                      0401 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$774                      0404 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$775                      0405 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$776                      0408 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$777                      040B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$779                      040D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$783                      0410 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$784                      0411 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$785                      0412 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$786                      0413 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$787                      0414 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$788                      0415 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$789                      0418 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$790                      041B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$791                      041C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$792                      041D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$793                      041E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$794                      041F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$795                      0420 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$796                      0421 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$797                      0422 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$798                      0423 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$799                      0424 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$80                       0000 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$800                      0425 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$801                      0426 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$802                      0427 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$803                      0428 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$804                      0429 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$808                      042A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$809                      042B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$81                       0002 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$810                      042C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$811                      042D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$812                      042E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$813                      042F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$814                      0432 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$815                      0435 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$816                      0436 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$817                      0437 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$818                      0438 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$819                      0439 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$82                       0006 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$820                      043A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$821                      043B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$822                      043C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$823                      043D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$824                      043E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$825                      043F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$826                      0440 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 28.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$polye/tomaz/Work/ura/build/ura/poly$83                       0008 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$830                      0441 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$831                      0444 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$832                      0447 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$833                      0448 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$834                      0449 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$835                      044A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$836                      044D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$837                      0450 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$838                      0451 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$839                      0452 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$84                       0009 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$840                      0453 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$841                      0454 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$842                      0455 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$843                      0457 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$847                      045A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$848                      045B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$849                      045C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$850                      045D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$851                      045E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$852                      045F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$853                      0462 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$854                      0465 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$855                      0466 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$856                      0467 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$857                      0468 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$862                      046B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$863                      046E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$864                      0471 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$865                      0473 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$869                      0475 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$870                      0478 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$871                      047B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$872                      047C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$873                      047D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$877                      047E GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$878                      0481 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$879                      0484 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$88                       000A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$880                      0485 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$881                      0488 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$882                      0489 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$883                      048A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$884                      048D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$885                      0490 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$886                      0493 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$887                      0496 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$888                      0497 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$889                      0498 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$89                       000D GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$890                      049B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$894                      049C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$895                      049F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$896                      04A2 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 29.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$polye/tomaz/Work/ura/build/ura/poly$897                      04A3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$898                      04A4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$90                       0011 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$903                      04A5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$904                      04A8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$905                      04AB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$906                      04AC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$907                      04AD GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$91                       0013 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$911                      04AF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$912                      04B2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$913                      04B5 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$914                      04B7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$919                      04B9 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$92                       0014 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$920                      04BC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$921                      04BF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$929                      04C1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$93                       0015 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$934                      04C4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$935                      04C6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$94                       0016 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$940                      04C8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$95                       0017 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$950                      04C9 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$951                      04CB GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$952                      04CF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$953                      04D1 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$954                      04D2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$958                      04D3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$959                      04D6 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$96                       0018 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$960                      04D7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$961                      04D8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$962                      04D9 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$963                      04DA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$964                      04DD GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$965                      04DE GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$966                      04DF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$967                      04E2 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$968                      04E3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$969                      04E4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$97                       0019 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$970                      04E7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$971                      04E8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$972                      04EA GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$973                      04EC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$974                      04ED GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$975                      04F0 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$98                       001A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$980                      04F3 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$981                      04F4 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$982                      04F7 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$983                      04F8 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$984                      04F9 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 30.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$polye/tomaz/Work/ura/build/ura/poly$985                      04FC GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$986                      04FF GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$987                      0500 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$988                      0503 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$989                      0506 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$99                       001B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$990                      0509 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$991                      050A GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$992                      050B GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$993                      050C GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$994                      050F GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$995                      0510 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$996                      0511 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$997                      0514 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$998                      0517 GR
+  0 A$polye/tomaz/Work/ura/build/ura/poly$999                      0518 GR
+  0 C$poly.c$100$1_1$28                                         =  04C1 GR
+  0 C$poly.c$101$1_1$27                                         =  04C8 GR
+  0 C$poly.c$112$1_1$37                                         =  04C9 GR
+  0 C$poly.c$120$1_0$37                                         =  04D3 GR
+  0 C$poly.c$121$1_0$37                                         =  04F3 GR
+  0 C$poly.c$123$2_0$39                                         =  0531 GR
+  0 C$poly.c$124$2_0$39                                         =  0535 GR
+  0 C$poly.c$127$3_0$40                                         =  053B GR
+  0 C$poly.c$128$2_0$40                                         =  0541 GR
+  0 C$poly.c$129$3_0$41                                         =  058C GR
+  0 C$poly.c$130$3_0$41                                         =  058F GR
+  0 C$poly.c$132$2_0$40                                         =  059E GR
+  0 C$poly.c$133$2_0$40                                         =  05B5 GR
+  0 C$poly.c$135$1_0$37                                         =  05BC GR
+  0 C$poly.c$139$1_0$43                                         =  05BD GR
+  0 C$poly.c$140$1_0$43                                         =  05C5 GR
+  0 C$poly.c$141$1_0$43                                         =  05E7 GR
+  0 C$poly.c$144$1_0$45                                         =  05E8 GR
+  0 C$poly.c$145$1_0$45                                         =  05F0 GR
+  0 C$poly.c$146$1_0$45                                         =  0608 GR
+  0 C$poly.c$148$1_0$47                                         =  0609 GR
+  0 C$poly.c$155$1_0$47                                         =  0611 GR
+  0 C$poly.c$156$2_0$48                                         =  061E GR
+  0 C$poly.c$157$1_0$47                                         =  0640 GR
+  0 C$poly.c$158$1_0$47                                         =  0645 GR
+  0 C$poly.c$164$1_0$50                                         =  0646 GR
+  0 C$poly.c$166$1_0$50                                         =  0653 GR
+  0 C$poly.c$167$1_0$50                                         =  0660 GR
+  0 C$poly.c$170$1_0$50                                         =  0663 GR
+  0 C$poly.c$171$1_0$50                                         =  0668 GR
+  0 C$poly.c$174$1_0$50                                         =  0672 GR
+  0 C$poly.c$178$2_0$51                                         =  067B GR
+  0 C$poly.c$180$2_1$52                                         =  06EF GR
+  0 C$poly.c$180$3_1$53                                         =  067F GR
+  0 C$poly.c$182$3_1$53                                         =  069E GR
+  0 C$poly.c$183$3_1$53                                         =  06CB GR
+  0 C$poly.c$190$1_1$51                                         =  06F2 GR
+  0 C$poly.c$191$2_1$54                                         =  06F6 GR
+  0 C$poly.c$194$1_2$50                                         =  070B GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 31.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 C$poly.c$195$1_2$50                                         =  074D GR
+  0 C$poly.c$197$2_1$54                                         =  079C GR
+  0 C$poly.c$200$2_2$55                                         =  07CE GR
+  0 C$poly.c$201$2_2$55                                         =  07F1 GR
+  0 C$poly.c$202$2_2$55                                         =  0816 GR
+  0 C$poly.c$203$2_2$55                                         =  0811 GR
+  0 C$poly.c$205$2_2$55                                         =  0832 GR
+  0 C$poly.c$209$1_2$56                                         =  0842 GR
+  0 C$poly.c$210$3_2$58                                         =  0859 GR
+  0 C$poly.c$213$2_2$57                                         =  0859 GR
+  0 C$poly.c$215$1_2$50                                         =  085E GR
+  0 C$poly.c$216$3_2$58                                         =  087F GR
+  0 C$poly.c$217$3_2$58                                         =  088F GR
+  0 C$poly.c$218$3_2$58                                         =  088F GR
+  0 C$poly.c$219$3_2$58                                         =  08B1 GR
+  0 C$poly.c$224$2_3$59                                         =  08B4 GR
+  0 C$poly.c$226$3_3$60                                         =  08BF GR
+  0 C$poly.c$227$3_3$60                                         =  08C2 GR
+  0 C$poly.c$230$3_3$60                                         =  08D3 GR
+  0 C$poly.c$232$1_2$50                                         =  08DA GR
+  0 C$poly.c$234$4_3$61                                         =  0935 GR
+  0 C$poly.c$236$4_3$61                                         =  0949 GR
+  0 C$poly.c$238$4_3$61                                         =  09A7 GR
+  0 C$poly.c$242$4_3$61                                         =  09C4 GR
+  0 C$poly.c$243$4_3$61                                         =  09BB GR
+  0 C$poly.c$247$4_3$61                                         =  09DC GR
+  0 C$poly.c$249$4_3$61                                         =  09F8 GR
+  0 C$poly.c$250$4_3$61                                         =  0A1B GR
+  0 C$poly.c$251$4_3$61                                         =  0A49 GR
+  0 C$poly.c$252$4_3$61                                         =  0A54 GR
+  0 C$poly.c$255$4_3$61                                         =  0A64 GR
+  0 C$poly.c$257$4_3$61                                         =  0A6D GR
+  0 C$poly.c$259$2_3$59                                         =  0A80 GR
+  0 C$poly.c$263$2_3$59                                         =  0A80 GR
+  0 C$poly.c$264$1_2$56                                         =  0A81 GR
+  0 C$poly.c$265$1_2$50                                         =  0A95 GR
+  0 C$poly.c$269$1_2$63                                         =  0A96 GR
+  0 C$poly.c$273$1_0$63                                         =  0AA3 GR
+  0 C$poly.c$274$1_0$63                                         =  0AB0 GR
+  0 C$poly.c$275$1_0$63                                         =  0AB3 GR
+  0 C$poly.c$277$1_0$63                                         =  0ABC GR
+  0 C$poly.c$277$2_0$64                                         =  0B3A GR
+  0 C$poly.c$279$3_0$65                                         =  0AF9 GR
+  0 C$poly.c$28$0_0$25                                          =  0000 GR
+  0 C$poly.c$280$3_0$65                                         =  0ACF GR
+  0 C$poly.c$283$1_0$63                                         =  0B5A GR
+  0 C$poly.c$284$1_0$63                                         =  0B3D GR
+  0 C$poly.c$285$1_0$63                                         =  0B8C GR
+  0 C$poly.c$31$1_0$25                                          =  000A GR
+  0 C$poly.c$32$1_0$25                                          =  0026 GR
+  0 C$poly.c$33$1_0$25                                          =  0041 GR
+  0 C$poly.c$34$1_0$25                                          =  005E GR
+  0 C$poly.c$35$1_0$25                                          =  007B GR
+  0 C$poly.c$36$1_0$25                                          =  00AA GR
+  0 C$poly.c$37$1_0$25                                          =  00D9 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 32.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 C$poly.c$38$1_0$25                                          =  010A GR
+  0 C$poly.c$39$1_0$25                                          =  013B GR
+  0 C$poly.c$40$1_0$25                                          =  017A GR
+  0 C$poly.c$41$1_0$25                                          =  0197 GR
+  0 C$poly.c$42$1_0$25                                          =  01AD GR
+  0 C$poly.c$43$1_0$25                                          =  01B4 GR
+  0 C$poly.c$44$1_0$25                                          =  01BC GR
+  0 C$poly.c$46$1_0$27                                          =  01BD GR
+  0 C$poly.c$53$1_0$27                                          =  01CA GR
+  0 C$poly.c$54$1_0$27                                          =  022F GR
+  0 C$poly.c$57$1_0$27                                          =  0235 GR
+  0 C$poly.c$58$1_0$27                                          =  024E GR
+  0 C$poly.c$61$1_1$28                                          =  0301 GR
+  0 C$poly.c$61$2_1$29                                          =  0285 GR
+  0 C$poly.c$63$2_1$29                                          =  030D GR
+  0 C$poly.c$64$2_1$29                                          =  0325 GR
+  0 C$poly.c$65$3_1$30                                          =  0339 GR
+  0 C$poly.c$66$4_1$31                                          =  034A GR
+  0 C$poly.c$67$4_1$31                                          =  0353 GR
+  0 C$poly.c$68$4_1$31                                          =  0365 GR
+  0 C$poly.c$70$1_1$27                                          =  02F1 GR
+  0 C$poly.c$70$3_1$30                                          =  036E GR
+  0 C$poly.c$71$3_1$30                                          =  0376 GR
+  0 C$poly.c$74$2_1$29                                          =  0379 GR
+  0 C$poly.c$75$2_1$29                                          =  039B GR
+  0 C$poly.c$76$3_1$32                                          =  03B4 GR
+  0 C$poly.c$77$3_1$32                                          =  03CC GR
+  0 C$poly.c$79$2_1$29                                          =  03F1 GR
+  0 C$poly.c$80$3_1$33                                          =  0410 GR
+  0 C$poly.c$81$3_1$33                                          =  042A GR
+  0 C$poly.c$82$3_1$33                                          =  0441 GR
+  0 C$poly.c$83$3_1$33                                          =  045A GR
+  0 C$poly.c$87$1_1$28                                          =  046B GR
+  0 C$poly.c$88$2_1$34                                          =  0475 GR
+  0 C$poly.c$89$2_1$34                                          =  047E GR
+  0 C$poly.c$90$2_1$34                                          =  049C GR
+  0 C$poly.c$94$1_1$28                                          =  04A5 GR
+  0 C$poly.c$95$1_1$28                                          =  04AF GR
+  0 C$poly.c$97$1_1$28                                          =  04B9 GR
+  0 C$poly.c$99$1_1$28                                          =  04C1 GR
+  7 Fpoly$__xinit_br_count$0_0$0                                =  0000 GR
+  7 Fpoly$__xinit_ixfirst$0_0$0                                 =  0002 GR
+  7 Fpoly$__xinit_iyfirst$0_0$0                                 =  0001 GR
+  0 Fpoly$_atbl_delete$0$0                                      =  0609 GR
+  0 Fpoly$_atbl_insert$0$0                                      =  04C9 GR
+  0 Fpoly$_br_x$0$0                                             =  05BD GR
+  0 Fpoly$_bresenham_init$0$0                                   =  0000 GR
+  0 Fpoly$_bresenham_next$0$0                                   =  01BD GR
+  0 Fpoly$_pt_y$0$0                                             =  05E8 GR
+  2 G$br_count$0_0$0                                            =  0000 GR
+  1 G$br_data$0_0$0                                             =  0000 GR
+  0 G$gpx_draw_polygon$0$0                                      =  0A96 GR
+  0 G$gpx_fill_polygon$0$0                                      =  0646 GR
+  2 G$ixfirst$0_0$0                                             =  0002 GR
+  1 G$ixsort$0_0$0                                              =  0600 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 33.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  2 G$iyfirst$0_0$0                                             =  0001 GR
+  1 G$iysort$0_0$0                                              =  05C0 GR
+  0 XFpoly$_atbl_delete$0$0                                     =  0645 GR
+  0 XFpoly$_atbl_insert$0$0                                     =  05BC GR
+  0 XFpoly$_br_x$0$0                                            =  05E7 GR
+  0 XFpoly$_bresenham_init$0$0                                  =  01BC GR
+  0 XFpoly$_bresenham_next$0$0                                  =  04C8 GR
+  0 XFpoly$_pt_y$0$0                                            =  0608 GR
+  0 XG$gpx_draw_polygon$0$0                                     =  0B8C GR
+  0 XG$gpx_fill_polygon$0$0                                     =  0A95 GR
+    ___sdcc_call_hl                                                **** GX
+  0 __atbl_delete                                                  0609 R
+  0 __atbl_insert                                                  04C9 R
+  0 __br_x                                                         05BD R
+  0 __bresenham_init                                               0000 R
+  0 __bresenham_next                                               01BD R
+    __modsint                                                      **** GX
+  0 __pt_y                                                         05E8 R
+  7 __xinit__br_count                                              0000 R
+  7 __xinit__ixfirst                                               0002 R
+  7 __xinit__iyfirst                                               0001 R
+    _abs                                                           **** GX
+  2 _br_count                                                      0000 GR
+  1 _br_data                                                       0000 GR
+    _gdrawline                                                     **** GX
+  0 _gpx_draw_polygon                                              0A96 GR
+  0 _gpx_fill_polygon                                              0646 GR
+    _gsetcolor                                                     **** GX
+  2 _ixfirst                                                       0002 GR
+  1 _ixsort                                                        0600 GR
+  2 _iyfirst                                                       0001 GR
+  1 _iysort                                                        05C0 GR
+
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 34.
+Hexadecimal [16-Bits]
+
+Area Table
+
+   0 _CODE                                      size  B8D   flags    0
+   1 _DATA                                      size  640   flags    0
+   2 _INITIALIZED                               size    3   flags    0
+   3 _DABS                                      size    0   flags    8
+   4 _HOME                                      size    0   flags    0
+   5 _GSINIT                                    size    0   flags    0
+   6 _GSFINAL                                   size    0   flags    0
+   7 _INITIALIZER                               size    3   flags    0
+   8 _CABS                                      size    0   flags    8
+

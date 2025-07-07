@@ -1,0 +1,494 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 1.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+    .__.$$$.                                                    =  2710 L
+    .__.ABS.                                                    =  0000 G
+    .__.CPU.                                                    =  0000 L
+    .__.H$L.                                                    =  0000 L
+  0 A$clock/tomaz/Work/ura/build/ura/clock$100                     001B GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$101                     001C GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$102                     001F GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$104                     0021 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$108                     0024 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$109                     0025 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$110                     0028 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$111                     0029 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$112                     002A GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$113                     002D GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$114                     002E GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$115                     002F GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$119                     0030 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$120                     0031 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$125                     0033 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$129                     0036 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$130                     0039 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$131                     003A GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$132                     003D GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$136                     003E GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$137                     003F GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$138                     0040 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$139                     0042 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$140                     0043 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$141                     0046 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$145                     0047 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$147                     004A GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$148                     004C GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$149                     004D GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$150                     004F GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$151                     0050 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$152                     0053 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$154                     0055 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$158                     0058 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$159                     0059 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$160                     005C GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$161                     005D GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$162                     005E GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$163                     0061 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$164                     0062 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$165                     0063 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$169                     0064 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$170                     0065 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$181                     0067 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$201                     006A GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$211                     006D GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$212                     006F GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$213                     0073 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$214                     0075 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$215                     0078 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$216                     0079 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 2.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$clock/tomaz/Work/ura/build/ura/clock$220                     007A GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$221                     007D GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$225                     007F GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$226                     0082 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$230                     0083 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$231                     0084 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$232                     0087 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$233                     008A GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$234                     008B GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$235                     008E GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$243                     0091 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$244                     0093 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$245                     0094 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$246                     0095 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$247                     0098 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$248                     0099 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$249                     009B GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$250                     009C GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$251                     009D GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$252                     009E GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$253                     009F GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$254                     00A0 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$255                     00A3 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$259                     00A6 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$260                     00A8 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$261                     00A9 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$262                     00AA GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$263                     00AD GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$264                     00AE GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$265                     00B0 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$266                     00B1 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$267                     00B2 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$268                     00B3 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$269                     00B4 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$270                     00B5 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$271                     00B6 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$272                     00B7 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$273                     00B8 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$274                     00B9 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$275                     00BC GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$276                     00BF GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$277                     00C1 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$278                     00C2 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$279                     00C3 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$280                     00C6 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$281                     00C7 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$282                     00C9 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$283                     00CA GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$284                     00CB GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$285                     00CD GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$286                     00CF GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$287                     00D0 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$288                     00D1 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$290                     00D2 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$291                     00D4 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 3.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$clock/tomaz/Work/ura/build/ura/clock$292                     00D6 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$293                     00D9 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$294                     00DC GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$295                     00DD GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$296                     00E0 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$300                     00E3 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$301                     00E6 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$302                     00E9 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$306                     00EB GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$307                     00EE GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$308                     00F1 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$309                     00F3 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$310                     00F6 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$311                     00F9 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$312                     00FB GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$313                     00FE GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$314                     0101 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$315                     0103 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$316                     0106 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$317                     0109 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$326                     010C GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$327                     010F GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$328                     0110 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$329                     0113 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$330                     0114 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$331                     0116 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$332                     0117 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$333                     0119 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$334                     011A GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$335                     011C GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$336                     011D GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$337                     011F GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$338                     0120 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$339                     0123 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$340                     0126 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$341                     0127 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$342                     012A GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$343                     012D GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$344                     012E GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$348                     012F GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$349                     0132 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$350                     0133 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$351                     0136 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$352                     0137 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$353                     0139 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$354                     013A GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$355                     013C GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$356                     013D GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$357                     013F GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$358                     0140 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$359                     0142 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$360                     0143 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$361                     0146 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$362                     0149 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$363                     014A GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 4.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$clock/tomaz/Work/ura/build/ura/clock$364                     014D GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$365                     0150 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$366                     0151 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$370                     0152 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$371                     0155 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$372                     0157 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$373                     0158 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$374                     015B GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$375                     015D GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$376                     015E GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$377                     0161 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$378                     0162 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$379                     0163 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$380                     0166 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$381                     0167 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$382                     0168 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$383                     016B GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$384                     016C GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$385                     016D GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$386                     0170 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$387                     0171 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$391                     0172 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$392                     0174 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$393                     0177 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$394                     0179 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$395                     017C GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$396                     017F GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$398                     0181 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$399                     0184 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$400                     0187 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$401                     0189 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$402                     018C GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$403                     018D GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$404                     018E GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$405                     018F GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$406                     0191 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$410                     0193 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$415                     0196 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$416                     0198 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$417                     0199 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$418                     019A GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$419                     019D GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$420                     019E GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$421                     01A1 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$422                     01A2 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$423                     01A5 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$424                     01A6 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$425                     01A7 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$429                     01A8 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$430                     01AA GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$431                     01AB GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$432                     01AC GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$433                     01AF GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$434                     01B0 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$435                     01B3 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 5.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$clock/tomaz/Work/ura/build/ura/clock$436                     01B4 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$437                     01B7 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$438                     01B8 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$439                     01B9 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$443                     01BA GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$444                     01BD GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$445                     01BE GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$446                     01C0 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$447                     01C1 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$448                     01C4 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$452                     01C5 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$453                     01C8 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$454                     01C9 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$455                     01CB GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$456                     01CC GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$457                     01CF GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$458                     01D2 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$460                     01D4 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$461                     01D8 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$462                     01D9 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$464                     01DC GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$465                     01DF GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$469                     01E2 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$470                     01E5 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$471                     01E6 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$472                     01E8 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$473                     01E9 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$474                     01EC GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$478                     01ED GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$479                     01F0 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$480                     01F3 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$484                     01F5 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$485                     01F7 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$486                     01F8 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$487                     01F9 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$488                     01FC GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$489                     01FD GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$490                     0200 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$491                     0201 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$492                     0204 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$493                     0205 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$494                     0206 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$498                     0207 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$499                     0209 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$500                     020A GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$501                     020B GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$502                     020E GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$503                     020F GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$504                     0212 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$505                     0213 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$506                     0216 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$507                     0217 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$508                     0218 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$509                     0219 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$514                     021B GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 6.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$clock/tomaz/Work/ura/build/ura/clock$515                     021E GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$520                     021F GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$522                     0222 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$523                     0223 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$524                     0225 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$525                     0226 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$526                     0227 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$527                     0228 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$528                     0229 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$529                     022B GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$533                     022D GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$534                     022E GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$535                     022F GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$536                     0231 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$537                     0233 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$538                     0235 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$539                     0237 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$540                     023A GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$541                     023B GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$542                     023E GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$543                     0241 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$544                     0244 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$545                     0245 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$546                     0246 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$547                     0247 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$548                     024A GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$549                     024D GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$550                     0250 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$551                     0252 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$552                     0253 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$556                     0254 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$557                     0257 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$558                     0258 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$559                     0259 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$560                     025B GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$561                     025C GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$562                     025D GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$563                     025F GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$564                     0260 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$565                     0261 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$566                     0262 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$567                     0265 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$568                     0267 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$572                     0268 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$573                     0269 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$578                     026B GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$579                     026E GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$580                     0271 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$581                     0274 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$585                     0277 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$586                     027A GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$587                     027D GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$588                     0280 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$596                     0283 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$597                     0286 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 7.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$clock/tomaz/Work/ura/build/ura/clock$598                     0287 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$599                     0289 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$600                     028A GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$601                     028B GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$602                     028E GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$603                     028F GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$604                     0290 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$605                     0291 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$606                     0292 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$610                     0295 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$614                     0298 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$615                     029A GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$620                     029C GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$76                      0000 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$77                      0002 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$78                      0003 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$79                      0004 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$80                      0007 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$84                      0008 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$88                      000B GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$89                      000E GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$90                      000F GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$91                      0012 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$95                      0013 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$97                      0016 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$98                      0018 GR
+  0 A$clock/tomaz/Work/ura/build/ura/clock$99                      0019 GR
+  0 C$clock.c$100$2_1$42                                        =  0283 GR
+  0 C$clock.c$104$1_1$41                                        =  0295 GR
+  0 C$clock.c$105$1_1$40                                        =  029C GR
+  0 C$clock.c$18$0_0$36                                         =  0000 GR
+  0 C$clock.c$20$1_0$36                                         =  0000 GR
+  0 C$clock.c$22$1_0$36                                         =  0008 GR
+  0 C$clock.c$23$1_0$36                                         =  000B GR
+  0 C$clock.c$25$1_0$36                                         =  0013 GR
+  0 C$clock.c$25$2_0$37                                         =  0030 GR
+  0 C$clock.c$26$2_0$37                                         =  0024 GR
+  0 C$clock.c$27$1_0$36                                         =  0033 GR
+  0 C$clock.c$28$1_0$36                                         =  0036 GR
+  0 C$clock.c$29$1_0$36                                         =  003E GR
+  0 C$clock.c$31$1_0$36                                         =  0047 GR
+  0 C$clock.c$31$2_0$38                                         =  0064 GR
+  0 C$clock.c$32$2_0$38                                         =  0058 GR
+  0 C$clock.c$33$1_0$36                                         =  0067 GR
+  0 C$clock.c$34$1_0$36                                         =  0067 GR
+  0 C$clock.c$36$1_0$39                                         =  006A GR
+  0 C$clock.c$40$1_0$39                                         =  006A GR
+  0 C$clock.c$41$1_0$39                                         =  006A GR
+  0 C$clock.c$47$1_0$40                                         =  006D GR
+  0 C$clock.c$49$1_0$40                                         =  007A GR
+  0 C$clock.c$50$2_0$41                                         =  007F GR
+  0 C$clock.c$51$2_0$41                                         =  0083 GR
+  0 C$clock.c$54$2_1$42                                         =  0091 GR
+  0 C$clock.c$57$2_1$42                                         =  0091 GR
+  0 C$clock.c$58$2_1$42                                         =  00A6 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 8.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 C$clock.c$61$2_1$42                                         =  00E3 GR
+  0 C$clock.c$63$2_1$42                                         =  00EB GR
+  0 C$clock.c$64$2_1$42                                         =  010C GR
+  0 C$clock.c$66$2_1$42                                         =  010C GR
+  0 C$clock.c$67$2_1$42                                         =  012F GR
+  0 C$clock.c$71$2_1$42                                         =  0152 GR
+  0 C$clock.c$72$2_1$42                                         =  0172 GR
+  0 C$clock.c$73$2_1$42                                         =  0193 GR
+  0 C$clock.c$74$2_1$42                                         =  0196 GR
+  0 C$clock.c$75$2_1$42                                         =  01A8 GR
+  0 C$clock.c$78$2_1$42                                         =  01BA GR
+  0 C$clock.c$79$2_1$42                                         =  01C5 GR
+  0 C$clock.c$80$2_1$42                                         =  01E2 GR
+  0 C$clock.c$83$2_1$42                                         =  01ED GR
+  0 C$clock.c$85$3_1$43                                         =  01F5 GR
+  0 C$clock.c$86$3_1$43                                         =  0207 GR
+  0 C$clock.c$88$2_1$42                                         =  021B GR
+  0 C$clock.c$91$1_1$40                                         =  021F GR
+  0 C$clock.c$91$3_1$44                                         =  0268 GR
+  0 C$clock.c$92$4_1$45                                         =  022D GR
+  0 C$clock.c$93$4_1$45                                         =  0254 GR
+  0 C$clock.c$95$2_1$42                                         =  026B GR
+  0 C$clock.c$96$2_1$42                                         =  0277 GR
+  0 C$clock.c$99$2_1$42                                         =  0283 GR
+  1 Fclock$clk$0_0$0                                            =  0000 GR
+    G$HOUR$0_0$0                                                =  00A4 G
+    G$MINUTE$0_0$0                                              =  00A3 G
+    G$SECOND$0_0$0                                              =  00A2 G
+  0 G$clock_exit$0$0                                            =  006A GR
+  0 G$clock_init$0$0                                            =  0000 GR
+  0 G$clock_loop$0$0                                            =  006D GR
+  0 XG$clock_exit$0$0                                           =  006A GR
+  0 XG$clock_init$0$0                                           =  0067 GR
+  0 XG$clock_loop$0$0                                           =  029C GR
+    _HOUR                                                       =  00A4 
+    _MINUTE                                                     =  00A3 
+    _SECOND                                                     =  00A2 
+    __divsint                                                      **** GX
+    _bcd2bin                                                       **** GX
+    _bdos                                                          **** GX
+  1 _clk                                                           0000 R
+  0 _clock_exit                                                    006A GR
+  0 _clock_init                                                    0000 GR
+  0 _clock_loop                                                    006D GR
+    _gexit                                                         **** GX
+    _ginit                                                         **** GX
+    _gpx_fill_polygon                                              **** GX
+    _gsetpage                                                      **** GX
+    _scr_calc_hands                                                **** GX
+    _scr_clear                                                     **** GX
+    _scr_draw_logo                                                 **** GX
+    _scr_draw_num                                                  **** GX
+
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 9.
+Hexadecimal [16-Bits]
+
+Area Table
+
+   0 _CODE                                      size  29D   flags    0
+   1 _DATA                                      size   61   flags    0
+   2 _INITIALIZED                               size    0   flags    0
+   3 _DABS                                      size    0   flags    8
+   4 _HOME                                      size    0   flags    0
+   5 _GSINIT                                    size    0   flags    0
+   6 _GSFINAL                                   size    0   flags    0
+   7 _INITIALIZER                               size    0   flags    0
+   8 _CABS                                      size    0   flags    8
+

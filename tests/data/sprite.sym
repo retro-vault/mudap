@@ -1,0 +1,248 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 1.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+    .__.$$$.                                                    =  2710 L
+    .__.ABS.                                                    =  0000 G
+    .__.CPU.                                                    =  0000 L
+    .__.H$L.                                                    =  0000 L
+  0 A$spritetomaz/Work/ura/build/ura/sprite$100                    0049 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$101                    004C GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$102                    004F GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$103                    0052 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$104                    0055 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$105                    0058 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$106                    005B GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$107                    005C GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$108                    005F GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$109                    0062 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$110                    0063 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$111                    0066 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$112                    0067 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$116                    0068 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$117                    0069 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$118                    006C GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$122                    006F GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$123                    0070 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$124                    0073 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$129                    0076 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$130                    0079 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$131                    007B GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$132                    007E GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$133                    007F GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$134                    0082 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$135                    0083 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$136                    0086 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$138                    0088 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$142                    008B GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$143                    008E GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$144                    0091 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$145                    0094 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$146                    0097 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$147                    009A GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$148                    009D GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$149                    00A0 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$150                    00A3 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$151                    00A4 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$152                    00A5 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$156                    00A7 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$157                    00AA GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$158                    00AD GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$162                    00AF GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$163                    00B2 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$164                    00B3 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$165                    00B4 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$166                    00B7 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$170                    00B8 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$171                    00BB GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$172                    00BE GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$173                    00BF GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 2.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$spritetomaz/Work/ura/build/ura/sprite$174                    00C1 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$175                    00C4 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$176                    00C5 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$177                    00C6 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$178                    00C9 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$179                    00CA GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$180                    00CB GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$185                    00CD GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$186                    00CE GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$187                    00CF GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$188                    00D0 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$189                    00D3 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$193                    00D4 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$194                    00D7 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$195                    00DA GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$196                    00DB GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$197                    00DD GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$198                    00E0 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$199                    00E1 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$200                    00E2 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$201                    00E5 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$202                    00E6 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$207                    00E7 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$208                    00EA GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$209                    00ED GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$210                    00EE GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$211                    00F0 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$212                    00F3 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$213                    00F4 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$214                    00F7 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$215                    00FA GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$216                    00FB GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$221                    00FE GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$222                    0101 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$223                    0104 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$224                    0106 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$225                    0108 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$226                    0109 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$227                    010C GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$228                    010D GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$232                    0110 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$233                    0113 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$234                    0116 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$235                    0119 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$240                    011C GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$241                    011F GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$246                    0122 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$247                    0125 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$248                    0126 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$249                    0127 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$253                    012A GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$254                    012C GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$259                    012E GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$269                    012F GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$270                    0131 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 3.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$spritetomaz/Work/ura/build/ura/sprite$271                    0135 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$272                    0137 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$276                    0138 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$277                    013B GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$278                    013E GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$279                    0141 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$280                    0144 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$281                    0145 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$282                    0146 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$283                    0148 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$284                    0149 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$285                    014A GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$286                    014B GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$287                    014C GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$291                    014D GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$292                    014E GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$293                    014F GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$294                    0150 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$295                    0151 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$296                    0154 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$297                    0157 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$298                    0158 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$299                    0159 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$300                    015A GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$301                    015D GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$302                    015E GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$303                    0161 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$304                    0164 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$305                    0165 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$306                    0166 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$307                    0169 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$311                    016A GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$312                    016B GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$316                    016C GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$317                    016E GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$322                    0170 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$56                     0000 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$57                     0002 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$58                     0006 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$59                     0008 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$60                     000B GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$61                     000C GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$65                     000D GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$66                     0010 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$67                     0013 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$68                     0014 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$69                     0015 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$70                     0018 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$71                     001B GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$72                     001E GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$73                     001F GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$74                     0020 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$75                     0021 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$79                     0024 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$80                     0028 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 4.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 A$spritetomaz/Work/ura/build/ura/sprite$81                     0029 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$85                     002C GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$86                     002D GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$88                     0030 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$89                     0033 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$90                     0036 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$94                     0039 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$95                     003C GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$96                     003F GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$97                     0040 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$98                     0043 GR
+  0 A$spritetomaz/Work/ura/build/ura/sprite$99                     0046 GR
+  0 C$sprite.c$10$1_0$18                                        =  000D GR
+  0 C$sprite.c$11$1_0$18                                        =  0024 GR
+  0 C$sprite.c$14$1_0$18                                        =  002C GR
+  0 C$sprite.c$15$2_0$19                                        =  0039 GR
+  0 C$sprite.c$16$2_0$19                                        =  0068 GR
+  0 C$sprite.c$17$3_0$20                                        =  006F GR
+  0 C$sprite.c$18$1_0$18                                        =  0076 GR
+  0 C$sprite.c$19$1_0$18                                        =  008B GR
+  0 C$sprite.c$21$4_1$22                                        =  00A7 GR
+  0 C$sprite.c$22$5_1$23                                        =  00AF GR
+  0 C$sprite.c$23$5_1$23                                        =  00B8 GR
+  0 C$sprite.c$26$5_1$24                                        =  00CD GR
+  0 C$sprite.c$27$5_1$24                                        =  00D4 GR
+  0 C$sprite.c$29$4_1$22                                        =  00E7 GR
+  0 C$sprite.c$31$3_1$21                                        =  00FE GR
+  0 C$sprite.c$32$3_1$21                                        =  0110 GR
+  0 C$sprite.c$34$2_1$20                                        =  011C GR
+  0 C$sprite.c$37$1_0$18                                        =  0122 GR
+  0 C$sprite.c$38$1_0$18                                        =  012E GR
+  0 C$sprite.c$40$1_0$26                                        =  012F GR
+  0 C$sprite.c$41$1_0$26                                        =  0138 GR
+  0 C$sprite.c$42$1_0$26                                        =  014D GR
+  0 C$sprite.c$43$1_0$26                                        =  016A GR
+  0 C$sprite.c$44$1_0$26                                        =  0170 GR
+  0 C$sprite.c$8$0_0$18                                         =  0000 GR
+  0 G$gmesprite$0$0                                             =  012F GR
+  0 G$gputsprite$0$0                                            =  0000 GR
+  0 XG$gmesprite$0$0                                            =  0170 GR
+  0 XG$gputsprite$0$0                                           =  012E GR
+    _gdrawd                                                        **** GX
+  0 _gmesprite                                                     012F GR
+  0 _gputsprite                                                    0000 GR
+    _gsetcolor                                                     **** GX
+    _gxy                                                           **** GX
+
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 5.
+Hexadecimal [16-Bits]
+
+Area Table
+
+   0 _CODE                                      size  171   flags    0
+   1 _DATA                                      size    0   flags    0
+   2 _INITIALIZED                               size    0   flags    0
+   3 _DABS                                      size    0   flags    8
+   4 _HOME                                      size    0   flags    0
+   5 _GSINIT                                    size    0   flags    0
+   6 _GSFINAL                                   size    0   flags    0
+   7 _INITIALIZER                               size    0   flags    0
+   8 _CABS                                      size    0   flags    8
+

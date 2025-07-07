@@ -17,15 +17,16 @@ enable_testing()
 file(GLOB TEST_SOURCES CONFIGURE_DEPENDS *.cpp)
 
 # Define the test executable
-add_executable(idp_tests ${TEST_SOURCES})
+add_executable(mudap-tests ${TEST_SOURCES})
 
 # Link with GoogleTest's main runner
-target_link_libraries(idp_tests
+target_link_libraries(mudap-tests
     PRIVATE
         gtest_main
         dap
+        sdcc
 )
 
 # Discover and register the tests for `ctest`
 include(GoogleTest)
-gtest_discover_tests(idp_tests)
+gtest_discover_tests(mudap-tests)

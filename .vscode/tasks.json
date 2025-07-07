@@ -20,7 +20,7 @@
     {
         "label": "Build DAP server",
         "type": "shell",
-        "command": "[ ! -d build ] && cmake -B build || true; cmake --build build --target idp-dbg",
+        "command": "[ ! -d build ] && cmake -B build || true; cmake --build build --target mudap",
         "group": "build",
         "problemMatcher": [],
         "presentation": {
