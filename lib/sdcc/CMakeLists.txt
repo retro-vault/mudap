@@ -15,4 +15,4 @@ target_include_directories(sdcc
 )
 
 # Require C++23 for modern features
-target_compile_features(dap PUBLIC cxx_std_23)
+target_compile_features(sdcc PUBLIC cxx_std_23)

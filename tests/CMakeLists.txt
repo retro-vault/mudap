@@ -10,9 +10,6 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(googletest)
 
-# Enable CTest integration
-enable_testing()
-
 # Automatically collect all .cpp files in this folder
 file(GLOB TEST_SOURCES CONFIGURE_DEPENDS *.cpp)
 
@@ -29,4 +26,6 @@ target_link_libraries(mudap-tests
 
 # Discover and register the tests for `ctest`
 include(GoogleTest)
-gtest_discover_tests(mudap-tests)
+gtest_discover_tests(mudap-tests
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+)

@@ -12,7 +12,7 @@
 
 #include <string>
 #include <vector>
-#include <unordered_map>
+#include <memory>
 #include <functional>
 #include <mutex>
 #include <sstream>
@@ -23,7 +23,6 @@
 namespace dap
 {
     using json = nlohmann::json;
-    using dap_handler = std::function<std::string(const std::string &)>;
 
     // Generic request wrapper. Used as the base for all DAP request types.
     struct request
@@ -37,8 +36,16 @@ namespace dap
         virtual ~request() = default;
     };
 
+    // Abstract base for DAP request handlers (chain of responsibility).
+    class request_handler {
+    public:
+        virtual ~request_handler() = default;
+        virtual std::string command() const = 0;
+        virtual std::string handle(const request& req) = 0;
+    };
+
     // Initialize request. Sent by the client at startup.
-    struct initialize_request : public request 
+    struct initialize_request : public request
     {
         std::string adapter_id;
         std::string client_id;
@@ -196,45 +203,32 @@ namespace dap
         json _json;                     // Final response JSON.
     };
 
-    // DAP dispatcher and handler registry.
+    // DAP dispatcher with chain of responsibility pattern.
+    // Handlers are walked in order; the first matching handler processes
+    // the request.
     class dap
     {
     public:
         dap();
 
-        // Register dispatch functions.
-        void register_handler(
-            const std::string &command,
-            dap_handler handler);
-        template <typename request_t>
-        void register_typed_handler(
-            const std::string &command,
-            std::function<std::string(const request_t &)> handler)
-        {
-            _typed_handlers[command] = [handler](const request &req)
-            {
-                return handler(request_t::from(req));
-            };
-        }
+        // Add a handler to the chain.
+        void add_handler(std::unique_ptr<request_handler> handler);
+
+        // Set the callback for sending async events to the client.
         void set_event_sender(std::function<void(const std::string &)> sender);
 
-        // Run DAP server.
+        // Run DAP server on the given streams.
         void run(std::istream &in, std::ostream &out);
 
     private:
-        // Helper functions.
         std::string handle_message(const std::string &json);
         std::string read_message(std::istream &in);
         void send_message(std::ostream &out, const std::string &json);
 
     private:
-        std::unordered_map              // Raw handlers.
-            <std::string, dap_handler> _handlers;                          
-        std::unordered_map              // Typed handlers.
-            <std::string, std::function<std::string(const request &)>> _typed_handlers; 
-        std::mutex _mutex;              // Concurrency guard.
-        std::function                   // Send event handler.
-            <void(const std::string &)> send_event_;
+        std::vector<std::unique_ptr<request_handler>> handlers_;
+        std::mutex mutex_;
+        std::function<void(const std::string &)> send_event_;
     };
 
 } // namespace dap

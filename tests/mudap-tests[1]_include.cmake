@@ -1,0 +1,5 @@
+if(EXISTS "/home/tstih/data/retro-vault/mudap/tests/mudap-tests[1]_tests.cmake")
+  include("/home/tstih/data/retro-vault/mudap/tests/mudap-tests[1]_tests.cmake")
+else()
+  add_test(mudap-tests_NOT_BUILT mudap-tests_NOT_BUILT)
+endif()

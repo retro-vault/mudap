@@ -3,11 +3,12 @@
 //
 // This file provides the implementation of socket_stream_buffer and
 // socket_stream classes, enabling sockpp::tcp_socket to be used as a
-// std::iostream. 
+// std::iostream.
 //
 // Copyright 2025 Tomaz Stih. All rights reserved.
 // MIT License.
 #include <stdexcept>
+#include <socket_stream.h>
 
 socket_stream_buffer::socket_stream_buffer(sockpp::tcp_socket& socket)
     : socket_(socket) {
@@ -16,28 +17,24 @@ socket_stream_buffer::socket_stream_buffer(sockpp::tcp_socket& socket)
 }
 
 int socket_stream_buffer::underflow() {
-    // Return buffered data if available
     if (gptr() < egptr()) {
         return traits_type::to_int_type(*gptr());
     }
 
-    // Read from socket into input buffer
-    auto res = socket_.read(in_buffer_, buffer_size);
-    if (!res || res.value() <= 0) {
-        return traits_type::eof(); // EOF on error or disconnection
+    auto n = socket_.read(in_buffer_, buffer_size);
+    if (n <= 0) {
+        return traits_type::eof();
     }
 
-    setg(in_buffer_, in_buffer_, in_buffer_ + res.value());
+    setg(in_buffer_, in_buffer_, in_buffer_ + n);
     return traits_type::to_int_type(*gptr());
 }
 
 int socket_stream_buffer::overflow(int c) {
-    // Write character to output buffer
     if (c != traits_type::eof()) {
         *pptr() = static_cast<char>(c);
         pbump(1);
     }
-    // Flush buffer to socket
     if (sync() == 0) {
         return c;
     }
@@ -45,49 +42,48 @@ int socket_stream_buffer::overflow(int c) {
 }
 
 int socket_stream_buffer::sync() {
-    // Get size of data in output buffer
     auto size = pptr() - pbase();
     if (size > 0) {
-        // Write buffer to socket using write_n
-        auto res = socket_.write_n(pbase(), size);
-        if (!res) {
-            return -1; // Indicate failure
-        }
-        if (res.value() != size) {
-            // Partial write or unexpected result
+        auto n = socket_.write_n(pbase(), size);
+        if (n != size) {
             return -1;
         }
-        // Reset output buffer
         setp(out_buffer_, out_buffer_ + buffer_size);
     }
-    return 0; // Success
+    return 0;
 }
 
 socket_stream::socket_stream(uint16_t port)
-    : socket_(std::make_unique<sockpp::tcp_socket>()),
-      buffer_(*socket_) {
+    : std::iostream(nullptr),
+      socket_(std::make_unique<sockpp::tcp_socket>()),
+      buffer_(*socket_)
+{
+    rdbuf(&buffer_);
     sockpp::initialize();
     sockpp::tcp_acceptor acceptor(port);
     if (!acceptor) {
-        throw std::runtime_error("failed to create acceptor on port " + std::to_string(port) + ": " + acceptor.last_error_str());
+        throw std::runtime_error("failed to create acceptor on port " +
+            std::to_string(port) + ": " + acceptor.last_error_str());
     }
-    // Accept first client connection
-    auto res = acceptor.accept(*socket_);
-    if (!res) {
-        throw std::runtime_error("failed to accept connection: " + res.error_message());
+    *socket_ = acceptor.accept();
+    if (!*socket_) {
+        throw std::runtime_error("failed to accept connection");
     }
 }
 
 socket_stream::socket_stream(const std::string& host, uint16_t port)
-    : socket_(std::make_unique<sockpp::tcp_socket>()),
-      buffer_(*socket_) {
+    : std::iostream(nullptr),
+      socket_(std::make_unique<sockpp::tcp_socket>()),
+      buffer_(*socket_)
+{
+    rdbuf(&buffer_);
     sockpp::initialize();
-    sockpp::tcp_connector connector;
-    auto res = connector.connect(host, port);
-    if (!res) {
-        throw std::runtime_error("failed to connect to " + host + ":" + std::to_string(port) + ": " + res.error_message());
+    sockpp::tcp_connector connector({host, static_cast<in_port_t>(port)});
+    if (!connector) {
+        throw std::runtime_error("failed to connect to " + host + ":" +
+            std::to_string(port));
     }
-    *socket_ = std::move(connector); // Transfer ownership
+    *socket_ = std::move(connector);
 }
 
 socket_stream::~socket_stream() {

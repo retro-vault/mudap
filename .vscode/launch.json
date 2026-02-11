@@ -2,18 +2,6 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Run tests (build + ctest)",
-      "type": "cppdbg",
-      "request": "launch",
-      "preLaunchTask": "Configure, build, and run tests",
-      "program": "${workspaceFolder}/build/tests/mudap-tests",
-      "args": [],
-      "stopAtEntry": false,
-      "cwd": "${workspaceFolder}",
-      "MIMode": "gdb",
-      "miDebuggerPath": "/usr/bin/gdb"
-    },
-    {
       "name": "Run DAP server (debugger)",
       "type": "cppdbg",
       "request": "launch",
@@ -24,7 +12,18 @@
       "cwd": "${workspaceFolder}",
       "MIMode": "gdb",
       "miDebuggerPath": "/usr/bin/gdb"
+    },
+    {
+      "name": "Run tests (build + ctest)",
+      "type": "cppdbg",
+      "request": "launch",
+      "preLaunchTask": "Configure, build, and run tests",
+      "program": "${workspaceFolder}/build/tests/mudap-tests",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb"
     }
   ]
 }
-

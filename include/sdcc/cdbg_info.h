@@ -12,6 +12,7 @@
 
 #include <string>
 #include <vector>
+#include <cstdint>
 
 namespace sdcc {
     struct cdbg_info_symbol {
@@ -35,6 +36,7 @@ namespace sdcc {
     struct cdbg_info_line {
         std::string file; // Source file path (e.g., "clock.c")
         int line = 0; // Line number
+        uint16_t address = 0; // Mapped memory address
         std::string scope; // "global" or "local"
     };
 

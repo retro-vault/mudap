@@ -95,24 +95,27 @@ void cdb_parser::parse_symbol(std::string_view content) {
     // Examples:
     // S:Lclock.clock_loop$hour$1_1$41({2}SI:S),B,1,-2
     // S:G$SECOND$0_0$0({1}SC:U),I,0,0
+    // S:Fclock$clk$0_0$0({97}STclock_s:S),E,0,0
     if (current_module_.empty()) return;
 
     cdbg_info_symbol symbol;
-    symbol.scope = (content[0] == 'G') ? "global" : "local";
+    char scope_char = content[0];
 
-    // Find name and type info
+    // First '$' separates scope prefix from symbol name
     size_t dollar_pos = content.find('$');
     if (dollar_pos == std::string_view::npos) return;
 
-    size_t name_end = content.find('$', dollar_pos + 1);
-    size_t paren_pos = content.find('(');
-    if (name_end == std::string_view::npos || (paren_pos != std::string_view::npos && paren_pos < name_end)) {
-        name_end = paren_pos;
-    }
-    if (name_end == std::string_view::npos) return;
+    // Scope prefix is between scope char and first '$'
+    // e.g. "clock.clock_loop" for L, empty for G
+    std::string_view scope_prefix = content.substr(1, dollar_pos - 1);
 
-    std::string full_name = std::string(content.substr(dollar_pos + 1, name_end - dollar_pos - 1));
-    // Extract type info (e.g., "{2}SI:S"), excluding parentheses
+    // Symbol name is between first and second '$'
+    size_t name_end = content.find('$', dollar_pos + 1);
+    if (name_end == std::string_view::npos) return;
+    std::string sym_name(content.substr(dollar_pos + 1, name_end - dollar_pos - 1));
+
+    // Extract type info from parentheses, e.g. "{2}SI:S"
+    size_t paren_pos = content.find('(');
     if (paren_pos != std::string_view::npos) {
         size_t end_paren = content.find(')', paren_pos);
         if (end_paren != std::string_view::npos) {
@@ -120,20 +123,17 @@ void cdb_parser::parse_symbol(std::string_view content) {
         }
     }
 
-    // Handle local vs. global symbols
-    if (symbol.scope == "local") {
-        // Local symbol, e.g., "Lclock.clock_loop$hour" -> function "clock_loop", name "hour"
-        size_t first_dot = full_name.find('.');
-        if (first_dot == std::string::npos) return;
+    symbol.name = sym_name;
 
-        std::string module_name = full_name.substr(0, first_dot);
-        size_t second_dollar = full_name.find('$', first_dot + 1);
-        if (second_dollar == std::string::npos) return;
+    if (scope_char == 'L') {
+        // Local symbol: scope_prefix = "clock.clock_loop" (module.function)
+        symbol.scope = "local";
+        size_t dot_pos = scope_prefix.find('.');
+        if (dot_pos == std::string_view::npos) return;
 
-        std::string function_name = full_name.substr(first_dot + 1, second_dollar - first_dot - 1);
-        symbol.name = full_name.substr(second_dollar + 1);
+        std::string module_name(scope_prefix.substr(0, dot_pos));
+        std::string function_name(scope_prefix.substr(dot_pos + 1));
 
-        // Add to the appropriate function in the current module
         for (auto& module : data_) {
             if (module.name == current_module_ && module_name == current_module_) {
                 for (auto& func : module.functions) {
@@ -144,16 +144,18 @@ void cdb_parser::parse_symbol(std::string_view content) {
                 }
             }
         }
-    } else {
-        // Global symbol
-        size_t dot_pos = full_name.find('.');
-        if (dot_pos != std::string::npos) {
-            symbol.name = full_name.substr(dot_pos + 1);
-        } else {
-            symbol.name = full_name;
+    } else if (scope_char == 'G') {
+        // Global symbol: name is between 1st and 2nd '$'
+        symbol.scope = "global";
+        for (auto& module : data_) {
+            if (module.name == current_module_) {
+                module.global_symbols.push_back(symbol);
+                break;
+            }
         }
-
-        // Add to current module's global symbols
+    } else {
+        // File-scope (F) or struct-scope (S) — add as module-level symbol
+        symbol.scope = (scope_char == 'F') ? "local" : "struct";
         for (auto& module : data_) {
             if (module.name == current_module_) {
                 module.global_symbols.push_back(symbol);
@@ -203,45 +205,61 @@ void cdb_parser::parse_type(std::string_view content) {
 
 void cdb_parser::parse_line_info(std::string_view content) {
     // Examples:
-    // L:G$SECOND$0_0$0:A2
-    // L:C$clock.c$18$0_0$36:116
-    // L:A$clock/tomaz/Work/ura/build/ura/clock$76:116
+    // L:C$clock.c$18$0_0$36:116    (C source line)
+    // L:A$clock/path/clock$76:116   (Assembly line)
+    // L:G$SECOND$0_0$0:A2           (Global symbol address)
     if (current_module_.empty()) return;
 
-    cdbg_info_line line;
-    line.scope = (content[0] == 'G') ? "global" : "local";
+    char type = content[0];
 
-    // Split by '$'
+    // Only handle C source lines for now
+    // Format: C$file$line$level$block:address
+    if (type != 'C') return;
+
     auto parts = util::split(content, '$');
-    if (parts.size() < 3) return;
+    // parts: ["C", "clock.c", "18", "0_0", "36:116"]
+    if (parts.size() < 4) return;
 
-    // File path is the second part (index 1)
+    cdbg_info_line line;
+    line.scope = "local";
     line.file = std::string(parts[1]);
-    // Normalize file path to use forward slashes
     std::replace(line.file.begin(), line.file.end(), '\\', '/');
 
-    // Line number is in the last part, before ':' or end
-    std::string_view last_part = parts.back();
-    size_t colon_pos = last_part.find(':');
-    std::string_view line_str = (colon_pos != std::string_view::npos) ? last_part.substr(0, colon_pos) : last_part;
-
+    // Line number is parts[2], decimal
     try {
-        line.line = std::stoi(std::string(line_str), nullptr, 16);
+        line.line = std::stoi(std::string(parts[2]));
     } catch (...) {
-        return; // Skip invalid line numbers
+        return;
     }
 
-    // Add to current module
+    // Address is after the last ':' in the last part
+    std::string_view last_part = parts.back();
+    size_t colon_pos = last_part.find(':');
+    if (colon_pos != std::string_view::npos) {
+        try {
+            line.address = static_cast<uint16_t>(
+                std::stoul(std::string(last_part.substr(colon_pos + 1)), nullptr, 16));
+        } catch (...) {
+            // Address is optional, ignore parse errors
+        }
+    }
+
+    // Match module by file name rather than current_module_, because
+    // L: records can appear after a different M: record in the CDB file.
+    // e.g. "clock.c" -> module "clock"
+    std::string module_name;
+    size_t dot_pos = line.file.rfind('.');
+    if (dot_pos != std::string::npos) {
+        module_name = line.file.substr(0, dot_pos);
+    }
+
     for (auto& module : data_) {
-        if (module.name == current_module_) {
-            // Set module file to the first .c file path encountered
-            if (module.file.empty() || module.file == current_module_ + ".c") {
-                if (line.file.find(".c") != std::string::npos) {
-                    module.file = line.file;
-                }
+        if (module.name == module_name) {
+            if (module.file == module.name + ".c") {
+                module.file = line.file;
             }
             module.lines.push_back(line);
-            break;
+            return;
         }
     }
 }

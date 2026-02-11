@@ -15,7 +15,6 @@
 #include <sockpp/tcp_socket.h>
 #include <sockpp/tcp_acceptor.h>
 #include <sockpp/tcp_connector.h>
-#include <sockpp/result.h>
 
 class socket_stream_buffer : public std::streambuf {
 public:
@@ -33,13 +32,10 @@ private:
 
 class socket_stream : public std::iostream {
 public:
-    // Constructor for server mode (listen on port)
     socket_stream(uint16_t port);
-    // Constructor for client mode (connect to host:port)
     socket_stream(const std::string& host, uint16_t port);
-    // Destructor to clean up socket
     ~socket_stream();
 private:
+    std::unique_ptr<sockpp::tcp_socket> socket_;
     socket_stream_buffer buffer_;
-    std::unique_ptr<sockpp::tcp_socket> socket_; // Owned socket
 };

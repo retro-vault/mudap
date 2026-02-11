@@ -15,9 +15,10 @@ target_link_libraries(mudap
     sockpp
     structopt::structopt
     nlohmann_json::nlohmann_json
-    dap  # your in-tree debug adapter protocol library
-    z80ex  # link against z80ex
-    z80ex_dasm  # link against z80ex disassembler
+    dap
+    sdcc
+    z80ex
+    z80ex_dasm
 )
 
 # Include directories for local project headers

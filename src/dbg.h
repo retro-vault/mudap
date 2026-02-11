@@ -2,8 +2,8 @@
 // Debug Adapter Protocol (DAP) server class for Z80 emulation.
 //
 // This file defines the `dbg` class which implements a DAP-compliant debugger
-// for a Z80 CPU using the z80ex library. It handles all standard DAP requests,
-// maintains CPU and memory state, and manages breakpoints.
+// for a Z80 CPU using the z80ex library. It holds all emulation state and
+// registers handler classes with the DAP dispatcher.
 //
 // Copyright 2025 Tomaz Stih. All rights reserved.
 // MIT License.
@@ -19,11 +19,19 @@
 #include <algorithm>
 #include <cstring>
 #include <iostream>
+#include <filesystem>
+#include <optional>
 
 #include <nlohmann/json.hpp>
+#include <sdcc/cdbg_info.h>
 #include <z80ex.h>
 #include <z80ex_dasm.h>
 #include <dap/dap.h>
+
+struct source_location {
+    std::string file;
+    int line;
+};
 
 class dbg
 {
@@ -31,46 +39,54 @@ public:
     dbg();
     ~dbg();
 
-    // DAP request handlers.
-    std::string handle_initialize(const dap::initialize_request &req);
-    std::string handle_launch(const dap::launch_request &req);
-    std::string handle_set_breakpoints(const dap::set_breakpoints_request &req);
-    std::string handle_set_instruction_breakpoints(const dap::set_instruction_breakpoints_request &req);
-    std::string handle_configuration_done(const dap::configuration_done_request &req);
-    std::string handle_threads(const dap::threads_request &req);
-    std::string handle_stack_trace(const dap::stack_trace_request &req);
-    std::string handle_scopes(const dap::scopes_request &req);
-    std::string handle_variables(const dap::variables_request &req);
-    std::string handle_continue(const dap::continue_request &req);
-    std::string handle_source(const dap::source_request &req);
-    std::string handle_read_memory(const dap::read_memory_request &req);
-    std::string handle_disassemble(const dap::disassemble_request &req);
-    std::string handle_next(const dap::next_request &req);
-    std::string handle_step_in(const dap::step_in_request &req);
-    std::string handle_step_out(const dap::step_out_request &req);
+    // Register all handler objects with the DAP dispatcher.
+    void register_handlers(dap::dap &dispatcher);
 
-    // Memory access.
-    std::vector<uint8_t> &memory();             // Mutable memory buffer.
-    const std::vector<uint8_t> &memory() const; // Const memory buffer.
+    // Event sending (set by main before running the dispatcher).
+    void set_event_sender(std::function<void(const std::string &)> sender);
+    void send_event(const std::string &event_json);
+
+    // Accessors for handler classes.
+    Z80EX_CONTEXT *cpu() { return cpu_; }
+    std::vector<uint8_t> &memory() { return memory_; }
+    const std::vector<uint8_t> &memory() const { return memory_; }
+    std::vector<uint16_t> &breakpoints() { return breakpoints_; }
+    std::vector<uint16_t> &instruction_breakpoints() { return instruction_breakpoints_; }
+    int next_event_seq() { return event_seq_++; }
+    bool launched() const { return launched_; }
+    void set_launched(bool v) { launched_ = v; }
+    const std::string &virtual_lst_path() const { return virtual_lst_path_; }
+    void set_virtual_lst_path(const std::string &p) { virtual_lst_path_ = p; }
+    int virtual_lst_source_reference() const { return virtual_lst_source_reference_; }
+    void set_virtual_lst_source_reference(int r) { virtual_lst_source_reference_ = r; }
+
+    // CDB debug info.
+    void set_cdb_modules(std::vector<sdcc::cdbg_info_module> m) { cdb_modules_ = std::move(m); }
+    const std::vector<sdcc::cdbg_info_module> &cdb_modules() const { return cdb_modules_; }
+    bool has_cdb() const { return !cdb_modules_.empty(); }
+    void set_source_root(const std::string &r) { source_root_ = r; }
+    const std::string &source_root() const { return source_root_; }
+    std::optional<source_location> lookup_source(uint16_t address) const;
+    std::optional<uint16_t> lookup_address(const std::string &file, int line) const;
 
     // Disassembler support.
-    static uint8_t dasm_readbyte_cb(            // z80ex disasm callback.
-        Z80EX_WORD addr, void *user_data); 
+    static uint8_t dasm_readbyte_cb(Z80EX_WORD addr, void *user_data);
+
+    // Formatting helper.
+    std::string format_hex(uint16_t value, int width);
 
 private:
-    Z80EX_CONTEXT *cpu_;                        // z80ex CPU context.
-    std::vector<uint8_t> memory_;               // Emulated 64K memory.
-    std::vector<int> breakpoints_;              // Source breakpoints.
-    std::vector<uint16_t>                       // Instruction breakpoints.
-        instruction_breakpoints_; 
-    int event_seq_;                             // Event sequence counter.
-    bool launched_;                             // Whether 'launch' has occurred.
+    Z80EX_CONTEXT *cpu_;
+    std::vector<uint8_t> memory_;
+    std::vector<uint16_t> breakpoints_;
+    std::vector<uint16_t> instruction_breakpoints_;
+    int event_seq_;
+    bool launched_;
+    std::function<void(const std::string &)> send_event_;
 
+    std::string virtual_lst_path_ = "/__virtual__/listing.lst";
+    int virtual_lst_source_reference_ = 1;
 
-    std::string virtual_lst_path_ =             // Virtual disasm source path.
-        "/__virtual__/listing.lst";
-    int virtual_lst_source_reference_ = 1;      // Virtual source reference ID.
-
-    std::string format_hex                      // Format as hex string.
-        (uint16_t value, int width); 
+    std::vector<sdcc::cdbg_info_module> cdb_modules_;
+    std::string source_root_;
 };

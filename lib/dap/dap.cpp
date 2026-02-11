@@ -1,13 +1,19 @@
+// dap.cpp
+// DAP dispatcher implementation with chain of responsibility.
+//
+// Copyright 2025 Tomaz Stih. All rights reserved.
+// MIT License.
 #include <dap/dap.h>
+#include <dap/handler.h>
 
 namespace dap
 {
     dap::dap() = default;
 
-    void dap::register_handler(const std::string &command, dap_handler handler)
+    void dap::add_handler(std::unique_ptr<request_handler> handler)
     {
-        std::lock_guard<std::mutex> lock(_mutex);
-        _handlers[command] = handler;
+        std::lock_guard<std::mutex> lock(mutex_);
+        handlers_.push_back(std::move(handler));
     }
 
     std::string dap::handle_message(const std::string &json_text)
@@ -24,15 +30,14 @@ namespace dap
             return resp.str();
         }
 
-        std::lock_guard<std::mutex> lock(_mutex);
+        std::lock_guard<std::mutex> lock(mutex_);
 
-        auto typed_it = _typed_handlers.find(req.command);
-        if (typed_it != _typed_handlers.end())
-            return typed_it->second(req);
-
-        auto it = _handlers.find(req.command);
-        if (it != _handlers.end())
-            return it->second(json_text);
+        // Walk the handler chain (chain of responsibility).
+        for (auto &handler : handlers_)
+        {
+            if (handler->command() == req.command)
+                return handler->handle(req);
+        }
 
         response resp(req.seq, req.command);
         resp.success(false).message("Unknown command: " + req.command);
@@ -43,7 +48,7 @@ namespace dap
     {
         send_event_ = std::move(sender);
     }
-    
+
     std::string dap::read_message(std::istream &in)
     {
         std::string header;

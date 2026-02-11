@@ -1,16 +1,35 @@
+// initialize.cpp — DAP "initialize" request handler.
+//
+// Copyright 2025 Tomaz Stih. All rights reserved.
+// MIT License.
 #include <dap/dap.h>
-
+#include <dap/handler.h>
 #include <dbg.h>
 
-std::string dbg::handle_initialize(const dap::initialize_request &req)
-{
-    // Send initialize response
-    dap::response resp(req.seq, req.command);
-    std::string response =
-        resp
+namespace handlers {
+
+class initialize_handler : public dap::request_handler {
+public:
+    initialize_handler(dbg &ctx) : ctx_(ctx) {}
+    std::string command() const override { return "initialize"; }
+
+    std::string handle(const dap::request &req) override
+    {
+        auto r = dap::initialize_request::from(req);
+
+        // Send the "initialized" event asynchronously.
+        nlohmann::json ev;
+        ev["type"] = "event";
+        ev["seq"] = ctx_.next_event_seq();
+        ev["event"] = "initialized";
+        ev["body"] = nlohmann::json::object();
+        ctx_.send_event(ev.dump());
+
+        // Return the capabilities response.
+        dap::response resp(r.seq, r.command);
+        return resp
             .success(true)
             .result({{"supportsConfigurationDoneRequest", true},
-                     //{"supportsDisassembleRequest", true},
                      {"supportsBreakpointLocationsRequest", true},
                      {"supportsInstructionBreakpoints", true},
                      {"supportsLoadedSourcesRequest", true},
@@ -21,16 +40,15 @@ std::string dbg::handle_initialize(const dap::initialize_request &req)
                      {"supportsTerminateDebuggee", false},
                      {"supportsMemoryReferences", true}})
             .str();
+    }
 
-    if (send_event_)
-        send_event_(response);
+private:
+    dbg &ctx_;
+};
 
-    // Now create the "initialized" event using event_seq_
-    nlohmann::json ev;
-    ev["type"] = "event";
-    ev["seq"] = event_seq_++;
-    ev["event"] = "initialized";
-    ev["body"] = nlohmann::json::object();
-
-    return ev.dump(); // Sent by caller with Content-Length wrapping
+std::unique_ptr<dap::request_handler> make_initialize(dbg &ctx)
+{
+    return std::make_unique<initialize_handler>(ctx);
 }
+
+} // namespace handlers
