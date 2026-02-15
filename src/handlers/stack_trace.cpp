@@ -25,16 +25,24 @@ public:
         if (src)
         {
             std::string name = std::filesystem::path(src->file).filename().string();
+            int source_ref = ctx_.ensure_source_reference(src->file, "text/x-c");
+            nlohmann::json source = {
+                {"name", name},
+                {"presentationHint", "normal"}};
+            if (source_ref > 0)
+                source["sourceReference"] = source_ref;
+            else
+            {
+                source["path"] = src->file;
+                source["sourceReference"] = 0;
+            }
+
             frame = {
                 {"id", 1},
                 {"name", name + ":" + std::to_string(src->line)},
                 {"memoryReference", ctx_.format_hex(pc, 4)},
                 {"instructionReference", ctx_.format_hex(pc, 4)},
-                {"source",
-                 {{"name", name},
-                  {"path", src->file},
-                  {"sourceReference", 0},
-                  {"presentationHint", "normal"}}},
+                {"source", source},
                 {"line", src->line},
                 {"column", 1}};
         }
@@ -45,10 +53,11 @@ public:
             // content (which starts from the current PC).
             int source_ref = ctx_.virtual_lst_source_reference() + 1;
             ctx_.set_virtual_lst_source_reference(source_ref);
+            auto sym = ctx_.lookup_symbol(pc);
 
             frame = {
                 {"id", 1},
-                {"name", ctx_.format_hex(pc, 4)},
+                {"name", sym ? *sym : ctx_.format_hex(pc, 4)},
                 {"memoryReference", ctx_.format_hex(pc, 4)},
                 {"instructionReference", ctx_.format_hex(pc, 4)},
                 {"source",

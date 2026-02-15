@@ -16,13 +16,24 @@ public:
     std::string handle(const dap::request &req) override
     {
         auto r = dap::scopes_request::from(req);
+        nlohmann::json scopes = nlohmann::json::array();
+        scopes.push_back({
+            {"name", "Registers"},
+            {"variablesReference", 100},
+            {"presentationHint", "registers"},
+            {"expensive", false}});
+
+        if (ctx_.has_map())
+        {
+            scopes.push_back({
+                {"name", "MAP"},
+                {"variablesReference", 200},
+                {"presentationHint", "locals"},
+                {"expensive", false}});
+        }
+
         dap::response resp(r.seq, r.command);
-        resp.success(true).result(
-            {{"scopes",
-              {{{"name", "Registers"},
-                {"variablesReference", 100},
-                {"presentationHint", "registers"},
-                {"expensive", false}}}}});
+        resp.success(true).result({{"scopes", scopes}});
         return resp.str();
     }
 

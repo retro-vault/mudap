@@ -53,6 +53,44 @@ public:
                                 z80ex_get_reg(ctx_.cpu(), regAF) & 0xFF, 2)},
                             {"variablesReference", 0}});
         }
+        else if (r.variables_reference == 200)
+        {
+            vars.push_back({
+                {"name", "Segments"},
+                {"value", std::to_string(ctx_.map_segments().size())},
+                {"variablesReference", 201},
+            });
+            vars.push_back({
+                {"name", "Symbols"},
+                {"value", std::to_string(ctx_.map_symbols().size())},
+                {"variablesReference", 202},
+            });
+        }
+        else if (r.variables_reference == 201)
+        {
+            for (const auto &seg : ctx_.map_segments())
+            {
+                vars.push_back({
+                    {"name", seg.name},
+                    {"value",
+                     "addr=" + ctx_.format_hex(static_cast<uint16_t>(seg.address & 0xFFFF), 4) +
+                         ", size=" + ctx_.format_hex(static_cast<uint16_t>(seg.size & 0xFFFF), 4) +
+                         ", " + seg.attributes},
+                    {"variablesReference", 0},
+                });
+            }
+        }
+        else if (r.variables_reference == 202)
+        {
+            for (const auto &sym : ctx_.map_symbols())
+            {
+                vars.push_back({
+                    {"name", sym.name},
+                    {"value", ctx_.format_hex(static_cast<uint16_t>(sym.address & 0xFFFF), 4)},
+                    {"variablesReference", 0},
+                });
+            }
+        }
 
         dap::response resp(r.seq, r.command);
         resp.success(true).result({{"variables", vars}});

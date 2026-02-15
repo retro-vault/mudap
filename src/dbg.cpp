@@ -9,6 +9,38 @@
 // MIT License.
 #include <dbg.h>
 #include <dap/handler.h>
+#include <unordered_set>
+
+namespace {
+
+std::optional<source_location> map_symbol_to_source(const sdcc::symbol &sym)
+{
+    // SDCC/ASxxxx map symbol format:
+    // C$<file>$<line>$...
+    if (sym.name.size() < 4 || sym.name[0] != 'C' || sym.name[1] != '$')
+        return std::nullopt;
+
+    size_t p1 = sym.name.find('$', 2);
+    if (p1 == std::string::npos)
+        return std::nullopt;
+    size_t p2 = sym.name.find('$', p1 + 1);
+    if (p2 == std::string::npos)
+        return std::nullopt;
+
+    source_location loc;
+    loc.file = sym.name.substr(2, p1 - 2);
+    try
+    {
+        loc.line = std::stoi(sym.name.substr(p1 + 1, p2 - p1 - 1));
+    }
+    catch (...)
+    {
+        return std::nullopt;
+    }
+    return loc;
+}
+
+} // namespace
 
 // Forward declarations of handler factory functions (defined in handlers/).
 namespace handlers {
@@ -73,7 +105,6 @@ std::string dbg::format_hex(uint16_t value, int width)
 
 std::optional<source_location> dbg::lookup_source(uint16_t address) const
 {
-    namespace fs = std::filesystem;
     for (auto &mod : cdb_modules_)
     {
         for (auto &ln : mod.lines)
@@ -81,55 +112,29 @@ std::optional<source_location> dbg::lookup_source(uint16_t address) const
             if (ln.address != address)
                 continue;
 
-            // Resolve the source file path.
-            fs::path p(ln.file);
-            std::string filename = p.filename().string();
+            auto resolved = resolve_source_path(ln.file);
+            if (resolved)
+                return source_location{*resolved, ln.line};
 
-            if (p.is_absolute() && fs::exists(p))
-                return source_location{p.string(), ln.line};
-
-            // Try relative to source_root_.
-            if (!source_root_.empty())
-            {
-                fs::path candidate = fs::path(source_root_) / p;
-                if (fs::exists(candidate))
-                    return source_location{fs::canonical(candidate).string(), ln.line};
-            }
-
-            // Try current working directory.
-            if (fs::exists(p))
-                return source_location{fs::canonical(p).string(), ln.line};
-
-            // Walk up from source_root_ looking for the file in each
-            // ancestor and its immediate subdirectories (e.g. src/).
-            if (!source_root_.empty())
-            {
-                fs::path dir = fs::path(source_root_);
-                for (int depth = 0; depth < 5 && dir.has_parent_path(); ++depth)
-                {
-                    dir = dir.parent_path();
-                    // Try direct match: parent/main.c
-                    fs::path candidate = dir / filename;
-                    if (fs::exists(candidate))
-                        return source_location{fs::canonical(candidate).string(), ln.line};
-
-                    // Try one-level subdirectories: parent/src/main.c
-                    try {
-                        for (auto &entry : fs::directory_iterator(dir))
-                        {
-                            if (!entry.is_directory())
-                                continue;
-                            candidate = entry.path() / filename;
-                            if (fs::exists(candidate))
-                                return source_location{fs::canonical(candidate).string(), ln.line};
-                        }
-                    } catch (...) {}
-                }
-            }
-
-            // Return unresolved path as last resort.
-            return source_location{ln.file, ln.line};
+            return source_location{ln.file, ln.line}; // unresolved fallback
         }
+    }
+
+    // Fallback: map C$<file>$<line>$... symbols from MAP/NOI style names.
+    for (const auto &sym : map_symbols_)
+    {
+        if (sym.address != address)
+            continue;
+
+        auto loc = map_symbol_to_source(sym);
+        if (!loc)
+            continue;
+
+        auto resolved = resolve_source_path(loc->file);
+        if (resolved)
+            return source_location{*resolved, loc->line};
+
+        return loc;
     }
     return std::nullopt;
 }
@@ -153,7 +158,244 @@ std::optional<uint16_t> dbg::lookup_address(const std::string &file, int line) c
                 return ln.address;
         }
     }
+
+    // Fallback: MAP symbols.
+    for (const auto &sym : map_symbols_)
+    {
+        auto loc = map_symbol_to_source(sym);
+        if (!loc || loc->line != line)
+            continue;
+
+        std::string map_name = fs::path(loc->file).filename().string();
+        if (map_name == query_name)
+            return static_cast<uint16_t>(sym.address & 0xFFFF);
+    }
     return std::nullopt;
+}
+
+std::optional<std::string> dbg::lookup_symbol_exact(uint16_t address) const
+{
+    const sdcc::symbol *best = nullptr;
+    for (const auto &sym : map_symbols_)
+    {
+        uint16_t sym_addr = static_cast<uint16_t>(sym.address & 0xFFFF);
+        if (sym_addr != address)
+            continue;
+
+        if (!best)
+            best = &sym;
+        else if (sym.name.size() > 1 && sym.name[0] == '_')
+            best = &sym; // prefer C-like symbol names for display
+    }
+
+    if (!best)
+        return std::nullopt;
+    return best->name;
+}
+
+std::optional<std::string> dbg::lookup_symbol(uint16_t address) const
+{
+    const sdcc::symbol *best = nullptr;
+    uint16_t best_addr = 0;
+
+    for (const auto &sym : map_symbols_)
+    {
+        uint16_t sym_addr = static_cast<uint16_t>(sym.address & 0xFFFF);
+        if (sym_addr > address)
+            continue;
+
+        if (!best || sym_addr > best_addr)
+        {
+            best = &sym;
+            best_addr = sym_addr;
+        }
+    }
+
+    if (!best)
+        return std::nullopt;
+
+    std::ostringstream oss;
+    oss << best->name;
+    if (address > best_addr)
+        oss << "+" << (address - best_addr);
+    return oss.str();
+}
+
+std::optional<std::string> dbg::resolve_source_path(const std::string &path) const
+{
+    namespace fs = std::filesystem;
+    fs::path p(path);
+    std::string filename = p.filename().string();
+
+    auto canonical_if_exists = [](const fs::path &candidate)
+        -> std::optional<std::string>
+    {
+        try
+        {
+            if (fs::exists(candidate))
+                return fs::canonical(candidate).string();
+        }
+        catch (...) {}
+        return std::nullopt;
+    };
+
+    if (p.is_absolute())
+    {
+        auto resolved = canonical_if_exists(p);
+        if (resolved)
+            return resolved;
+    }
+
+    auto cwd_resolved = canonical_if_exists(p);
+    if (cwd_resolved)
+        return cwd_resolved;
+
+    std::vector<fs::path> roots;
+    if (!source_root_.empty())
+        roots.push_back(source_root_);
+    for (const auto &root : source_roots_)
+        roots.push_back(root);
+
+    std::unordered_set<std::string> seen_roots;
+    for (auto &root : roots)
+    {
+        std::string key = root.string();
+        if (key.empty() || seen_roots.count(key))
+            continue;
+        seen_roots.insert(key);
+
+        auto resolved = canonical_if_exists(root / p);
+        if (resolved)
+            return resolved;
+
+        resolved = canonical_if_exists(root / filename);
+        if (resolved)
+            return resolved;
+
+        // One-level subdirectory match: root/src/main.c.
+        try
+        {
+            for (auto &entry : fs::directory_iterator(root))
+            {
+                if (!entry.is_directory())
+                    continue;
+                resolved = canonical_if_exists(entry.path() / filename);
+                if (resolved)
+                    return resolved;
+            }
+        }
+        catch (...) {}
+    }
+
+    return std::nullopt;
+}
+
+void dbg::set_source_breakpoints_for_file(const std::string &file,
+                                          std::vector<int> lines)
+{
+    if (file.empty())
+        return;
+    if (lines.empty())
+    {
+        source_breakpoints_by_file_.erase(file);
+        return;
+    }
+    source_breakpoints_by_file_[file] = std::move(lines);
+}
+
+std::vector<nlohmann::json> dbg::resolve_source_breakpoints_for_file(
+    const std::string &file) const
+{
+    std::vector<nlohmann::json> out;
+    auto it = source_breakpoints_by_file_.find(file);
+    if (it == source_breakpoints_by_file_.end())
+        return out;
+
+    for (int line : it->second)
+    {
+        auto addr = lookup_address(file, line);
+        if (addr)
+        {
+            out.push_back({{"verified", true}, {"line", line}});
+        }
+        else if (!has_cdb() && !has_map())
+        {
+            out.push_back({{"verified", false},
+                           {"line", line},
+                           {"message", "Pending symbol resolution (CDB/MAP not loaded yet)"}});
+        }
+        else
+        {
+            out.push_back({{"verified", false},
+                           {"line", line},
+                           {"message", "No address mapping for this line"}});
+        }
+    }
+    return out;
+}
+
+void dbg::rebuild_source_breakpoint_addresses()
+{
+    breakpoints_.clear();
+    std::unordered_set<uint16_t> seen;
+
+    for (const auto &entry : source_breakpoints_by_file_)
+    {
+        const auto &file = entry.first;
+        for (int line : entry.second)
+        {
+            auto addr = lookup_address(file, line);
+            if (!addr)
+                continue;
+            if (seen.insert(*addr).second)
+                breakpoints_.push_back(*addr);
+        }
+    }
+}
+
+void dbg::clear_source_cache()
+{
+    source_ref_to_content_.clear();
+    source_path_to_ref_.clear();
+    next_source_reference_ = 1000;
+}
+
+int dbg::ensure_source_reference(const std::string &path,
+                                 const std::string &mime_type)
+{
+    namespace fs = std::filesystem;
+    auto resolved = resolve_source_path(path);
+    std::string lookup_path = resolved ? *resolved : path;
+
+    auto it = source_path_to_ref_.find(lookup_path);
+    if (it != source_path_to_ref_.end())
+        return it->second;
+
+    std::ifstream ifs(lookup_path);
+    if (!ifs)
+        return 0;
+
+    std::ostringstream content;
+    content << ifs.rdbuf();
+
+    int source_ref = next_source_reference_++;
+    source_content sc;
+    sc.path = lookup_path;
+    sc.name = fs::path(lookup_path).filename().string();
+    sc.content = content.str();
+    sc.mime_type = mime_type;
+
+    source_ref_to_content_[source_ref] = std::move(sc);
+    source_path_to_ref_[lookup_path] = source_ref;
+    return source_ref;
+}
+
+std::optional<source_content> dbg::source_by_reference(int source_reference) const
+{
+    auto it = source_ref_to_content_.find(source_reference);
+    if (it == source_ref_to_content_.end())
+        return std::nullopt;
+    return it->second;
 }
 
 uint8_t dbg::dasm_readbyte_cb(Z80EX_WORD addr, void *user_data)

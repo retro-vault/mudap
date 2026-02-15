@@ -20,7 +20,7 @@
   "contributes": {
     "debuggers": [
       {
-        "type": "mudap-gdb",
+        "type": "mudap",
         "label": "µdap Debugger",
         "configurationAttributes": {
           "launch": {

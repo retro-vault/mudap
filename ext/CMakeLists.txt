@@ -1,19 +1,20 @@
 set(EXT_SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 set(EXT_BUILD_DIR "${CMAKE_BINARY_DIR}/ext")
-set(EXT_VSIX "${CMAKE_SOURCE_DIR}/bin/idp-gdb.vsix")
+set(EXT_VSIX "${CMAKE_SOURCE_DIR}/bin/mudap.vsix")
 
-# List all files you need to copy and track
+# List source files required for VS Code extension packaging.
 set(EXT_FILES
     "${EXT_SRC_DIR}/package.json"
     "${EXT_SRC_DIR}/LICENSE"
-    # add more files here if needed
 )
 
-# This command will always copy everything in ext/ to the build dir when you build
+# Stage extension sources into build/ext.
 add_custom_target(prepare_extension ALL
-    COMMAND ${CMAKE_COMMAND} -E copy_directory "${EXT_SRC_DIR}" "${EXT_BUILD_DIR}"
+    COMMAND ${CMAKE_COMMAND} -E make_directory "${EXT_BUILD_DIR}"
+    COMMAND ${CMAKE_COMMAND} -E copy "${EXT_SRC_DIR}/package.json" "${EXT_BUILD_DIR}/package.json"
+    COMMAND ${CMAKE_COMMAND} -E copy "${EXT_SRC_DIR}/LICENSE" "${EXT_BUILD_DIR}/LICENSE"
     DEPENDS ${EXT_FILES}
-    COMMENT "Copying extension sources to build/ext"
+    COMMENT "Staging extension sources to build/ext"
 )
 
 add_custom_command(

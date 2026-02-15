@@ -16,9 +16,29 @@ public:
     std::string handle(const dap::request &req) override
     {
         auto r = dap::configuration_done_request::from(req);
+
         dap::response resp(r.seq, r.command);
-        resp.success(true).result({});
-        return resp.str();
+        std::string response = resp.success(true).result({}).str();
+
+        if (ctx_.launched() && ctx_.pending_entry_stop())
+        {
+            ctx_.set_pending_entry_stop(false);
+            std::thread([this]()
+                        {
+                std::this_thread::sleep_for(std::chrono::milliseconds(20));
+                nlohmann::json stopped_event;
+                stopped_event["seq"] = ctx_.next_event_seq();
+                stopped_event["type"] = "event";
+                stopped_event["event"] = "stopped";
+                stopped_event["body"] = {
+                    {"reason", "entry"},
+                    {"threadId", 1},
+                    {"allThreadsStopped", true}};
+                ctx_.send_event(stopped_event.dump()); })
+                .detach();
+        }
+
+        return response;
     }
 
 private:

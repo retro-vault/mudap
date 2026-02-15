@@ -3,6 +3,13 @@
 cmake_minimum_required(VERSION 3.25)
 project(mudap LANGUAGES CXX)
 
+if(CMAKE_SOURCE_DIR STREQUAL CMAKE_BINARY_DIR)
+  message(FATAL_ERROR
+    "In-source CMake builds are disabled.\n"
+    "Use: cmake -S . -B build"
+  )
+endif()
+
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -16,6 +23,10 @@ endif()
 
 # --- Fetch all external dependencies ---
 include(FetchContent)
+if(NOT DEFINED FETCHCONTENT_UPDATES_DISCONNECTED)
+  set(FETCHCONTENT_UPDATES_DISCONNECTED ON CACHE BOOL
+      "Disable FetchContent network update checks during local builds" FORCE)
+endif()
 
 # Use the actual z80ex repo by lipro
 set(Z80EX_BUILD_DASM ON CACHE BOOL "Build z80ex disassembler" FORCE)

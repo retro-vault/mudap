@@ -1,10 +1,11 @@
 ![status.badge] [![language.badge]][language.url] [![standard.badge]][standard.url] [![license.badge]][license.url]
 
-# idp-dbg
+# μDAP (mudap)
 
-`idp-dbg` is a cross-debugging toolchain for Z80 programs, designed for integration with Visual Studio Code on Linux. It implements the Microsoft Debug Adapter Protocol (DAP) and serves as both a lightweight emulator backend and a debug adapter frontend.
+`μDAP (mudap)` is a cross-debugging toolchain for Z80 programs, designed for integration with Visual Studio Code on Linux. It implements the Microsoft Debug Adapter Protocol (DAP) and serves as both a lightweight emulator backend and a debug adapter frontend.
 
-This project is used by the [mavrica](https://github.com/iskra-delta/mavrica) project (located in the same GitHub root), which uses a Z80 just-in-time (JIT) compilation core to emulate a Z80 system. `idp-dbg` enables debugging of such emulators directly from VSCode.
+ > This project is used by the [mavrica](https://github.com/iskra-delta/mavrica)
+   project (located in the same GitHub root), which uses a Z80 just-in-time (JIT) compilation core to emulate a Z80 system. `μDAP (mudap)` enables debugging of such emulators directly from VSCode.
 
 ![Screenshot](docs/images/idp-emu-alpha.png)
 
@@ -26,26 +27,25 @@ This project is used by the [mavrica](https://github.com/iskra-delta/mavrica) pr
 ## Build instructions
 
 ```sh
-git clone https://github.com/iskra-delta/idp-dbg.git --recurse-submodules
-cd idp-dbg
-cmake -B build -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTS=ON
+git clone https://github.com/iskra-delta/mudap.git --recurse-submodules
+cd mudap
+cmake -S . -B build
 cmake --build build
 ```
 
 To run the tests:
 
 ```sh
-cd build
-ctest --output-on-failure
+ctest --test-dir build --output-on-failure
 ```
 
 The build produces two key outputs:
 
-- `build/idp-dbg` — the debug adapter binary
-- `build/idp-dbg.vsix` — the Visual Studio Code extension you can install with:
+- `bin/mudap` — the debug adapter binary
+- `bin/mudap.vsix` — the Visual Studio Code extension you can install with:
 
 ```sh
-code --install-extension build/idp-dbg.vsix
+code --install-extension bin/mudap.vsix
 ```
 
 ## VSCode integration
@@ -58,7 +58,7 @@ Add the following to your `.vscode/launch.json` in your project (e.g. in `mavric
   "configurations": [
     {
       "name": "Debug mavrica (Z80 JIT DAP)",
-      "type": "idp-gdb",
+      "type": "mudap",
       "request": "launch",
       "program": "${workspaceFolder}/build/mavrica.bin",
       "preLaunchTask": "Build mavrica",
@@ -68,6 +68,16 @@ Add the following to your `.vscode/launch.json` in your project (e.g. in `mavric
   ]
 }
 ```
+
+Optional adapter-specific launch arguments:
+
+- `sourceRoot`: single root folder used to resolve source files referenced by CDB.
+- `sourceRoots`: array of fallback root folders for source resolution.
+- `includeRoots`: array of include search roots (also used for source file resolution).
+- `cdbFile`: explicit path to CDB file (default is `<program>.cdb`).
+- `mapFile`: explicit path to MAP file (default is `<program>.map`).
+- `startAddress`: explicit program entry point (number or string like `"0x1234"`).
+  If omitted, IHX start address is used when available; otherwise entry defaults to `0x0000`.
 
 ## Directory structure
 
@@ -99,19 +109,23 @@ This project is under active development. Current component status:
 - DAP to emulator interface
 - Disassembler output
 - Register view with CPU tree
-- Visual Studio Code minimal extension
+- Visual Studio Code extension integration (`type: mudap`)
+- Instruction breakpoints
+- Continue / step (`next`, `stepIn`, `stepOut`)
+- Source code integration via CDB + MAP fallback
+- C source line mapping and source delivery via `sourceReference`
+- MAP parser integration (segments/symbols + symbolized stack fallback)
 
 ### In development
 
-- Instruction breakpoints
-- Continue / Stop / Restart
-- `next` (step over)
+- Watchpoints
+- Restart / terminate semantics improvements
+- Broader debug metadata ingestion (ADB/NOI/SYM)
 
 ### Planned
 
-- Watchpoints / symbols
-- Source code integration
-- C source line mapping
+- Expression/evaluate support
+- Memory/segment UX improvements using MAP metadata
 
 ### Nice to have
 
@@ -124,7 +138,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Copyright
 
-Copyright © 2025 Tomaz Stih  
+Copyright © 2025, 2026 Tomaz Stih  
 All rights reserved.
 
 [language.url]: https://en.wikipedia.org/wiki/C%2B%2B23%2B

@@ -16,7 +16,28 @@ public:
     std::string handle(const dap::request &req) override
     {
         auto r = dap::next_request::from(req);
-        z80ex_step(ctx_.cpu());
+        uint16_t start_pc = z80ex_get_reg(ctx_.cpu(), regPC);
+        auto start_loc = ctx_.lookup_source(start_pc);
+
+        // Source-level step when source mapping exists.
+        if (start_loc)
+        {
+            for (int i = 0; i < 100000; ++i)
+            {
+                z80ex_step(ctx_.cpu());
+                uint16_t pc = z80ex_get_reg(ctx_.cpu(), regPC);
+                auto loc = ctx_.lookup_source(pc);
+                if (!loc)
+                    continue;
+                if (loc->file != start_loc->file || loc->line != start_loc->line)
+                    break;
+            }
+        }
+        else
+        {
+            // Pure disassembly context: single instruction step.
+            z80ex_step(ctx_.cpu());
+        }
 
         dap::response resp(r.seq, r.command);
         resp.success(true).result({{"allThreadsContinued", true}});
